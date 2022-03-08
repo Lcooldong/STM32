@@ -1,0 +1,10 @@
+05:25:19 **** Incremental Build of configuration Debug for project DFU_TEST ****
+make -j16 all 
+arm-none-eabi-size   DFU_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31244	    228	   4880	  36352	   8e00	DFU_TEST.elf
+Finished building: default.size.stdout
+ 
+
+05:25:20 Build Finished. 0 errors, 0 warnings. (took 382ms)
+

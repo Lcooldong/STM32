@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value=""/>
+		<item key="selection" value="CALLBACK"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="cpCallback"/>
+			<item value="Callback"/>
+			<item value="cp"/>
+			<item value="USART3"/>
+			<item value="USART3_IRQn"/>
+			<item value="UART3"/>
+			<item value="interrupt"/>
+			<item value="global"/>
+			<item value="NVIC"/>
+			<item value="Tx"/>
+			<item value="Rx"/>
 			<item value="PG"/>
 			<item value="GPIO"/>
 		</list>

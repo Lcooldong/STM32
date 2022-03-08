@@ -1,0 +1,10 @@
+19:13:20 **** Incremental Build of configuration Debug for project 2-2_UART_printf_F429ZIT6U ****
+make -j16 all 
+arm-none-eabi-size   2-2_UART_printf_F429ZIT6U.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31092	    488	   1664	  33244	   81dc	2-2_UART_printf_F429ZIT6U.elf
+Finished building: default.size.stdout
+ 
+
+19:13:21 Build Finished. 0 errors, 0 warnings. (took 336ms)
+

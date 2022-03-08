@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp
+"mdk_arm_f429zit6u\startup_stm32f429xx.o"
+"mdk_arm_f429zit6u\main.o"
+"mdk_arm_f429zit6u\gpio.o"
+"mdk_arm_f429zit6u\usart.o"
+"mdk_arm_f429zit6u\stm32f4xx_it.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_msp.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_tim.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_tim_ex.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_uart.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_rcc.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_rcc_ex.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_flash.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_flash_ex.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_flash_ramfunc.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_gpio.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_dma_ex.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_dma.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_pwr.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_pwr_ex.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_cortex.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal.o"
+"mdk_arm_f429zit6u\stm32f4xx_hal_exti.o"
+"mdk_arm_f429zit6u\system_stm32f4xx.o"
+--strict --scatter "MDK_ARM_F429ZIT6U\MDK_ARM_F429ZIT6U.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "MDK_ARM_F429ZIT6U.map" -o MDK_ARM_F429ZIT6U\MDK_ARM_F429ZIT6U.axf

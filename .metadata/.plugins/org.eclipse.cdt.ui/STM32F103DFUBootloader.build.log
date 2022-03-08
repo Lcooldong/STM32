@@ -1,0 +1,12 @@
+05:34:41 **** Incremental Build of configuration Debug for project STM32F103DFUBootloader ****
+make all 
+arm-none-eabi-size   STM32F103DFUBootloader.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11720	    200	   5092	  17012	   4274	STM32F103DFUBootloader.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy.exe -O ihex "STM32F103DFUBootloader.elf" "STM32F103DFUBootloader.hex"
+ 
+
+05:34:42 Build Finished. 0 errors, 0 warnings. (took 464ms)
+

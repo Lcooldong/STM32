@@ -1,0 +1,10 @@
+10:42:08 **** Build of configuration Debug for project 2-3_UART_interrupt_F429ZIT6U ****
+make -j16 all 
+arm-none-eabi-size   2-3_UART_interrupt_F429ZIT6U.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33840	    488	   1672	  36000	   8ca0	2-3_UART_interrupt_F429ZIT6U.elf
+Finished building: default.size.stdout
+ 
+
+10:42:10 Build Finished. 0 errors, 0 warnings. (took 1s.688ms)
+
