@@ -170,10 +170,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)		// 인터럽트 수신
 		//HAL_UART_Transmit(&huart3, &rx3_data, 1, 10);
 		HAL_UART_Receive_IT(&huart3, rx3_data, RX__BUFF_SIZE);	// 5byte 받을 때 실행, IRQHandler 는 1byte
 		HAL_UART_Transmit(&huart3, (uint8_t *)rx3_data, RX__BUFF_SIZE, 100);
-		for(int i = 0; i< RX__BUFF_SIZE; i++)
-		{
-			rx3_data[i] = 0;
-		}
 	}
 }
 /* USER CODE END 4 */

@@ -12,4 +12,6 @@
 	<section name="OptionalMessageDialog.hide.">
 		<item key="askReindex.detail" value="0"/>
 	</section>
+	<section name="CResourceRenameRefactoringInputPage">
+	</section>
 </section>
