@@ -116,18 +116,18 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   //uint32_t a = 0;
   float f = 0.0;
-  int8_t str[50];	// uint8_t -> int8_t
+  int8_t str[20];	// uint8_t -> int8_t
   while (1)
   {
-	  sprintf((char*)str, "%.1f", f);		// signed Occured
+	  sprintf(str, "%.1f", f);		// signed Occured
 	  lcd_put_cur(0, 0);
 	  lcd_send_string("TimeGone : ");
 	  lcd_put_cur(0, 11);
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 	  f += 0.5;
-	  sprintf((char*)str, "%.1f", f);
+	  sprintf(str, "%.1f", f);
 	  HAL_Delay(500);
-	  lcd_send_string((char*)str);
+	  lcd_send_string(str);
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
 	  HAL_Delay(500);
 	  f += 0.5;

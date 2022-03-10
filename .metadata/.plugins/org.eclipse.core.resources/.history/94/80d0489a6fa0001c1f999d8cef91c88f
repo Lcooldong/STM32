@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "i2c-lcd.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,16 +98,43 @@ int main(void)
   MX_USART3_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  //HAL_UART_Receive_IT(&huart3, &rx3_data, 1);	// ?¸?„°?Ÿ½?Š¸ ?ˆ˜?‹  ?„ ?–¸
+  //HAL_UART_Receive_IT(&huart3, &rx3_data, 1);
+  lcd_init();	//lcd ì´ˆê¸°í™”
   HAL_UART_Receive_IT(&huart3, rx3_data, RX__BUFF_SIZE);
+
+  lcd_clear();
+  lcd_put_cur(0, 0);
+  lcd_send_string("HELLO WORLD");
+  HAL_Delay(1000);
+  lcd_put_cur(1, 0);
+  lcd_send_string("LIM DONG HEE");
+  HAL_Delay(2000);
+  lcd_clear();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   //uint32_t a = 0;
+  float f = 0.0;
+  uint8_t str[50];	// uint8_t -> int8_t
   while (1)
   {
+	  sprintf(str, "%.1f", f);		// signed Occured
+	  lcd_put_cur(0, 0);
+	  lcd_send_string("TimeGone : ");
+	  lcd_put_cur(0, 11);
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+	  f += 0.5;
+	  sprintf(str, "%.1f", f);
+	  HAL_Delay(500);
+	  lcd_send_string(str);
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+	  HAL_Delay(500);
+	  f += 0.5;
 
+	  if(f == 600){
+		  f = 0;
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -164,13 +192,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)		// ?¸?„°?Ÿ½?Š¸ ?ˆ˜?‹ 
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)		// ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½
 {
 	if(huart->Instance == USART3)	// huart3.Instance
 	{
-		//HAL_UART_Receive_IT(&huart3, &rx3_data, 1);	// 1byte ë°›ì„ ?•Œë§ˆë‹¤ rx3_data?— ???¥
+		//HAL_UART_Receive_IT(&huart3, &rx3_data, 1);	// 1byte ë°›ì„ ?ï¿½ï¿½ë§ˆë‹¤ rx3_data?ï¿½ï¿½ ???ï¿½ï¿½
 		//HAL_UART_Transmit(&huart3, &rx3_data, 1, 10);
-		HAL_UART_Receive_IT(&huart3, rx3_data, RX__BUFF_SIZE);	// 5byte ë°›ì„ ?•Œ ?‹¤?–‰, IRQHandler ?Š” 1byte
+		HAL_UART_Receive_IT(&huart3, rx3_data, RX__BUFF_SIZE);	// 5byte ë°›ì„ ?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½, IRQHandler ?ï¿½ï¿½ 1byte
 		HAL_UART_Transmit(&huart3, (uint8_t *)rx3_data, RX__BUFF_SIZE, 100);
 		for(int i = 0; i< RX__BUFF_SIZE; i++)
 		{
