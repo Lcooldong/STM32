@@ -1,10 +1,10 @@
-02:35:56 **** Incremental Build of configuration Debug for project 3-1_CharacterLCD_F429ZIT6U ****
-make -j16 all 
+16:13:54 **** Incremental Build of configuration Debug for project 3-1_CharacterLCD_F429ZIT6U ****
+make -j12 all 
 arm-none-eabi-size   3-1_CharacterLCD_F429ZIT6U.elf 
    text	   data	    bss	    dec	    hex	filename
-  37120	    488	   1760	  39368	   99c8	3-1_CharacterLCD_F429ZIT6U.elf
+  37160	    488	   1760	  39408	   99f0	3-1_CharacterLCD_F429ZIT6U.elf
 Finished building: default.size.stdout
  
 
-02:35:56 Build Finished. 0 errors, 0 warnings. (took 327ms)
+16:13:54 Build Finished. 0 errors, 0 warnings. (took 297ms)
 
