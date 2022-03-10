@@ -102,8 +102,6 @@ int main(void)
   lcd_init();	//lcd 초기화
   HAL_UART_Receive_IT(&huart3, rx3_data, RX__BUFF_SIZE);
 
-  lcd_clear();
-  lcd_put_cur(0, 0);
   lcd_send_string("HELLO WORLD");
   HAL_Delay(1000);
   lcd_put_cur(1, 0);
@@ -116,18 +114,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   //uint32_t a = 0;
   float f = 0.0;
-  int8_t str[20];	// uint8_t -> int8_t
+  uint8_t str[20];
   while (1)
   {
-	  sprintf(str, "%.1f", f);		// signed Occured
+	  sprintf(str, "%f", f);
 	  lcd_put_cur(0, 0);
-	  lcd_send_string("TimeGone : ");
-	  lcd_put_cur(0, 11);
+	  lcd_send_string("timeGone : ");
+
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 	  f += 0.5;
-	  sprintf(str, "%.1f", f);
 	  HAL_Delay(500);
-	  lcd_send_string(str);
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
 	  HAL_Delay(500);
 	  f += 0.5;

@@ -119,7 +119,7 @@ int main(void)
   int8_t str[20];	// uint8_t -> int8_t
   while (1)
   {
-	  sprintf(str, "%.1f", f);		// signed Occured
+	  sprintf(str, "%.1f", f);		// signed 에러 났었음
 	  lcd_put_cur(0, 0);
 	  lcd_send_string("TimeGone : ");
 	  lcd_put_cur(0, 11);

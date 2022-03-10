@@ -116,10 +116,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   //uint32_t a = 0;
   float f = 0.0;
-  int8_t str[20];	// uint8_t -> int8_t
+  uint8_t str[20];
   while (1)
   {
-	  sprintf(str, "%.1f", f);		// signed Occured
+	  sprintf(str, "%.1f", f);
 	  lcd_put_cur(0, 0);
 	  lcd_send_string("TimeGone : ");
 	  lcd_put_cur(0, 11);
