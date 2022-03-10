@@ -359,7 +359,7 @@ Discarded input sections
  .data          0x0000000000000000        0x0 ./Core/Src/i2c.o
  .bss           0x0000000000000000        0x0 ./Core/Src/i2c.o
  .text.HAL_I2C_MspDeInit
-                0x0000000000000000       0x44 ./Core/Src/i2c.o
+                0x0000000000000000       0x48 ./Core/Src/i2c.o
  .debug_macro   0x0000000000000000      0xaa8 ./Core/Src/i2c.o
  .debug_macro   0x0000000000000000      0x29b ./Core/Src/i2c.o
  .debug_macro   0x0000000000000000       0x2e ./Core/Src/i2c.o

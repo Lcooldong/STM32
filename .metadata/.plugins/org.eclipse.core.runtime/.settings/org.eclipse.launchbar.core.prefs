@@ -13,7 +13,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:2-3_UART_interrupt_F429ZIT6U\ D
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:2-3_UART_interrupt_F429ZIT6U\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:210727_01\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:210727_01\ Debug/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:3-1_CharacterLCD_F429ZIT6U\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:3-1_CharacterLCD_F429ZIT6U\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:DFU_TEST\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:DFU_TEST_C8T6\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F103DFUBootloader\ Debug/activeLaunchMode=run

@@ -1421,9 +1421,9 @@ void MX_GPIO_Init(void)
  80010ac:	40020400 	.word	0x40020400
 
 080010b0 <lcd_send_cmd>:
-extern I2C_HandleTypeDef hi2c1;  // change your handler here accordingly
 
-#define SLAVE_ADDRESS_LCD 0x4E // change this according to ur setup
+//#define SLAVE_ADDRESS_LCD 0x4E // change this according to ur setup
+#define SLAVE_ADDRESS_LCD 0x4E
 
 void lcd_send_cmd (char cmd)
 {
@@ -1819,11 +1819,11 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
  800130e:	613b      	str	r3, [r7, #16]
  8001310:	693b      	ldr	r3, [r7, #16]
     /**I2C1 GPIO Configuration
-    PB6     ------> I2C1_SCL
+    PB8     ------> I2C1_SCL
     PB9     ------> I2C1_SDA
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_9;
- 8001312:	f44f 7310 	mov.w	r3, #576	; 0x240
+    GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9;
+ 8001312:	f44f 7340 	mov.w	r3, #768	; 0x300
  8001316:	617b      	str	r3, [r7, #20]
     GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
  8001318:	2312      	movs	r3, #18
