@@ -125,8 +125,8 @@ int main(void)
 	  lcd_put_cur(0, 11);
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 	  f += 0.5;
-	  sprintf((char*)str, "%.1f", f);
 	  HAL_Delay(500);
+	  sprintf((char*)str, "%.1f", f);
 	  lcd_send_string((char*)str);
 	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
 	  HAL_Delay(500);

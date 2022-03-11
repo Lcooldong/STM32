@@ -19,13 +19,13 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "i2c.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
-#include "i2c-lcd.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -35,7 +35,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define RX__BUFF_SIZE 5
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -46,20 +45,13 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-//uint8_t rx3_data;
-uint8_t rx3_data[RX__BUFF_SIZE];
+float timeSecond = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-int _write(int file, uint8_t* p, int len)
-{
-	if(HAL_UART_Transmit(&huart3, p, len, 10) == HAL_OK) return len;
-	else return 0;
-	//HAL_UART_Transmit(&huart3, p, len, 10);
-	//return len;
-}
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -97,17 +89,15 @@ int main(void)
   MX_GPIO_Init();
   MX_USART3_UART_Init();
   MX_I2C1_Init();
+  MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
-  //HAL_UART_Receive_IT(&huart3, &rx3_data, 1);
-  HAL_UART_Receive_IT(&huart3, rx3_data, RX__BUFF_SIZE);
+  HAL_TIM_Base_Start_IT(&htim7);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  //uint32_t a = 0;
   while (1)
   {
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -165,18 +155,19 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)		// ?��?��?��?�� ?��?��
+int _write(int file, char* p, int len){
+	if (HAL_UART_Transmit(&huart3, (uint8_t*)p, len, 10) == HAL_OK) return len;
+	else return 0;
+
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if(huart->Instance == USART3)	// huart3.Instance
-	{
-		//HAL_UART_Receive_IT(&huart3, &rx3_data, 1);	// 1byte 받을 ?��마다 rx3_data?�� ???��
-		//HAL_UART_Transmit(&huart3, &rx3_data, 1, 10);
-		HAL_UART_Receive_IT(&huart3, rx3_data, RX__BUFF_SIZE);	// 5byte 받을 ?�� ?��?��, IRQHandler ?�� 1byte
-		HAL_UART_Transmit(&huart3, (uint8_t *)rx3_data, RX__BUFF_SIZE, 100);
-		for(int i = 0; i< RX__BUFF_SIZE; i++)
-		{
-			rx3_data[i] = 0;
-		}
+	if(htim->Instance == TIM7){
+
+		HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+		printf("Time : %f\r\n", timeSecond);
+		timeSecond += 0.5;
 	}
 }
 /* USER CODE END 4 */

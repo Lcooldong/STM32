@@ -1,0 +1,20 @@
+19:00:41 **** Incremental Build of configuration Debug for project 4-1_Timer_Interrupt_F429ZIT6U ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "4-1_Timer_Interrupt_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\4-1_Timer_Interrupt_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4-1_Timer_Interrupt_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 4-1_Timer_Interrupt_F429ZIT6U.elf
+ 
+arm-none-eabi-size   4-1_Timer_Interrupt_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  4-1_Timer_Interrupt_F429ZIT6U.elf  > "4-1_Timer_Interrupt_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  4-1_Timer_Interrupt_F429ZIT6U.elf  "4-1_Timer_Interrupt_F429ZIT6U.bin"
+   text	   data	    bss	    dec	    hex	filename
+  36748	    488	   1824	  39060	   9894	4-1_Timer_Interrupt_F429ZIT6U.elf
+Finished building: default.size.stdout
+ 
+Finished building: 4-1_Timer_Interrupt_F429ZIT6U.bin
+ 
+Finished building: 4-1_Timer_Interrupt_F429ZIT6U.list
+ 
+
+19:00:42 Build Finished. 0 errors, 0 warnings. (took 916ms)
+
