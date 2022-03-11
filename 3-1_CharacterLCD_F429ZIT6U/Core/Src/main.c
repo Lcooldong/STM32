@@ -192,7 +192,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)		// ?��?��?��?�� ?��?��
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)		//
 {
 	if(huart->Instance == USART3)	// huart3.Instance
 	{
