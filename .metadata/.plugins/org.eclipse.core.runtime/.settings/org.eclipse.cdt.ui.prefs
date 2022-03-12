@@ -1,9 +1,6 @@
 eclipse.preferences.version=1
-scalability.contentAssistAutoActivation=true
-scalability.enableAll=true
-scalability.parserBasedContentAssist=true
-scalability.semanticHighlight=true
-scalability.syntaxColor=true
+scalability.numberOfLines=10000
+scalability.reconciler=false
 spelling_locale_initialized=true
 useAnnotationsPrefPage=true
 useQuickDiffPrefPage=true

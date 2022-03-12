@@ -1,58 +1,109 @@
-18:58:56 **** Incremental Build of configuration Debug for project 4-1_Timer_Interrupt_F429ZIT6U ****
-make -j12 all 
+19:13:49 **** Incremental Build of configuration Debug for project 6-1_PWM_F429ZIT6U ****
+make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "4-1_Timer_Interrupt_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\4-1_Timer_Interrupt_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4-1_Timer_Interrupt_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 4-1_Timer_Interrupt_F429ZIT6U.elf
+arm-none-eabi-gcc -o "6-1_PWM_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\6-1_PWM_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6-1_PWM_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6-1_PWM_F429ZIT6U.elf
  
-arm-none-eabi-size   4-1_Timer_Interrupt_F429ZIT6U.elf 
-arm-none-eabi-objdump -h -S  4-1_Timer_Interrupt_F429ZIT6U.elf  > "4-1_Timer_Interrupt_F429ZIT6U.list"
-arm-none-eabi-objcopy  -O binary  4-1_Timer_Interrupt_F429ZIT6U.elf  "4-1_Timer_Interrupt_F429ZIT6U.bin"
+arm-none-eabi-size   6-1_PWM_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  6-1_PWM_F429ZIT6U.elf  > "6-1_PWM_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  6-1_PWM_F429ZIT6U.elf  "6-1_PWM_F429ZIT6U.bin"
    text	   data	    bss	    dec	    hex	filename
-  36748	    488	   1824	  39060	   9894	4-1_Timer_Interrupt_F429ZIT6U.elf
+  16728	     20	   1940	  18688	   4900	6-1_PWM_F429ZIT6U.elf
 Finished building: default.size.stdout
  
-Finished building: 4-1_Timer_Interrupt_F429ZIT6U.bin
+Finished building: 6-1_PWM_F429ZIT6U.bin
  
-Finished building: 4-1_Timer_Interrupt_F429ZIT6U.list
+Finished building: 6-1_PWM_F429ZIT6U.list
  
-18:59:12 **** Incremental Build of configuration Debug for project 4-1_Timer_Interrupt_F429ZIT6U ****
-make -j12 all 
-arm-none-eabi-size   4-1_Timer_Interrupt_F429ZIT6U.elf 
+19:13:54 **** Incremental Build of configuration Debug for project 6-1_PWM_F429ZIT6U ****
+make -j16 all 
+arm-none-eabi-size   6-1_PWM_F429ZIT6U.elf 
    text	   data	    bss	    dec	    hex	filename
-  36748	    488	   1824	  39060	   9894	4-1_Timer_Interrupt_F429ZIT6U.elf
+  16728	     20	   1940	  18688	   4900	6-1_PWM_F429ZIT6U.elf
 Finished building: default.size.stdout
  
-19:00:15 **** Incremental Build of configuration Debug for project 4-1_Timer_Interrupt_F429ZIT6U ****
-make -j12 all 
+19:14:48 **** Incremental Build of configuration Debug for project 6-1_PWM_F429ZIT6U ****
+make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "4-1_Timer_Interrupt_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\4-1_Timer_Interrupt_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4-1_Timer_Interrupt_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 4-1_Timer_Interrupt_F429ZIT6U.elf
+arm-none-eabi-gcc -o "6-1_PWM_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\6-1_PWM_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6-1_PWM_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6-1_PWM_F429ZIT6U.elf
  
-arm-none-eabi-size   4-1_Timer_Interrupt_F429ZIT6U.elf 
-arm-none-eabi-objdump -h -S  4-1_Timer_Interrupt_F429ZIT6U.elf  > "4-1_Timer_Interrupt_F429ZIT6U.list"
-arm-none-eabi-objcopy  -O binary  4-1_Timer_Interrupt_F429ZIT6U.elf  "4-1_Timer_Interrupt_F429ZIT6U.bin"
+arm-none-eabi-size   6-1_PWM_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  6-1_PWM_F429ZIT6U.elf  > "6-1_PWM_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  6-1_PWM_F429ZIT6U.elf  "6-1_PWM_F429ZIT6U.bin"
    text	   data	    bss	    dec	    hex	filename
-  36748	    488	   1824	  39060	   9894	4-1_Timer_Interrupt_F429ZIT6U.elf
+  16728	     20	   1940	  18688	   4900	6-1_PWM_F429ZIT6U.elf
 Finished building: default.size.stdout
  
-Finished building: 4-1_Timer_Interrupt_F429ZIT6U.bin
+Finished building: 6-1_PWM_F429ZIT6U.bin
  
-Finished building: 4-1_Timer_Interrupt_F429ZIT6U.list
+Finished building: 6-1_PWM_F429ZIT6U.list
  
-19:00:41 **** Incremental Build of configuration Debug for project 4-1_Timer_Interrupt_F429ZIT6U ****
-make -j12 all 
+19:15:13 **** Incremental Build of configuration Debug for project 6-1_PWM_F429ZIT6U ****
+make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "4-1_Timer_Interrupt_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\4-1_Timer_Interrupt_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="4-1_Timer_Interrupt_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 4-1_Timer_Interrupt_F429ZIT6U.elf
+arm-none-eabi-gcc -o "6-1_PWM_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\6-1_PWM_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6-1_PWM_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6-1_PWM_F429ZIT6U.elf
  
-arm-none-eabi-size   4-1_Timer_Interrupt_F429ZIT6U.elf 
-arm-none-eabi-objdump -h -S  4-1_Timer_Interrupt_F429ZIT6U.elf  > "4-1_Timer_Interrupt_F429ZIT6U.list"
-arm-none-eabi-objcopy  -O binary  4-1_Timer_Interrupt_F429ZIT6U.elf  "4-1_Timer_Interrupt_F429ZIT6U.bin"
+arm-none-eabi-size   6-1_PWM_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  6-1_PWM_F429ZIT6U.elf  > "6-1_PWM_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  6-1_PWM_F429ZIT6U.elf  "6-1_PWM_F429ZIT6U.bin"
    text	   data	    bss	    dec	    hex	filename
-  36748	    488	   1824	  39060	   9894	4-1_Timer_Interrupt_F429ZIT6U.elf
+  16728	     20	   1940	  18688	   4900	6-1_PWM_F429ZIT6U.elf
 Finished building: default.size.stdout
  
-Finished building: 4-1_Timer_Interrupt_F429ZIT6U.bin
+Finished building: 6-1_PWM_F429ZIT6U.bin
  
-Finished building: 4-1_Timer_Interrupt_F429ZIT6U.list
+Finished building: 6-1_PWM_F429ZIT6U.list
+ 
+19:16:30 **** Incremental Build of configuration Debug for project 6-1_PWM_F429ZIT6U ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "6-1_PWM_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\6-1_PWM_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6-1_PWM_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6-1_PWM_F429ZIT6U.elf
+ 
+arm-none-eabi-size   6-1_PWM_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  6-1_PWM_F429ZIT6U.elf  > "6-1_PWM_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  6-1_PWM_F429ZIT6U.elf  "6-1_PWM_F429ZIT6U.bin"
+   text	   data	    bss	    dec	    hex	filename
+  16728	     20	   1940	  18688	   4900	6-1_PWM_F429ZIT6U.elf
+Finished building: default.size.stdout
+ 
+Finished building: 6-1_PWM_F429ZIT6U.bin
+ 
+Finished building: 6-1_PWM_F429ZIT6U.list
+ 
+19:16:47 **** Incremental Build of configuration Debug for project 6-1_PWM_F429ZIT6U ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "6-1_PWM_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\6-1_PWM_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6-1_PWM_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6-1_PWM_F429ZIT6U.elf
+ 
+arm-none-eabi-size   6-1_PWM_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  6-1_PWM_F429ZIT6U.elf  > "6-1_PWM_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  6-1_PWM_F429ZIT6U.elf  "6-1_PWM_F429ZIT6U.bin"
+   text	   data	    bss	    dec	    hex	filename
+  16728	     20	   1940	  18688	   4900	6-1_PWM_F429ZIT6U.elf
+Finished building: default.size.stdout
+ 
+Finished building: 6-1_PWM_F429ZIT6U.bin
+ 
+Finished building: 6-1_PWM_F429ZIT6U.list
+ 
+19:19:44 **** Incremental Build of configuration Debug for project 6-1_PWM_F429ZIT6U ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "6-1_PWM_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\6-1_PWM_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6-1_PWM_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6-1_PWM_F429ZIT6U.elf
+ 
+arm-none-eabi-size   6-1_PWM_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  6-1_PWM_F429ZIT6U.elf  > "6-1_PWM_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  6-1_PWM_F429ZIT6U.elf  "6-1_PWM_F429ZIT6U.bin"
+   text	   data	    bss	    dec	    hex	filename
+  16728	     20	   1940	  18688	   4900	6-1_PWM_F429ZIT6U.elf
+Finished building: default.size.stdout
+ 
+Finished building: 6-1_PWM_F429ZIT6U.bin
+ 
+Finished building: 6-1_PWM_F429ZIT6U.list
  

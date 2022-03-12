@@ -4,3 +4,7 @@
 1646705475839	Delete resource '2-2_UART_printf_F429ZIT6U'
 1646705479633	Delete resource '2-3_UART_interrupt_F429ZIT6U'
 1646846030386	Delete resource '2-3_UART_interrupt_F429ZIT6U'
+1647005368293	Delete resource '3-1_CharacterLCD_F429ZIT6U'
+1647005926653	Delete resource '4-1_Timer_Interrupt_F429ZIT6U'
+1647011106394	Delete resource '4-1_Timer_Interrupt_F429ZIT6U'
+1647075398719	Delete resource '5-1_External_Interrupt_F429ZIT6U'
