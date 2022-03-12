@@ -4714,3 +4714,21 @@ java.lang.Exception: localhost:61234: ½Ã½ºÅÛÀÌ °áÇÕµÈ µå¶óÀÌ
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-03-12 16:03:52.677
 !MESSAGE Indexed '6-1_PWM_F429ZIT6U' (28 sources, 90 headers) in 2.9 sec: 7,096 declarations; 52,218 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0034%)
+!SESSION 2022-03-12 22:10:15.615 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-03-12 22:11:59.044
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-03-12 22:11:59.111
+!MESSAGE Log4j initialized with config file D:\Github\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-03-12 22:12:07.584
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-03-12 22:54:52.609
+!MESSAGE Indexed '6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U' (28 sources, 90 headers) in 2.95 sec: 7,129 declarations; 52,664 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0033%)
