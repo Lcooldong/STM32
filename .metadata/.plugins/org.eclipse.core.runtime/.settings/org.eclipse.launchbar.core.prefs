@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:2-3_UART_interrupt_F429ZIT6U Debug (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:6-1_PWM_F429ZIT6U Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:2-3_UART_interrupt_F429ZIT6U Debug (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:6-3_ARR_Prescaler_F429ZIT6U Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:2-1_UART\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:2-1_UART\ Debug/activeLaunchTarget=null\:---
@@ -16,6 +16,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:210727_01\ Debug/activeLaunchTa
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:3-1_CharacterLCD_F429ZIT6U\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:5-1_External_Interrupt_F429ZIT6U\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:6-1_PWM_F429ZIT6U\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:6-3_ARR_Prescaler_F429ZIT6U\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:DFU_TEST\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:DFU_TEST_C8T6\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F103DFUBootloader\ Debug/activeLaunchMode=run

@@ -1,24 +1,89 @@
-03:49:02 **** Incremental Build of configuration Debug for project 6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U ****
-make -j16 all 
+12:28:08 **** Incremental Build of configuration Debug for project 6-3_ARR_Prescaler_F429ZIT6U ****
+make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.elf
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:110:12: warning: unused variable 'psc' [-Wunused-variable]
+  110 |   uint16_t psc = 180;
+      |            ^~~
+arm-none-eabi-gcc -o "6-3_ARR_Prescaler_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\6-3_ARR_Prescaler_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6-3_ARR_Prescaler_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6-3_ARR_Prescaler_F429ZIT6U.elf
  
-arm-none-eabi-size   6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.elf 
-arm-none-eabi-objdump -h -S  6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.elf  > "6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.list"
-arm-none-eabi-objcopy  -O binary  6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.elf  "6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.bin"
+arm-none-eabi-size   6-3_ARR_Prescaler_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  6-3_ARR_Prescaler_F429ZIT6U.elf  > "6-3_ARR_Prescaler_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  6-3_ARR_Prescaler_F429ZIT6U.elf  "6-3_ARR_Prescaler_F429ZIT6U.bin"
    text	   data	    bss	    dec	    hex	filename
-  41540	    488	   2184	  44212	   acb4	6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.elf
+  22880	    124	   2180	  25184	   6260	6-3_ARR_Prescaler_F429ZIT6U.elf
 Finished building: default.size.stdout
  
-Finished building: 6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.bin
+Finished building: 6-3_ARR_Prescaler_F429ZIT6U.bin
  
-Finished building: 6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.list
+Finished building: 6-3_ARR_Prescaler_F429ZIT6U.list
  
-03:49:08 **** Incremental Build of configuration Debug for project 6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U ****
-make -j16 all 
-arm-none-eabi-size   6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.elf 
+12:29:22 **** Incremental Build of configuration Debug for project 6-3_ARR_Prescaler_F429ZIT6U ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:19: error: invalid type argument of unary '*' (have 'int')
+  115 |    PWM_PSC_CHANGE(*psc, flag);
+      |                   ^~~~
+../Core/Src/main.c:115:25: warning: passing argument 2 of 'PWM_PSC_CHANGE' makes pointer from integer without a cast [-Wint-conversion]
+  115 |    PWM_PSC_CHANGE(*psc, flag);
+      |                         ^~~~
+      |                         |
+      |                         uint8_t {aka unsigned char}
+../Core/Src/main.c:60:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint8_t' {aka 'unsigned char'}
+   60 | void PWM_PSC_CHANGE(uint16_t* psc, uint8_t* flag);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:111:19: warning: unused variable 'arr' [-Wunused-variable]
+  111 |   static uint16_t arr = 1000;
+      |                   ^~~
+At top level:
+../Core/Src/main.c:111:19: warning: 'arr' defined but not used [-Wunused-variable]
+make: *** [Core/Src/subdir.mk:46: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+12:29:30 **** Incremental Build of configuration Debug for project 6-3_ARR_Prescaler_F429ZIT6U ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:111:19: warning: unused variable 'arr' [-Wunused-variable]
+  111 |   static uint16_t arr = 1000;
+      |                   ^~~
+At top level:
+../Core/Src/main.c:111:19: warning: 'arr' defined but not used [-Wunused-variable]
+arm-none-eabi-gcc -o "6-3_ARR_Prescaler_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\6-3_ARR_Prescaler_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6-3_ARR_Prescaler_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6-3_ARR_Prescaler_F429ZIT6U.elf
+ 
+arm-none-eabi-size   6-3_ARR_Prescaler_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  6-3_ARR_Prescaler_F429ZIT6U.elf  > "6-3_ARR_Prescaler_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  6-3_ARR_Prescaler_F429ZIT6U.elf  "6-3_ARR_Prescaler_F429ZIT6U.bin"
    text	   data	    bss	    dec	    hex	filename
-  41540	    488	   2184	  44212	   acb4	6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U.elf
+  22860	    120	   2184	  25164	   624c	6-3_ARR_Prescaler_F429ZIT6U.elf
 Finished building: default.size.stdout
+ 
+Finished building: 6-3_ARR_Prescaler_F429ZIT6U.bin
+ 
+Finished building: 6-3_ARR_Prescaler_F429ZIT6U.list
+ 
+13:08:27 **** Incremental Build of configuration Debug for project 6-3_ARR_Prescaler_F429ZIT6U ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:111:19: warning: unused variable 'arr' [-Wunused-variable]
+  111 |   static uint16_t arr = 1000;
+      |                   ^~~
+At top level:
+../Core/Src/main.c:111:19: warning: 'arr' defined but not used [-Wunused-variable]
+arm-none-eabi-gcc -o "6-3_ARR_Prescaler_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\6-3_ARR_Prescaler_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="6-3_ARR_Prescaler_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 6-3_ARR_Prescaler_F429ZIT6U.elf
+ 
+arm-none-eabi-size   6-3_ARR_Prescaler_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  6-3_ARR_Prescaler_F429ZIT6U.elf  > "6-3_ARR_Prescaler_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  6-3_ARR_Prescaler_F429ZIT6U.elf  "6-3_ARR_Prescaler_F429ZIT6U.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22860	    120	   2184	  25164	   624c	6-3_ARR_Prescaler_F429ZIT6U.elf
+Finished building: default.size.stdout
+ 
+Finished building: 6-3_ARR_Prescaler_F429ZIT6U.bin
+ 
+Finished building: 6-3_ARR_Prescaler_F429ZIT6U.list
  
