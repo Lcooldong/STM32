@@ -4750,3 +4750,21 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-03-14 10:44:24.406
 !MESSAGE Indexed '6-3_ARR_Prescaler_F429ZIT6U' (28 sources, 90 headers) in 2.46 sec: 7,162 declarations; 53,283 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0033%)
+!SESSION 2022-03-15 15:28:37.534 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-03-15 15:28:46.589
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-03-15 15:28:46.714
+!MESSAGE Log4j initialized with config file D:\Github\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-03-15 15:28:57.818
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-03-15 19:56:42.689
+!MESSAGE Indexed '7-1_ADC_DMA_F429ZIT6U' (28 sources, 90 headers) in 2.96 sec: 7,162 declarations; 53,283 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0033%)
