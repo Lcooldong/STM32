@@ -1,0 +1,6 @@
+# stm32
+.metadata/*.lock
+.metadata/*.log
+.metadata/*.xml
+.metadata/*.ini
+!.metadata/.plugins/
