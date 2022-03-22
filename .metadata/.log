@@ -5052,3 +5052,51 @@ C Model Exception: C Model Status [Element main.c does not exist.]
 	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
 !SUBENTRY 1 org.eclipse.cdt.core 4 969 2022-03-21 17:07:40.990
 !MESSAGE Element main.c does not exist.
+!SESSION 2022-03-22 09:33:32.600 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-03-22 09:33:39.586
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-03-22 09:33:39.676
+!MESSAGE Log4j initialized with config file D:\Github\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-03-22 09:33:49.673
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-03-22 09:42:07.842
+!MESSAGE Indexed '9-1_I2C_F429ZIT6U' (36 sources, 98 headers) in 2.78 sec: 7,970 declarations; 60,269 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0029%)
+!SESSION 2022-03-22 15:33:35.448 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-03-22 15:33:41.593
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-03-22 15:33:41.721
+!MESSAGE Log4j initialized with config file D:\Github\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-03-22 15:33:52.915
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-03-22 15:36:23.285 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-03-22 15:36:28.517
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-03-22 15:36:28.580
+!MESSAGE Log4j initialized with config file D:\Github\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-03-22 15:36:37.235
+!MESSAGE Started RMI Server, listening on port 41337

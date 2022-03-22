@@ -1543,7 +1543,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  8000bee:	4293      	cmp	r3, r2
  8000bf0:	d12a      	bne.n	8000c48 <HAL_TIM_PeriodElapsedCallback+0x68>
 	{
-		//float | 50 ->freq, sampling : cnt/1000
+		//float | 50 ->freq, sampling : cnt/1000 sinfloat(2π * Hz * Angle)
 		HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, (sinf(2 * 3.1415926535f * 50 * cnt / 1000.f)+1) * 2047);
  8000bf2:	4b18      	ldr	r3, [pc, #96]	; (8000c54 <HAL_TIM_PeriodElapsedCallback+0x74>)
  8000bf4:	781b      	ldrb	r3, [r3, #0]
