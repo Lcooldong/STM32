@@ -1,0 +1,10 @@
+16:52:11 **** Incremental Build of configuration Debug for project 7-2_ADC_Graph_F429ZIT6U ****
+make -j12 all 
+arm-none-eabi-size   7-2_ADC_Graph_F429ZIT6U.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27788	    120	   2360	  30268	   763c	7-2_ADC_Graph_F429ZIT6U.elf
+Finished building: default.size.stdout
+ 
+
+16:52:11 Build Finished. 0 errors, 0 warnings. (took 294ms)
+

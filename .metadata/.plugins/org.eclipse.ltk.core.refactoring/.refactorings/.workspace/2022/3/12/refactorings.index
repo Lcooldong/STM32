@@ -1,2 +1,7 @@
 1647341860074	Delete resource '6-3_ARR_Prescaler_F429ZIT6U'
 1647341984958	Delete resource '6-2_PWM_SG90_BUZZER_DCmotor_F429ZIT6U'
+1647415020296	Delete resource '2-3_UART_interrupt_F429ZIT6U'
+1647415848931	Delete resource '5-1_External_Interrupt_F429ZIT6U'
+1647422911478	Delete resource '4-1_Timer_Interrupt_F429ZIT6U'
+1647506844947	Delete resource '5-1_External_Interrupt_F429ZIT6U'
+1647518691113	Delete resource '7-1_ADC_DMA_F429ZIT6U'

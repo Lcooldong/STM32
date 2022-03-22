@@ -1,0 +1,24 @@
+18:05:22 **** Incremental Build of configuration Debug for project 8-1_DAC_F429ZIT6U ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:116:7: warning: unused variable 'value' [-Wunused-variable]
+  116 |   int value = 0;
+      |       ^~~~~
+arm-none-eabi-gcc -o "8-1_DAC_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\8-1_DAC_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="8-1_DAC_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 8-1_DAC_F429ZIT6U.elf
+ 
+arm-none-eabi-size   8-1_DAC_F429ZIT6U.elf 
+arm-none-eabi-objdump -h -S  8-1_DAC_F429ZIT6U.elf  > "8-1_DAC_F429ZIT6U.list"
+arm-none-eabi-objcopy  -O binary  8-1_DAC_F429ZIT6U.elf  "8-1_DAC_F429ZIT6U.bin"
+   text	   data	    bss	    dec	    hex	filename
+  25376	     20	   2348	  27744	   6c60	8-1_DAC_F429ZIT6U.elf
+Finished building: default.size.stdout
+ 
+Finished building: 8-1_DAC_F429ZIT6U.bin
+ 
+Finished building: 8-1_DAC_F429ZIT6U.list
+ 
+
+18:05:23 Build Finished. 0 errors, 1 warnings. (took 986ms)
+

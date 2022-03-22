@@ -28,6 +28,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "i2c-lcd.h"
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,7 +49,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+static uint16_t tempData;
+uint16_t a = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -55,7 +58,7 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 int _write(int file, char* p, int len)
 {
-	if(HAL_UART_Transmit(&huart3, p, len, 10) == HAL_OK) return len;
+	if(HAL_UART_Transmit(&huart3, (uint8_t*)p, len, 10) == HAL_OK) return len;
 	else return 0;
 }
 /* USER CODE END PFP */
@@ -72,7 +75,7 @@ int _write(int file, char* p, int len)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  uint16_t adcValue[4];
+  volatile uint16_t adcValue[4];
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -104,17 +107,37 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM5_Init();
   /* USER CODE BEGIN 2 */
-  HAL_ADC_Start_DMA(&hadc1, &adcValue[0], 4);
+  lcd_init ();
+  HAL_TIM_Base_Start_IT(&htim7);
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)&adcValue[0], 4);
+  void showArray(int* array, int length);
+  void showResult(GPIO_TypeDef* GPIOx);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  lcd_clear();
+  uint8_t str[20];
+  //uint32_t gpioMode = GPIOB->MODER;
+  //uint8_t modeStr[8];
   while (1)
   {
+	  lcd_put_cur(0, 0);
+	  sprintf((char*)str, "%4d  %4d", adcValue[0], adcValue[3]);
+	  tempData = adcValue[3];
+	  lcd_send_string((char*)str);
+
+	  //printf("0x%x\r\n", (int)GPIOB->MODER);	  // 16 -> 0x
+	  //printf("d:%d\r\n", (int)GPIOB->MODER);	  // int -> d
+	  //printf("u:%u\r\n", (uint32_t)GPIOB->MODER); // uint32_t
+
+
+	  HAL_Delay(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
+
   /* USER CODE END 3 */
 }
 
@@ -168,7 +191,148 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void showArray(int* array, int length)
+{
+	printf("[");
+	for(int i = 0; i < length-1; i++)
+	{
+		printf("%d, ", array[i]);
+	}
+	printf("%d", array[length-1]);
+	printf("]\r\n");
+}
 
+
+void showResult(GPIO_TypeDef* GPIOx)
+{
+	uint32_t gpioMode = GPIOx->MODER;
+	int gpioModeArray[8] = {0, };
+	int bitArray[32] = {0, };
+	int pinArray[16] = {0, };
+	int length = sizeof(gpioModeArray)/sizeof(gpioModeArray[0]);
+	int bitArrayLength = sizeof(bitArray)/sizeof(bitArray[0]);
+	int pinArrayLength = sizeof(pinArray)/sizeof(pinArray[0]);
+	int cnt = length-1;
+	int quotient;
+    int remainder;
+
+	while(gpioMode >= 16)
+	{
+		printf("d: %10u | length : %d\r\n", (int)gpioMode, length);
+
+		  quotient = gpioMode /  16;
+		  remainder = gpioMode % 16;
+		  printf("Q : %9d | R : %2d | CNT : %d\r\n", quotient, remainder, cnt);
+		  if (quotient == 1 || quotient == 0){
+			  gpioModeArray[cnt-1] = quotient;
+		  }
+		  gpioModeArray[cnt] = remainder;
+		  gpioMode = quotient;
+		  cnt--;
+
+	 }
+	 showArray(gpioModeArray, length);
+
+	 for(int i=0; i< length; i++)
+	 {
+		 int temp = gpioModeArray[i];
+		 for(int j=3 + 4*i; j >= 4*i; j--){
+			 if(temp % 2 != 0){
+				 bitArray[j] = 1;
+			 }else{
+				 bitArray[j] = 0;
+			 }
+			 temp /= 2;
+		 }
+	 }
+	 showArray(bitArray, bitArrayLength);
+
+	 for(int i=0; i < pinArrayLength; i++)
+	 {
+		 if(bitArray[2*i] == 0)
+		 {
+			 if(bitArray[2*i + 1]==0)
+			 {
+				 printf("%d%d : INPUT              -> PIN : ", bitArray[2*i], bitArray[2*i+1]);
+			 }else{
+				 printf("%d%d : OUTPUT             -> PIN : ", bitArray[2*i], bitArray[2*i+1]);
+			 }
+		 }else{
+			 if(bitArray[2*i + 1]==0)
+			 {
+				 printf("%d%d : Alternate function -> PIN : ", bitArray[2*i], bitArray[2*i+1]);
+			 }else{
+				 printf("%d%d : Analog             -> PIN : ", bitArray[2*i], bitArray[2*i+1]);
+			 }
+		 }
+		 printf("%d\r\n", pinArrayLength-1-i);
+	 }
+
+}
+
+void gaugeControl(uint16_t minValue, uint16_t maxValue, uint16_t dataArray[], int length)
+{
+	for(int i = 0; i < 3; i++){
+
+	}
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(htim->Instance == TIM7)
+	{
+		if(tempData > 2000){
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+			//printf("%d\r\n", a);
+			a++;
+		}else{
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+		}
+
+
+		if(tempData > 1500 ){
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_SET);
+			a++;
+		}else{
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_7, GPIO_PIN_RESET);
+		}
+
+
+		if(tempData > 1000 ){
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_SET);
+			a++;
+		}else{
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14, GPIO_PIN_RESET);
+		}
+	}
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+
+	static uint32_t temp;
+	if(GPIO_Pin == GPIO_PIN_3)	// PIN_3 Pressed
+	{
+		if(HAL_GetTick() - temp > 100){
+			printf("%s\r\n", "[PIN_3 Pressed]");
+			showResult(GPIOB);
+			//HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+		}
+
+		//while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) == GPIO_PIN_RESET);
+		while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) == GPIO_PIN_RESET){
+			//printf("%s\r\n", "wait for reset");
+		}	// button -> 0
+		temp = HAL_GetTick();	// check last time
+	}
+
+
+	if(GPIO_Pin == GPIO_PIN_10)
+	{
+		printf("%s\r\n", "PIN_10 Pressed");
+		//HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
+	}
+}
 /* USER CODE END 4 */
 
 /**
