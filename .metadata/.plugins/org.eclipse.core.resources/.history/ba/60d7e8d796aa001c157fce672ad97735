@@ -43,15 +43,13 @@
 
 void VS1003_SPI_Init(void);
 void VS1003_Init(void);
+static void VS1003_SPI_SetSpeed(uint8_t SpeedSet);
+static uint16_t VS1003_SPI_ReadWriteByte(uint16_t TxData);
 void VS1003_WriteReg(uint8_t reg, uint16_t value);
 uint16_t VS1003_ReadReg(uint8_t reg);
 void VS1003_ResetDecodeTime(void);
 uint16_t VS1003_GetDecodeTime(void);
 void VS1003_SoftReset(void);
 void VS1003_Reset(void);
-void VS1003_SineTest(void);
-void VS1003_RamTest(void);
-void VS1003_SetVol(void);
-void VS1003_WriteData(uint8_t* buf);
 
 #endif

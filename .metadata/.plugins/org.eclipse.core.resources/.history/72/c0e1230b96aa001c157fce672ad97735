@@ -21,10 +21,9 @@ void VS1003_SPI_Init(void)
     hspi2.Init.TIMode = SPI_TIMODE_DISABLE;
     hspi2.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
     hspi2.Init.CRCPolynomial = 0;
-
     if (HAL_SPI_Init(&hspi2) != HAL_OK)
     {
-    	Error_Handler(__FILE__, __LINE__);
+        Error_Handler();
     }
 }
 
@@ -187,7 +186,7 @@ void VS1003_SoftReset(void)
 
     while(MP3_DREQ == 0);
     retry = 0;
-    while(VS1003_ReadReg(SPI_CLOCKF) != 0x9800)
+    while(VS1003_ReadReg(SPI_CLKCKF) != 0x9800)
     {
         VS1003_WriteReg(SPI_CLOCKF, 0x9800);
         if( retry++ > 100)
