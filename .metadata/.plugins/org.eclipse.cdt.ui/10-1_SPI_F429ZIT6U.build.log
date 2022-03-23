@@ -1,0 +1,32 @@
+17:49:33 **** Incremental Build of configuration Debug for project 10-1_SPI_F429ZIT6U ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/VS1003.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/VS1003.d" -MT"Core/Src/VS1003.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/VS1003.o"
+../Core/Src/VS1003.c: In function 'VS1003_SPI_Init':
+../Core/Src/VS1003.c:26:9: warning: implicit declaration of function 'Error_Handler' [-Wimplicit-function-declaration]
+   26 |         Error_Handler();
+      |         ^~~~~~~~~~~~~
+../Core/Src/VS1003.c: In function 'VS1003_SPI_SetSpeed':
+../Core/Src/VS1003.c:110:9: warning: implicit declaration of function '_Error_Handler' [-Wimplicit-function-declaration]
+  110 |         _Error_Handler(__FILE__, __LINE__);
+      |         ^~~~~~~~~~~~~~
+In file included from ../Core/Src/VS1003.c:1:
+../Core/Src/VS1003.c: In function 'VS1003_SoftReset':
+../Core/Inc/VS1003.h:44:25: warning: unsigned conversion from 'int' to 'uint8_t' {aka 'unsigned char'} changes value from '38912' to '0' [-Woverflow]
+   44 | #define SPI_CLKCKF      0x9800
+      |                         ^~~~~~
+../Core/Src/VS1003.c:189:26: note: in expansion of macro 'SPI_CLKCKF'
+  189 |     while(VS1003_ReadReg(SPI_CLKCKF) != 0x9800)
+      |                          ^~~~~~~~~~
+../Core/Src/VS1003.c: In function 'VS1003_RamTest':
+../Core/Src/VS1003.c:293:23: warning: variable 'value' set but not used [-Wunused-but-set-variable]
+  293 |     volatile uint16_t value;
+      |                       ^~~~~
+arm-none-eabi-gcc -o "10-1_SPI_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\10-1_SPI_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="10-1_SPI_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.8.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/VS1003.o: in function `VS1003_SPI_SetSpeed':
+D:/Github/STM32/10-1_SPI_F429ZIT6U/Debug/../Core/Src/VS1003.c:110: undefined reference to `_Error_Handler'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:64: 10-1_SPI_F429ZIT6U.elf] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+17:49:34 Build Failed. 3 errors, 4 warnings. (took 954ms)
+
