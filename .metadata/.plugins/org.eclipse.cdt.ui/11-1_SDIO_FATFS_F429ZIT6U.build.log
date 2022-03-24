@@ -1,0 +1,10 @@
+21:04:07 **** Incremental Build of configuration Debug for project 11-1_SDIO_FATFS_F429ZIT6U ****
+make -j16 all 
+arm-none-eabi-size   11-1_SDIO_FATFS_F429ZIT6U.elf 
+   text	   data	    bss	    dec	    hex	filename
+  52124	    120	   4568	  56812	   ddec	11-1_SDIO_FATFS_F429ZIT6U.elf
+Finished building: default.size.stdout
+ 
+
+21:04:07 Build Finished. 0 errors, 0 warnings. (took 378ms)
+

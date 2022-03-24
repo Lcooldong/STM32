@@ -124,9 +124,53 @@ int main(void)
   /* FS관련 초기화 */
   if((retSD = f_mount(&SDFatFS, &SDPath[0], 1)) == FR_OK)
   {
-	sprintf(str, "f_mount OK %d", retSD);
+	sprintf((char*)str, "f_mount OK %d", retSD);
 	printf("%s\r\n", str);
   }
+  else
+  {
+    sprintf((char*)str, "f_mount failed %d", retSD);
+	printf("%s\r\n", str);
+  }
+
+
+  /* file create and write */
+  if((retSD = f_open(&SDFile, "0:/test.txt", FA_CREATE_NEW | FA_WRITE))== FR_OK)
+  {
+	  sprintf((char*)buf, "Hi, there");
+	  f_write(&SDFile, buf, sizeof(buf), &bw);
+
+	  sprintf((char*)str, "%d bytes Write", bw);
+	  printf("%s\r\n", str);
+
+	  f_close(&SDFile);
+  }
+  else
+  {
+	  sprintf((char*)str, "error %d !! Can't write", retSD);
+	  printf("%s\r\n", str);
+
+  }
+
+  if((retSD = f_open(&SDFile, "0:/test.txt", FA_OPEN_EXISTING | FA_READ))== FR_OK)
+   {
+ 	  f_read(&SDFile, buf, sizeof(buf), &br);
+ 	  sprintf((char*)str, "%s", buf);
+ 	  printf("%s\r\n", str);
+
+ 	  sprintf((char*)str, "%d bytes Read", br);
+ 	  printf("%s\r\n", str);
+
+ 	  f_close(&SDFile);
+   }
+   else
+   {
+ 	  sprintf((char*)str, "error %d !! Can't read", retSD);
+ 	  printf("%s\r\n", str);
+   }
+
+
+
   while (1)
   {
     /* USER CODE END WHILE */
