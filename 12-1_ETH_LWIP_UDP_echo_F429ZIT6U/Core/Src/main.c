@@ -32,7 +32,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include "udp_echoserver.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,7 +59,11 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+int _write(int file, char* p, int len)
+{
+	if(HAL_UART_Transmit(&huart3, (uint8_t*)p, len, 10) == HAL_OK) return len;
+	else return 0;
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -112,12 +117,29 @@ int main(void)
   MX_LWIP_Init();
   /* USER CODE BEGIN 2 */
 
+  /* tcp echo server Init */
+  udp_echoserver_init();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+   /* Read a received packet from the Ethernet buffers and send it
+	   to the lwIP for handling */
+	ethernetif_input(&gnetif);
+
+	/* Handle timeouts */
+	sys_check_timeouts();
+
+//	#if LWIP_NETIF_LINK_CALLBACK
+//	    Ethernet_Link_Periodic_Handle(&gnetif);
+//	#endif
+
+//	#if LWIP_DHCP
+//	    DHCP_Periodic_Handle(&gnetif);
+//	#endif
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
