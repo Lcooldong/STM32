@@ -71,8 +71,16 @@ void udp_echoserver_init(void)
   * @param port the remote port from which the packet was received
   * @retval None
   */
+
+extern UART_HandleTypeDef huart3;
+uint8_t udp_data;
+uint8_t udp_flag;
 void udp_echoserver_receive_callback(void *arg, struct udp_pcb *upcb, struct pbuf *p, const ip_addr_t *addr, u16_t port)
 {
+  MEMCPY(&udp_data ,p->payload, p->len);	//macro
+  udp_flag = 1;
+
+  HAL_UART_Transmit(&huart3, &udp_data, sizeof(udp_data), 10);	// to terminal
 
   /* Connect to the remote client */
   udp_connect(upcb, addr, UDP_CLIENT_PORT);
