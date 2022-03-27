@@ -138,7 +138,15 @@ int main(void)
 	{
 		udp_flag = 0;
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:.metadata/.plugins/org.eclipse.core.resources/.history/e8/502a804b29ac001c19498c25faa2149a
 		swithc(udp_flag)
+=======
+		switch(udp_flag)
+>>>>>>> Stashed changes:.metadata/.plugins/org.eclipse.core.resources/.history/29/80b34f9f29ac001c19498c25faa2149a
+=======
+		swithc(udp_flag)
+>>>>>>> Stashed changes
 		{
 			case '1': SW1_flag = 1; break;
 			case '2': SW1_flag = 1; break;

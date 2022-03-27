@@ -5625,7 +5625,11 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-03-25 09:50:11.045
 !MESSAGE Started RMI Server, listening on port 41337
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 !SESSION 2022-03-25 17:05:54.808 -----------------------------------------------
+=======
+!SESSION 2022-03-26 12:29:06.622 -----------------------------------------------
+>>>>>>> Stashed changes
 =======
 !SESSION 2022-03-26 12:29:06.622 -----------------------------------------------
 >>>>>>> Stashed changes
@@ -5635,6 +5639,7 @@ java.vendor=AdoptOpenJDK
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 !ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-03-25 17:06:02.337
 !MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
@@ -5648,6 +5653,8 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 !ENTRY org.eclipse.cdt.core 1 0 2022-03-25 19:22:06.848
 !MESSAGE Indexed '12-1_ETH_LWIP_UDP_echo_F429ZIT6U' (134 sources, 304 headers) in 7.5 sec: 17,257 declarations; 115,096 references; 3 unresolved inclusions; 44 syntax errors; 176 unresolved names (0.13%)
 =======
+=======
+>>>>>>> Stashed changes
 !ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-03-26 12:29:19.282
 !MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
 
@@ -5863,6 +5870,7 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-03-27 22:00:14.799
 !MESSAGE Started RMI Server, listening on port 41337
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 !SESSION 2022-03-28 00:27:26.333 -----------------------------------------------
 eclipse.buildId=Version 1.8.0
@@ -5958,3 +5966,5 @@ java.lang.Exception
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-03-28 00:27:39.776
 !MESSAGE Started RMI Server, listening on port 41337
+=======
+>>>>>>> Stashed changes

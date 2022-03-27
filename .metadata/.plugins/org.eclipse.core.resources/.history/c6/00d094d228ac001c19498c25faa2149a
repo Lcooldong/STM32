@@ -54,6 +54,13 @@
 
 /* USER CODE BEGIN PV */
 extern uint8_t udp_data;
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream:.metadata/.plugins/org.eclipse.core.resources/.history/b5/706cada62aac001c19498c25faa2149a
+extern uint8_t udp_flag;
+=======
+>>>>>>> Stashed changes:.metadata/.plugins/org.eclipse.core.resources/.history/c6/00d094d228ac001c19498c25faa2149a
+>>>>>>> Stashed changes
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -137,20 +144,36 @@ int main(void)
 	{
 		udp_flag = 0;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream:.metadata/.plugins/org.eclipse.core.resources/.history/f7/303e0cae28ac001c19498c25faa2149a
 =======
 >>>>>>> Stashed changes
 
+=======
+
+<<<<<<< Updated upstream:.metadata/.plugins/org.eclipse.core.resources/.history/b5/706cada62aac001c19498c25faa2149a
+		switch(udp_flag)
+		{
+			case '1': SW1_flag = 1; break;
+			case '2': SW2_flag = 1; break;
+			case '3': SW3_flag = 1; break;
+=======
+>>>>>>> Stashed changes
 		swithc(udp_flag)
 		{
 			case '1': SW1_flag = 1; break;
 			case '2': SW1_flag = 1; break;
 			case '3': SW1_flag = 1; break;
+<<<<<<< Updated upstream
 		}
 <<<<<<< Updated upstream
 =======
 >>>>>>> Stashed changes:.metadata/.plugins/org.eclipse.core.resources/.history/c6/00d094d228ac001c19498c25faa2149a
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes:.metadata/.plugins/org.eclipse.core.resources/.history/c6/00d094d228ac001c19498c25faa2149a
+		}
 >>>>>>> Stashed changes
 	}
 //	#if LWIP_NETIF_LINK_CALLBACK

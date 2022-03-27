@@ -8,9 +8,12 @@
 1648111119624	Delete resource '11-1_SDIO_FATFS_F429ZIT6U'
 1648137817283	Delete resource '10-1_SPI_F429ZIT6U'
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 1648201679702	Delete resource '12-1_ETH_LWIP_UDP_echo_F429ZIT6U'
 1648203708012	Delete resource '11-1_SDIO_FATFS_F429ZIT6U'
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 1648265495680	Delete resource '12-1_ETH_LWIP_UDP_echo_F429ZIT6U'
 1648265499067	Delete resource '11-1_SDIO_FATFS_F429ZIT6U'
@@ -22,4 +25,7 @@
 1648201679702	Delete resource '12-1_ETH_LWIP_UDP_echo_F429ZIT6U'
 1648203708012	Delete resource '11-1_SDIO_FATFS_F429ZIT6U'
 >>>>>>> 76718c7c6bab4509231527da56310ba327104296
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

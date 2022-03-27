@@ -20,6 +20,10 @@
 #include "main.h"
 #include "adc.h"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+#include "can.h"
+>>>>>>> Stashed changes
 =======
 #include "can.h"
 >>>>>>> Stashed changes
@@ -38,7 +42,10 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #include "udp_echoserver.h"
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 /* USER CODE END Includes */
@@ -61,7 +68,12 @@
 
 /* USER CODE BEGIN PV */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
+=======
+volatile uint8_t buttonFlag = 0;
+volatile uint8_t can1_rx0_flag = 0;
+>>>>>>> Stashed changes
 =======
 volatile uint8_t buttonFlag = 0;
 volatile uint8_t can1_rx0_flag = 0;
@@ -72,13 +84,19 @@ volatile uint8_t can1_rx0_flag = 0;
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 int _write(int file, char* p, int len)
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD:13-1_CAN_F429ZIT6U/Core/Src/main.c
 int _write(int file, char*p, int len)
 =======
 int _write(int file, char* p, int len)
 >>>>>>> 76718c7c6bab4509231527da56310ba327104296:.metadata/.plugins/org.eclipse.core.resources/.history/23/80e0d0f227ac001c19498c25faa2149a
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 {
 	if(HAL_UART_Transmit(&huart3, (uint8_t*)p, len, 10) == HAL_OK) return len;
@@ -136,6 +154,7 @@ int main(void)
   MX_FATFS_Init();
   MX_LWIP_Init();
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   /* USER CODE BEGIN 2 */
 
   /* tcp echo server Init */
@@ -146,10 +165,16 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 >>>>>>> Stashed changes
+=======
+  MX_CAN1_Init();
+  /* USER CODE BEGIN 2 */
+
+>>>>>>> Stashed changes
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   while (1)
   {
@@ -168,6 +193,8 @@ int main(void)
 //	    DHCP_Periodic_Handle(&gnetif);
 //	#endif
 =======
+=======
+>>>>>>> Stashed changes
 
   canFilter1.FilterMaskIdHigh = 0x7E7 << 5;
   canFilter1.FilterIdHigh = 0x1EF << 5;
@@ -214,6 +241,9 @@ int main(void)
 		  sprintf((char*)str, "Rx Data : 0x%2X", can1Rx0Data[0]);	// 1 byte
 		  printf("%s\r\n", str);
 	  }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     /* USER CODE END WHILE */
 
@@ -273,8 +303,11 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 =======
+=======
+>>>>>>> Stashed changes
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	static uint32_t temp;
@@ -302,6 +335,9 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 		can1_rx0_flag = 1;
 	}
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 /* USER CODE END 4 */
 
