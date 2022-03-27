@@ -1,4 +1,4 @@
-00:35:48 **** Incremental Build of configuration Debug for project 12-1_ETH_LWIP_UDP_echo_F429ZIT6U ****
+00:37:50 **** Build of configuration Debug for project 12-1_ETH_LWIP_UDP_echo_F429ZIT6U ****
 make -j16 all 
 arm-none-eabi-size   12-1_ETH_LWIP_UDP_echo_F429ZIT6U.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   12-1_ETH_LWIP_UDP_echo_F429ZIT6U.elf
 Finished building: default.size.stdout
  
 
-00:35:49 Build Finished. 0 errors, 0 warnings. (took 675ms)
+00:37:50 Build Finished. 0 errors, 0 warnings. (took 746ms)
 
