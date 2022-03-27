@@ -6105,3 +6105,21 @@ Caused by: java.net.SocketException: Socket closed
 	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1364)
 	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:973)
 	... 22 more
+!SESSION 2022-03-28 00:35:29.658 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-03-28 00:35:34.890
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-03-28 00:35:34.936
+!MESSAGE Log4j initialized with config file D:\Github\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-03-28 00:35:40.860
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-03-28 00:36:27.481
+!MESSAGE Indexed '13-1_CAN_F429ZIT6U' (135 sources, 305 headers) in 7.68 sec: 17,538 declarations; 117,234 references; 3 unresolved inclusions; 47 syntax errors; 175 unresolved names (0.13%)

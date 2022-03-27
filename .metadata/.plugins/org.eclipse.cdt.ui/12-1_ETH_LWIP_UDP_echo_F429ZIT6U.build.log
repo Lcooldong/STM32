@@ -1,19 +1,10 @@
-00:32:49 **** Build of configuration Debug for project 12-1_ETH_LWIP_UDP_echo_F429ZIT6U ****
+00:35:48 **** Incremental Build of configuration Debug for project 12-1_ETH_LWIP_UDP_echo_F429ZIT6U ****
 make -j16 all 
-arm-none-eabi-gcc -o "12-1_ETH_LWIP_UDP_echo_F429ZIT6U.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\12-1_ETH_LWIP_UDP_echo_F429ZIT6U\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="12-1_ETH_LWIP_UDP_echo_F429ZIT6U.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 12-1_ETH_LWIP_UDP_echo_F429ZIT6U.elf
- 
 arm-none-eabi-size   12-1_ETH_LWIP_UDP_echo_F429ZIT6U.elf 
-arm-none-eabi-objdump -h -S  12-1_ETH_LWIP_UDP_echo_F429ZIT6U.elf  > "12-1_ETH_LWIP_UDP_echo_F429ZIT6U.list"
-arm-none-eabi-objcopy  -O binary  12-1_ETH_LWIP_UDP_echo_F429ZIT6U.elf  "12-1_ETH_LWIP_UDP_echo_F429ZIT6U.bin"
    text	   data	    bss	    dec	    hex	filename
   97496	    128	  30648	 128272	  1f510	12-1_ETH_LWIP_UDP_echo_F429ZIT6U.elf
 Finished building: default.size.stdout
  
-Finished building: 12-1_ETH_LWIP_UDP_echo_F429ZIT6U.bin
- 
-Finished building: 12-1_ETH_LWIP_UDP_echo_F429ZIT6U.list
- 
 
-00:32:54 Build Finished. 0 errors, 0 warnings. (took 4s.717ms)
+00:35:49 Build Finished. 0 errors, 0 warnings. (took 675ms)
 

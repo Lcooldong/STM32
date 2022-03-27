@@ -60,11 +60,8 @@ volatile uint8_t can1_rx0_flag = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-<<<<<<< HEAD:13-1_CAN_F429ZIT6U/Core/Src/main.c
-int _write(int file, char*p, int len)
-=======
+
 int _write(int file, char* p, int len)
->>>>>>> 76718c7c6bab4509231527da56310ba327104296:.metadata/.plugins/org.eclipse.core.resources/.history/23/80e0d0f227ac001c19498c25faa2149a
 {
 	if(HAL_UART_Transmit(&huart3, (uint8_t*)p, len, 10) == HAL_OK) return len;
 	else return 0;

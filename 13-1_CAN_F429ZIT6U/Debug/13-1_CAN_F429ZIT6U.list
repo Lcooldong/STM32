@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  0003717a  00000000  00000000  00084ee0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0003f1e6  00000000  00000000  000bc05a  2**0
+ 18 .debug_line   0003f1e7  00000000  00000000  000bc05a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    0010e075  00000000  00000000  000fb240  2**0
+ 19 .debug_str    0010e075  00000000  00000000  000fb241  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000053  00000000  00000000  002092b5  2**0
+ 20 .comment      00000053  00000000  00000000  002092b6  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  0000a6c8  00000000  00000000  00209308  2**2
+ 21 .debug_frame  0000a6c8  00000000  00000000  0020930c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1730,11 +1730,11 @@ void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
  8000d50:	40021400 	.word	0x40021400
 
 08000d54 <_write>:
-
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-int _write(int file, char*p, int len)
+
+int _write(int file, char* p, int len)
 {
  8000d54:	b580      	push	{r7, lr}
  8000d56:	b084      	sub	sp, #16
