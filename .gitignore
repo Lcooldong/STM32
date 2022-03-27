@@ -4,3 +4,4 @@
 .metadata/*.xml
 .metadata/*.ini
 !.metadata/.plugins/
+.metadata/

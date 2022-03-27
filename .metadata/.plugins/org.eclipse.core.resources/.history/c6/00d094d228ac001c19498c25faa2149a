@@ -136,6 +136,11 @@ int main(void)
 	if(udp_flag)
 	{
 		udp_flag = 0;
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream:.metadata/.plugins/org.eclipse.core.resources/.history/f7/303e0cae28ac001c19498c25faa2149a
+=======
+>>>>>>> Stashed changes
 
 		swithc(udp_flag)
 		{
@@ -143,6 +148,10 @@ int main(void)
 			case '2': SW1_flag = 1; break;
 			case '3': SW1_flag = 1; break;
 		}
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes:.metadata/.plugins/org.eclipse.core.resources/.history/c6/00d094d228ac001c19498c25faa2149a
+>>>>>>> Stashed changes
 	}
 //	#if LWIP_NETIF_LINK_CALLBACK
 //	    Ethernet_Link_Periodic_Handle(&gnetif);
