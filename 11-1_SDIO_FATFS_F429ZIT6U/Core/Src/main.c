@@ -121,7 +121,7 @@ int main(void)
   uint8_t str[20];
   BYTE buf[32] = "Hello World";
   uint32_t bw, br;
-  /* FSê´€ë ¨ ì´ˆê¸°í™” */
+  /* FSê´?? ¨ ì´ˆê¸°?™” */
   if((retSD = f_mount(&SDFatFS, &SDPath[0], 1)) == FR_OK)
   {
 	sprintf((char*)str, "f_mount OK %d", retSD);
