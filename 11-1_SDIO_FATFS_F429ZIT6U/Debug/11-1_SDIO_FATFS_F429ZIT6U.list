@@ -1658,7 +1658,7 @@ int main(void)
  8000ce6:	60da      	str	r2, [r3, #12]
  8000ce8:	611a      	str	r2, [r3, #16]
   uint32_t bw, br;
-  /* FSê´€ë ¨ ì´ˆê¸°í™” */
+  /* FSê´?? ¨ ì´ˆê¸°?™” */
   if((retSD = f_mount(&SDFatFS, &SDPath[0], 1)) == FR_OK)
  8000cea:	2201      	movs	r2, #1
  8000cec:	4955      	ldr	r1, [pc, #340]	; (8000e44 <main+0x1c4>)
