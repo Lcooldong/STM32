@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="buf"/>
+		<item key="selection" value="//&#x09;if (fres == FR_OK)"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="//&#x09;if (fres == FR_OK)"/>
+			<item value="&#x09;while (f_gets(buffer, sizeof(buffer), &amp;fil)) {"/>
 			<item value="buf"/>
 			<item value="function"/>
 			<item value="transmit_uart"/>
 			<item value="DMA_HandleTypeDef"/>
 			<item value="HAL_CAN_RxFi"/>
 			<item value="CAN_filter_mode"/>
-			<item value="Link"/>
-			<item value="MUL"/>
-			<item value="mul"/>
-			<item value="mult"/>
-			<item value="PeriodElapsedCallback"/>
-			<item value="Period"/>
-			<item value="a"/>
-			<item value="DMA"/>
-			<item value="_weak"/>
 		</list>
 		<list key="replacehistory">
 			<item value="printf"/>
