@@ -1,5 +1,12 @@
-19:49:11 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
-make -j12 all 
+01:23:18 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41800	    144	  19176	  61120	   eec0	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+01:24:39 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
@@ -8,15 +15,22 @@ arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf
 arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
 arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
    text	   data	    bss	    dec	    hex	filename
-  42588	    144	  19176	  61908	   f1d4	11-3_SDcard_SPI_FATFS_F429ZI.elf
+  42236	    144	  19176	  61556	   f074	11-3_SDcard_SPI_FATFS_F429ZI.elf
 Finished building: default.size.stdout
  
 Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
  
 Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
  
-20:05:16 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
-make -j12 all 
+01:46:49 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42236	    144	  19176	  61556	   f074	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+01:55:03 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
@@ -25,15 +39,22 @@ arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf
 arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
 arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
    text	   data	    bss	    dec	    hex	filename
-  42512	    144	  19176	  61832	   f188	11-3_SDcard_SPI_FATFS_F429ZI.elf
+  42276	    144	  19176	  61596	   f09c	11-3_SDcard_SPI_FATFS_F429ZI.elf
 Finished building: default.size.stdout
  
 Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
  
 Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
  
-21:12:35 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
-make -j12 all 
+01:55:30 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42276	    144	  19176	  61596	   f09c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+02:02:01 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
@@ -42,29 +63,22 @@ arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf
 arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
 arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
    text	   data	    bss	    dec	    hex	filename
-  42516	    144	  19176	  61836	   f18c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+  42284	    144	  19176	  61604	   f0a4	11-3_SDcard_SPI_FATFS_F429ZI.elf
 Finished building: default.size.stdout
  
 Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
  
 Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
  
-21:13:11 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
-make -j12 all 
+02:02:58 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
 arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
    text	   data	    bss	    dec	    hex	filename
-  42516	    144	  19176	  61836	   f18c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+  42284	    144	  19176	  61604	   f0a4	11-3_SDcard_SPI_FATFS_F429ZI.elf
 Finished building: default.size.stdout
  
-21:13:37 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
-make -j12 all 
-arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42516	    144	  19176	  61836	   f18c	11-3_SDcard_SPI_FATFS_F429ZI.elf
-Finished building: default.size.stdout
- 
-21:25:35 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
-make -j12 all 
+02:06:29 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
@@ -73,15 +87,15 @@ arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf
 arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
 arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
    text	   data	    bss	    dec	    hex	filename
-  42520	    144	  19176	  61840	   f190	11-3_SDcard_SPI_FATFS_F429ZI.elf
+  42284	    144	  19176	  61604	   f0a4	11-3_SDcard_SPI_FATFS_F429ZI.elf
 Finished building: default.size.stdout
  
 Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
  
 Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
  
-21:30:50 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
-make -j12 all 
+02:08:55 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
@@ -90,10 +104,363 @@ arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf
 arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
 arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
    text	   data	    bss	    dec	    hex	filename
-  42512	    144	  19176	  61832	   f188	11-3_SDcard_SPI_FATFS_F429ZI.elf
+  42244	    144	  19176	  61564	   f07c	11-3_SDcard_SPI_FATFS_F429ZI.elf
 Finished building: default.size.stdout
  
 Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
  
 Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+02:14:41 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42236	    144	  19176	  61556	   f074	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+02:16:20 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42276	    144	  19176	  61596	   f09c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+02:26:13 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42676	    144	  19176	  61996	   f22c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+02:26:45 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42676	    144	  19176	  61996	   f22c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+02:27:22 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42676	    144	  19176	  61996	   f22c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+02:45:30 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42720	    144	  19176	  62040	   f258	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+02:46:54 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42276	    144	  19176	  61596	   f09c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+02:58:12 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42272	    144	  19176	  61592	   f098	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+02:59:09 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42272	    144	  19176	  61592	   f098	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+03:00:58 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42276	    144	  19176	  61596	   f09c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:02:49 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42724	    144	  19176	  62044	   f25c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:03:38 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42724	    144	  19176	  62044	   f25c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+03:05:05 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'WriteFile':
+../Core/Src/main.c:316:17: warning: comparison between pointer and integer
+  316 |   if (temp[cnt] == "\n") cnt++;
+      |                 ^~
+../Core/Src/main.c:316:17: warning: comparison with string literal results in unspecified behavior [-Waddress]
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42736	    144	  19176	  62056	   f268	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:05:41 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42724	    144	  19176	  62044	   f25c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:08:09 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42704	    144	  19176	  62024	   f248	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:10:59 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42724	    144	  19176	  62044	   f25c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:11:44 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42724	    144	  19176	  62044	   f25c	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:16:49 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42364	    144	  19176	  61684	   f0f4	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:17:04 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42364	    144	  19176	  61684	   f0f4	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+03:17:29 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42372	    144	  19176	  61692	   f0fc	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:18:42 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42372	    144	  19176	  61692	   f0fc	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+03:20:02 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42364	    144	  19176	  61684	   f0f4	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:20:22 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../FATFS/Target -I../FATFS/App -I../Middlewares/Third_Party/FatFs/src -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "11-3_SDcard_SPI_FATFS_F429ZI.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="11-3_SDcard_SPI_FATFS_F429ZI.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 11-3_SDcard_SPI_FATFS_F429ZI.elf
+ 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+arm-none-eabi-objdump -h -S  11-3_SDcard_SPI_FATFS_F429ZI.elf  > "11-3_SDcard_SPI_FATFS_F429ZI.list"
+arm-none-eabi-objcopy  -O binary  11-3_SDcard_SPI_FATFS_F429ZI.elf  "11-3_SDcard_SPI_FATFS_F429ZI.bin"
+   text	   data	    bss	    dec	    hex	filename
+  42364	    144	  19176	  61684	   f0f4	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.bin
+ 
+Finished building: 11-3_SDcard_SPI_FATFS_F429ZI.list
+ 
+03:21:20 **** Incremental Build of configuration Debug for project 11-3_SDcard_SPI_FATFS_F429ZI ****
+make -j16 all 
+arm-none-eabi-size   11-3_SDcard_SPI_FATFS_F429ZI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42364	    144	  19176	  61684	   f0f4	11-3_SDcard_SPI_FATFS_F429ZI.elf
+Finished building: default.size.stdout
  

@@ -4,7 +4,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:2-3_UART_interrupt_F429ZIT6U Debug (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:11-1_SDIO_FATFS_F429ZIT6U Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:11-3_SDcard_SPI_FATFS_F429ZI Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:2-3_UART_interrupt_F429ZIT6U Debug (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:11-3_SDcard_SPI_FATFS_F429ZI Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:10-1_SPI_F429ZIT6U\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:11-3_SDcard_SPI_FATFS_F429ZI\ Debug/activeLaunchMode=run

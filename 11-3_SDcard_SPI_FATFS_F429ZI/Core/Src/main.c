@@ -29,6 +29,8 @@
 #include "fatfs_sd.h"
 #include "stdio.h"
 #include "string.h"
+#include "stddef.h"	// NULL
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -289,19 +291,63 @@ void WriteFile(char* text)
 	if (fres != FR_OK){
 		printf("Can't move to initial position\r\n");
 	}
+//#define FPUTS
+#define FWRITE
 
-
-	sprintf((char*)buffer, "%s\r\n", text);
+#ifdef FPUTS
+////////////////////////////f_puts//////////////////////////////////
+	int num = 0;
+	sprintf((char*)buffer, "%s\n", text);
 	for (uint8_t i = 0; i < 3; i++) {
-		fres = f_puts(buffer, &fil);
+		num += f_puts(buffer, &fil);
+		printf("nchr : %d\r\n", num);	// 15 + \r\n\0 = 18
+	}
+	char temp[100];
+	int cnt = 0;
+	for	(int i = 0; i<sizeof(temp); i++)
+	{
+		temp[i] = buffer[i];
 	}
 
+	while(temp[cnt] != 0)	// NULL
+	{
+		printf("charData : %c\r\n", temp[cnt]);
+		if (temp[cnt] == '\n') cnt++;
+		cnt++;
 
-//	sprintf((char*)buffer, "%s\r\n", text);
-//	uint16_t length = (uint16_t)strlen(text) + 2;	                       // + \r\n
-//	for (uint8_t i = 0; i < 3; i++) {
-//		fres = f_write(&fil, buffer, length, (void*)&bw);
-//	}
+	}
+
+	printf("cnt : %d\r\n", cnt);
+	if (cnt  == (num/3))
+	{
+		printf("Good Writing\r\n");
+		printf("%d bytes Write\r\n", num);
+	}
+	else
+	{
+		printf("Writing failed\r\n");
+	}
+#endif
+
+////////////////////////f_write////////////////////////////////
+
+#ifdef FWRITE
+	sprintf((char*)buffer, "%s\r\n", text);
+	uint16_t length = (uint16_t)strlen(text);	    // + \r\n
+	int cnt = 0;
+	while(buffer[cnt] != 0)
+	{
+		if (buffer[cnt] == '\r') length++;
+		else if(buffer[cnt] == '\n') length++;
+		cnt++;
+	}
+	//uint16_t length = (uint16_t)strlen(text) + 1;
+	//uint16_t length = (uint16_t)strlen(text) + 2;
+	printf("length : %d\r\n", length);
+
+	for (uint8_t i = 0; i < 3; i++) {
+		fres = f_write(&fil, buffer, length, (void*)&bw);
+	}
 
 
 	//fres = f_write(&fil, buffer, sizeof(buffer), (void*)&bw);
@@ -316,6 +362,8 @@ void WriteFile(char* text)
 		printf("Writing failed\r\n");
 	}
 
+#endif
+
 }
 
 void ReadFile(char* fileName)
@@ -328,32 +376,38 @@ void ReadFile(char* fileName)
 	} else if (fres != FR_OK) {
 		printf("File was not opened for reading!\r\n");
 	}
+//#define FGETS
+#define FREAD
 
-	//fres = f_read(&fil, buffer, sizeof(buffer), (void*)&br);
-	//char mRd[100];
-
-
+//////////////////////////f_gets//////////////////////////////////
+#ifdef FGETS
 	while (f_gets(buffer, sizeof(buffer), &fil)) {
 		char mRd[100];
 		sprintf(mRd, "%s", buffer);
 		printf(mRd);
 	}
+#endif
 
+//////////////////////////f_read//////////////////////////////////
 
-//	if (fres == FR_OK)
-//	{
-//		sprintf((char*)mRd, "%s", buffer);
-//		printf("-----------READING_TEXT----------\r\n");
-//		printf("%s", mRd);	// already existed \r\n
-//		printf("-----------READING_TEXT---------\r\n");
-//		sprintf((char*)str, "%3d bytes Read", (int)br);
-//		printf("%s\r\n", str);
-//
-//	}
-//	else if (fres != FR_OK || br == 0)
-//	{
-//		printf("Can't read~!\r\n");
-//	}
+#ifdef FREAD
+	fres = f_read(&fil, buffer, sizeof(buffer), (void*)&br);	// read util NULL
+	char mRd[100];
+	if (fres == FR_OK)
+	{
+		sprintf((char*)mRd, "%s", buffer);
+		printf("\r\n-----------READING_TEXT----------\r\n");
+		printf("%s", mRd);	// already existed \r\n
+		printf("\r\n-----------READING_TEXT----------\r\n");
+		sprintf((char*)str, "%3d bytes Read", (int)br);
+		printf("%s\r\n", str);
+
+	}
+	else if (fres != FR_OK || br == 0)
+	{
+		printf("Can't read~!\r\n");
+	}
+#endif
 
 }
 
