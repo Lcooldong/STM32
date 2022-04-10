@@ -233,9 +233,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	if(GPIO_Pin == GPIO_PIN_10)	// PIN_3 Pressed
 	{
 		if(HAL_GetTick() - temp > 100){
-			printf("%s\r\n", "PIN_3 Pressed");
+			printf("%s\r\n", "PIN_10 Pressed");
 			buttonFlag = 1;
-			//HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
+			HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_7);
 		}
 		//while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) == GPIO_PIN_RESET);
 		while(HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_10) == GPIO_PIN_RESET){
