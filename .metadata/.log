@@ -8644,3 +8644,37 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\Github\STM32\210727
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-04-10 17:39:14.206
 !MESSAGE Indexed '210727_01' (22 sources, 100 headers) in 2.61 sec: 7,917 declarations; 27,067 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.42%)
+!SESSION 2022-04-16 01:19:44.027 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  D:\Github\STM32\7-1_ADC_DMA_F429ZIT6U\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\Github\STM32\7-1_ADC_DMA_F429ZIT6U\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-16 01:20:00.039
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-16 01:20:00.154
+!MESSAGE Log4j initialized with config file D:\Github\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-16 01:20:13.066
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-16 01:20:19.360
+!MESSAGE Indexed '7-1_ADC_DMA_F429ZIT6U' (34 sources, 113 headers) in 4.71 sec: 10,616 declarations; 66,439 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.19%)
+!SESSION 2022-04-16 02:29:40.120 -----------------------------------------------
+eclipse.buildId=Version 1.8.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-16 02:29:47.730
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-16 02:29:47.794
+!MESSAGE Log4j initialized with config file D:\Github\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-16 02:29:53.903
+!MESSAGE Started RMI Server, listening on port 41337
