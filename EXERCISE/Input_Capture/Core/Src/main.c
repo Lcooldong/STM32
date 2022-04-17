@@ -46,10 +46,11 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-volatile uint16_t capture1[2];
+volatile uint16_t capture[4];
+volatile uint16_t array[4];
 volatile uint16_t risingCP;
 volatile uint16_t fallingCP;
-uint8_t capture1CNT = 0;
+uint8_t captureCNT = 0;
 uint32_t period, active, freq, duty;
 uint16_t width, DMAwidth = 0;
 uint16_t distance, DMAdistance = 0;
@@ -118,7 +119,7 @@ int main(void)
   HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_1);		// Sonar
 
   //htim3.State = HAL_TIM_STATE_READY;
-  HAL_TIM_IC_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t *)capture1, 2);
+  HAL_TIM_IC_Start_DMA(&htim3, TIM_CHANNEL_1, (uint32_t *)capture, 4);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -128,7 +129,8 @@ int main(void)
   while (1)
   {
 	 HAL_Delay(100);
-	 printf("%lx %x %5d-%5d DMAWidth : %5d => DMAdistance : %4d cm\r\n",TIM3->CCER & TIM_CCER_CC1P, 0x01 << 1 ,capture1[0], capture1[1], DMAwidth, DMAdistance);
+	 printf("%lx %x %5d | %5d | %5d | %5d | width : %5d\r\n",TIM3->CCER & TIM_CCER_CC1P, 0x01 << 1 ,capture[0], capture[1], capture[2], capture[3], DMAwidth);
+	 //printf("%lx %x %5d-%5d DMAWidth : %5d => DMAdistance : %4d cm | period : %5ld | freq : %3ld | duty : %3ld\r\n",TIM3->CCER & TIM_CCER_CC1P, 0x01 << 1 ,capture[0], capture[1], DMAwidth, DMAdistance, period ,freq, duty);
 
 
 
@@ -153,6 +155,7 @@ void SystemClock_Config(void)
   */
   __HAL_RCC_PWR_CLK_ENABLE();
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
@@ -168,12 +171,14 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
   /** Activate the Over-Drive mode
   */
   if (HAL_PWREx_EnableOverDrive() != HAL_OK)
   {
     Error_Handler();
   }
+
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
@@ -222,16 +227,15 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 		/*   */
 		if((TIM3->CCER & TIM_CCER_CC1P) != (0x01 << 1))
 		{
-			fallingCP = capture1[1];
+			array[captureCNT] = capture[captureCNT];	// f(past <- get) - r(current <- capture[1, 3]) - f(future)
 			TIM3->CCER |= TIM_CCER_CC1P;		// Rising -> Falling (0 -> 1)
 			GPIOB->ODR |= LD2_Pin;
 			GPIOB->ODR &= ~LD3_Pin;
 			ch1done = true;
-
 		}
 		else
 		{
-			risingCP = capture1[0];
+			array[captureCNT] = capture[captureCNT];		// r(past <- get) - f(current <- capture[0, 2]) - r(future)
 			TIM3->CCER &= ~TIM_CCER_CC1P;		// Falling -> Rising	(1 -> 0)
 			GPIOB->ODR |= LD3_Pin;
 			GPIOB->ODR &= ~LD2_Pin;
@@ -239,19 +243,37 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 
 		}
 
-		if(!ch1done)
-		{
-			if(risingCP > fallingCP){
-				DMAwidth = risingCP - fallingCP;
-			}
-			else
-			{
-				DMAwidth = TIM3->ARR - fallingCP + risingCP;
-			}
+		if(captureCNT >= 4) captureCNT = 0;
+		else captureCNT++;
 
-			 DMAdistance = DMAwidth/58;
-			 if(DMAdistance > 400) DMAdistance = 400;
-		}
+//		if(!ch1done)
+//		{
+//			if(risingCP > fallingCP){
+//				DMAwidth = risingCP - fallingCP;
+//			}
+//			else
+//			{
+//				DMAwidth = TIM3->ARR - fallingCP + risingCP;
+//			}
+//
+//			 DMAdistance = DMAwidth/58;
+//			 if(DMAdistance > 400) DMAdistance = 400;
+//
+//			 if(capture[0] > capture[2])
+//			 {
+//				 period = TIM3->ARR - capture[0] + capture[2];
+//			 }
+//			 else
+//			 {
+//				 period = capture[2] - capture[0];
+//			 }
+//
+//			 period += TIM3->ARR;
+//			 freq = (HAL_RCC_GetPCLK1Freq() * 2)/(TIM3->PSC + 1);
+//			 freq = freq / period;
+//
+//			 duty = DMAwidth * 100/period;
+//		}
 
 
 	}
@@ -342,4 +364,3 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
-
