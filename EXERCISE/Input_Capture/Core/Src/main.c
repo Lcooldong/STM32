@@ -47,7 +47,8 @@
 
 /* USER CODE BEGIN PV */
 volatile uint16_t capture1[2];
-volatile uint16_t capture2[2];
+volatile uint16_t risingCP;
+volatile uint16_t fallingCP;
 uint8_t capture1CNT = 0;
 uint32_t period, active, freq, duty;
 uint16_t width, DMAwidth = 0;
@@ -126,13 +127,10 @@ int main(void)
   HAL_Delay(1000);
   while (1)
   {
-	 //if(ch1done == true)
-	 //{
-		 DMAwidth = capture1[0] - capture1[1];
-		 DMAdistance = DMAwidth/58;
-		 if(DMAdistance > 400) DMAdistance = 400;
-		 printf("%lx %x %5d-%5d DMAWidth : %5d => DMAdistance : %4d cm\r\n",TIM3->CCER & TIM_CCER_CC1P, 0x01 << 1 ,capture1[0], capture1[1], DMAwidth, DMAdistance);
-	 //}
+	 HAL_Delay(100);
+	 printf("%lx %x %5d-%5d DMAWidth : %5d => DMAdistance : %4d cm\r\n",TIM3->CCER & TIM_CCER_CC1P, 0x01 << 1 ,capture1[0], capture1[1], DMAwidth, DMAdistance);
+
+
 
 
     /* USER CODE END WHILE */
@@ -219,10 +217,12 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 
 	if(htim->Instance == TIM3 && htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)
 	{
+
+
 		/*   */
 		if((TIM3->CCER & TIM_CCER_CC1P) != (0x01 << 1))
 		{
-
+			fallingCP = capture1[1];
 			TIM3->CCER |= TIM_CCER_CC1P;		// Rising -> Falling (0 -> 1)
 			GPIOB->ODR |= LD2_Pin;
 			GPIOB->ODR &= ~LD3_Pin;
@@ -231,12 +231,28 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
 		}
 		else
 		{
+			risingCP = capture1[0];
 			TIM3->CCER &= ~TIM_CCER_CC1P;		// Falling -> Rising	(1 -> 0)
 			GPIOB->ODR |= LD3_Pin;
 			GPIOB->ODR &= ~LD2_Pin;
 			ch1done = false;
 
 		}
+
+		if(!ch1done)
+		{
+			if(risingCP > fallingCP){
+				DMAwidth = risingCP - fallingCP;
+			}
+			else
+			{
+				DMAwidth = TIM3->ARR - fallingCP + risingCP;
+			}
+
+			 DMAdistance = DMAwidth/58;
+			 if(DMAdistance > 400) DMAdistance = 400;
+		}
+
 
 	}
 }
