@@ -19,6 +19,11 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+<<<<<<< Updated upstream
+=======
+			<item value="D:\Github\STM32\6-1_PWM_F429ZIT6U"/>
+			<item value="D:\Github\STM32\4-1_Timer_Interrupt_F429ZIT6U"/>
+>>>>>>> Stashed changes
 			<item value="D:\Github\STM32\11-3_SDcard_SPI_FATFS_F429ZI"/>
 			<item value="D:\Github\STM32\13-1_CAN_F429ZIT6U"/>
 			<item value="C:\Users\LDH\Desktop\Stm32\STM32_Study"/>

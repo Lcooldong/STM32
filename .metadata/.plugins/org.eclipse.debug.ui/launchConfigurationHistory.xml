@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchHistory>
     <launchGroup id="org.eclipse.debug.ui.launchGroup.debug">
+<<<<<<< Updated upstream
         <mruHistory/>
+=======
+        <mruHistory>
+            <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/13-1_CAN_F429ZIT6U/13-1_CAN_F429ZIT6U Debug.launch&quot;/&gt;&#13;&#10;"/>
+        </mruHistory>
+>>>>>>> Stashed changes
         <favorites/>
     </launchGroup>
     <launchGroup id="org.eclipse.debug.ui.launchGroup.profile">
@@ -13,7 +19,13 @@
         <favorites/>
     </launchGroup>
     <launchGroup id="org.eclipse.debug.ui.launchGroup.run">
+<<<<<<< Updated upstream
         <mruHistory/>
+=======
+        <mruHistory>
+            <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/13-1_CAN_F429ZIT6U/13-1_CAN_F429ZIT6U Debug.launch&quot;/&gt;&#13;&#10;"/>
+        </mruHistory>
+>>>>>>> Stashed changes
         <favorites/>
     </launchGroup>
 </launchHistory>
