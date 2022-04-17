@@ -6451,13 +6451,18 @@ Please upgrade the ST-LINK firmware using the upgrade tool. Reconnect ST-LINK an
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-03-30 10:13:15.105
 !MESSAGE Indexed '11-1_SDIO_FATFS_F429ZIT6U' (50 sources, 132 headers) in 3.77 sec: 13,192 declarations; 87,227 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.15%)
+<<<<<<< Updated upstream
 !SESSION 2022-04-04 22:06:56.894 -----------------------------------------------
+=======
+!SESSION 2022-04-06 16:54:02.091 -----------------------------------------------
+>>>>>>> Stashed changes
 eclipse.buildId=Version 1.8.0
 java.version=11.0.11
 java.vendor=AdoptOpenJDK
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
+<<<<<<< Updated upstream
 !ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-04 22:07:21.657
 !MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
 
@@ -8605,12 +8610,27 @@ C Model Exception: C Model Status [Element main.c does not exist.]
 !SUBENTRY 1 org.eclipse.cdt.core 4 969 2022-04-05 00:07:15.751
 !MESSAGE Element main.c does not exist.
 !SESSION 2022-04-10 03:11:35.736 -----------------------------------------------
+=======
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-06 16:54:09.443
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-06 16:54:09.570
+!MESSAGE Log4j initialized with config file D:\Github\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-06 16:54:20.323
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-06 16:58:05.982
+!MESSAGE Indexed '13-1_CAN_F429ZIT6U' (135 sources, 305 headers) in 8.76 sec: 17,542 declarations; 117,241 references; 3 unresolved inclusions; 43 syntax errors; 175 unresolved names (0.13%)
+!SESSION 2022-04-07 19:12:58.690 -----------------------------------------------
+>>>>>>> Stashed changes
 eclipse.buildId=Version 1.8.0
 java.version=11.0.11
 java.vendor=AdoptOpenJDK
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
+<<<<<<< Updated upstream
 !ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-10 03:11:48.342
 !MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
 
@@ -8678,3 +8698,25 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-16 02:29:53.903
 !MESSAGE Started RMI Server, listening on port 41337
+=======
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-04-07 19:13:50.703
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-04-07 19:13:50.787
+!MESSAGE Log4j initialized with config file D:\Github\STM32\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-04-07 19:14:03.520
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-07 19:32:38.078
+!MESSAGE Indexed '11-3_SDcard_SPI_FATFS_F429ZI' (35 sources, 117 headers) in 3.5 sec: 10,772 declarations; 59,885 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.21%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-07 19:46:22.728
+!MESSAGE Indexed '4-1_Timer_Interrupt_F429ZIT6U' (28 sources, 106 headers) in 2.84 sec: 9,887 declarations; 59,186 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.21%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-07 19:47:35.919
+!MESSAGE Indexed '6-1_PWM_F429ZIT6U' (28 sources, 106 headers) in 2.71 sec: 9,923 declarations; 59,717 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.21%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-08 17:42:44.951
+!MESSAGE Indexed '10-1_SPI_F429ZIT6U' (39 sources, 118 headers) in 4.04 sec: 11,268 declarations; 73,322 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.17%)
+>>>>>>> Stashed changes
