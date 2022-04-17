@@ -1,2 +1,5 @@
 # stm32
 .metadata/
+.metadata/*.log
+.metadata/version.ini
+.metadata/.plugins/

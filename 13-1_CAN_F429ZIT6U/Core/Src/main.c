@@ -158,7 +158,10 @@ int main(void)
 		  for(int i=0; i<8; i++) can1Tx0Data[i]++;
 
 		  TxMailBox = HAL_CAN_GetTxMailboxesFreeLevel(&hcan1);
-		  HAL_CAN_AddTxMessage(&hcan1, &canTxHeader, &can1Tx0Data[0], TxMailBox);
+		  printf("TxMailBox = %lu\r\n", TxMailBox);
+		  //HAL_CAN_AddTxMessage(&hcan1, &canTxHeader, &can1Tx0Data[0], TxMailBox);
+		  HAL_CAN_AddTxMessage(&hcan1, &canTxHeader, &can1Tx0Data[0], &TxMailBox);
+
 
 	  }
 
@@ -230,7 +233,7 @@ void SystemClock_Config(void)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	static uint32_t temp;
-	if(GPIO_Pin == GPIO_PIN_10)	// PIN_3 Pressed
+	if(GPIO_Pin == GPIO_PIN_10)	// PIN_10 Pressed
 	{
 		if(HAL_GetTick() - temp > 100){
 			printf("%s\r\n", "PIN_10 Pressed");
