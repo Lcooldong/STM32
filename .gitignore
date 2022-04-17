@@ -1,2 +1,3 @@
 # stm32
 .metadata/
+.metadata/*.log
