@@ -137,7 +137,7 @@ int main(void)
   while (1)
   {
 
-	  state = HAL_I2C_Mem_Read(&hi2c1, 0xE5, 0x32, 1, buffer, 1, HAL_MAX_DELAY);
+	  state = HAL_I2C_Mem_Read(&hi2c1, 0xE5	, 0x32, 1, buffer, 1, HAL_MAX_DELAY);
 	  if(state != HAL_OK) while(HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
 	  else if(state == HAL_OK)
 	  {
