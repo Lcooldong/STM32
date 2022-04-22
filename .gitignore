@@ -3,3 +3,5 @@
 .metadata/*.log
 .metadata/version.ini
 .metadata/.plugins/
+*.xml
+EXERCISE\IMU_HW_579\.settings\*.xml
