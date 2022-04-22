@@ -18,14 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "dma.h"
 #include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
+#include "stdbool.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,6 +45,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint8_t buffer[128] = {0, };
 
 /* USER CODE END PV */
 
@@ -53,7 +54,7 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 int _write(int file, char *p, int len)
 {
-	if(HAL_UART_Transmit(&huart3, (uint8_t *)p, 1, 10) == HAL_OK) return len;
+	if(HAL_UART_Transmit(&huart3, (uint8_t *)p, len, 10) == HAL_OK) return len;
 	else return 0;
 }
 /* USER CODE END PFP */
@@ -92,7 +93,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
-  MX_DMA_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
@@ -100,10 +100,52 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  HAL_StatusTypeDef state;
+  uint8_t slave_address;
+  uint8_t state_buffer[128] = {0, };
+  uint8_t sensors[3] = {0, };
+  uint8_t numSensors = 0;
+  uint8_t nDevices;
+
+  HAL_Delay(1000);
+  printf("I2C Scan Start\r\n");
+  printf("==================\r\n");
+  for(slave_address = 1; slave_address < 128; slave_address++)
+  {
+	  //state = HAL_I2C_Master_Transmit(&hi2c1, slave_address, state_buffer, 3, HAL_MAX_DELAY);
+	  state = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(slave_address << 1), 3, 10);
+	  if (state == HAL_OK)
+	  {
+		  sensors[numSensors] = slave_address;
+		  numSensors++;
+		  printf("Address : 0x%X\r\n", slave_address);	// !HAL_OK = 1
+	  }
+	  else
+	  {
+		  while(HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
+	  }
+  }
+  printf("==================\r\n");
+  printf("End Scanning\r\n");
+
+  for(int i = 0; i < numSensors; i++)
+  {
+	  printf("result : [0x%X]\r\n", sensors[i]);
+  }
+
   while (1)
   {
-	  HAL_Delay(1000);
-	  HAL_I2C_Mem_Read(&hi2c1, DevAddress, MemAddress, MemAddSize, pData, Size, Timeout)
+
+	  state = HAL_I2C_Mem_Read(&hi2c1, 0xE5, 0x32, 1, buffer, 1, HAL_MAX_DELAY);
+	  if(state != HAL_OK) while(HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
+	  else if(state == HAL_OK)
+	  {
+		  printf("Memory address : 0x%X\r\n", 0x32);
+		  printf("%s\r\n", buffer);	// get 8bits ?
+	  }
+	  HAL_Delay(100);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
