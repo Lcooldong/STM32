@@ -8,9 +8,9 @@
 #ifndef INC_ITG3205_H_
 #define INC_ITG3205_H_
 
-#include "i2c.h"
+
 #include "HW_579.h"
-#include "stdbool.h"
+
 
 
 #define ITG3205_ADDR_AD0_HIGH	0x69

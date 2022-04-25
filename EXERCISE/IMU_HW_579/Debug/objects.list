@@ -1,3 +1,4 @@
+"./Core/Src/ADXL345.o"
 "./Core/Src/HW_579.o"
 "./Core/Src/ITG3205.o"
 "./Core/Src/gpio.o"

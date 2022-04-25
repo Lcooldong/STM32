@@ -6,13 +6,12 @@
  */
 
 #include "ITG3205.h"
-#include "stdio.h"
 
 
 
 float scalefactor[3];
 uint16_t offsets[3];
-uint8_t _buff[6];
+uint8_t gyro_buff[6];
 extern HW579 hw579;
 
 void Gyro_Writebyte(HW579 * I2C, uint8_t register_address, uint8_t data)
@@ -31,16 +30,26 @@ uint8_t Gyro_Readbyte(HW579 * I2C, uint8_t register_address)
 	return Receive[0];
 }
 
+
 void Gyro_init(HW579 *I2C)	// struct -> i2c
 {
-	Gyro_Writebyte(I2C, PWR_MGM, 0x00);
+//	Gyro_Writebyte(I2C, PWR_MGM, 0x00);
+//	HAL_Delay(100);
+//	Gyro_Writebyte(I2C, PWR_MGM, PLL_XGYRO_REF);
+//	Gyro_Writebyte(I2C, SMPLRT_DIV, NOSRDIVIDER);
+//	Gyro_Writebyte(I2C, DLPF_FS, RANGE2000);
+//	Gyro_Writebyte(I2C, DLPF_FS, BW256_SR8);
+//	Gyro_Writebyte(I2C, INT_CFG, INTCFG_ITG_RDY_EN);
+//	Gyro_Writebyte(I2C, INT_CFG, INTCFG_RAW_RDY_EN);
+
+	I2C_Writebyte(I2C, PWR_MGM, 0x00, magneto);
 	HAL_Delay(100);
-	Gyro_Writebyte(I2C, PWR_MGM, PLL_XGYRO_REF);
-	Gyro_Writebyte(I2C, SMPLRT_DIV, NOSRDIVIDER);
-	Gyro_Writebyte(I2C, DLPF_FS, RANGE2000);
-	Gyro_Writebyte(I2C, DLPF_FS, BW256_SR8);
-	Gyro_Writebyte(I2C, INT_CFG, INTCFG_ITG_RDY_EN);
-	Gyro_Writebyte(I2C, INT_CFG, INTCFG_RAW_RDY_EN);
+	I2C_Writebyte(I2C, PWR_MGM, PLL_XGYRO_REF, magneto);
+	I2C_Writebyte(I2C, SMPLRT_DIV, NOSRDIVIDER, magneto);
+	I2C_Writebyte(I2C, DLPF_FS, RANGE2000, magneto);
+	I2C_Writebyte(I2C, DLPF_FS, BW256_SR8, magneto);
+	I2C_Writebyte(I2C, INT_CFG, INTCFG_ITG_RDY_EN, magneto);
+	I2C_Writebyte(I2C, INT_CFG, INTCFG_RAW_RDY_EN, magneto);
 
 	HAL_Delay(GYROSTART_UP_DELAY);
 }

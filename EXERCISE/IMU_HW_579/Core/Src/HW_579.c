@@ -9,9 +9,10 @@
 
 #include "ITG3205.h"
 #include "HW_579.h"
-#include "stdio.h"
 
 HW579 hw579;
+SENSOR_ENUM sensor_enum;
+
 
 uint8_t* getI2C_Address(I2C_HandleTypeDef *hi2c)
 {
@@ -50,6 +51,66 @@ uint8_t* getI2C_Address(I2C_HandleTypeDef *hi2c)
 
 	return sensors;
 }
+
+void I2C_Writebyte(HW579 * I2C, uint8_t register_address, uint8_t data, uint8_t TYPE)
+{
+	uint8_t Trans[2] = {register_address, data};
+
+	switch(TYPE)
+	{
+		case magneto:
+			HAL_I2C_Master_Transmit(&(I2C->i2c), I2C->magneto_address, Trans, 2, 10);
+			break;
+
+		case accel:
+			HAL_I2C_Master_Transmit(&(I2C->i2c), I2C->accel_address, Trans, 2, 10);
+			break;
+
+		case gyro:
+			HAL_I2C_Master_Transmit(&(I2C->i2c), I2C->gyro_address, Trans, 2, 10);
+			break;
+
+		default:
+			printf("Wrong TYPE");
+			break;
+	}
+
+
+}
+
+uint8_t I2C_Readbyte(HW579 * I2C, uint8_t register_address, uint8_t TYPE)
+{
+	uint8_t Trans[1] = {register_address};
+	uint8_t Receive[1];
+
+	switch(TYPE)
+	{
+		case magneto:
+			HAL_I2C_Master_Transmit(&(I2C->i2c), I2C->magneto_address, Trans, 1, 10);
+			HAL_I2C_Master_Receive(&(I2C->i2c), I2C->magneto_address, Receive, 1, 10);
+			break;
+
+		case accel:
+			HAL_I2C_Master_Transmit(&(I2C->i2c), I2C->accel_address, Trans, 1, 10);
+			HAL_I2C_Master_Receive(&(I2C->i2c), I2C->accel_address, Receive, 1, 10);
+			break;
+
+		case gyro:
+			HAL_I2C_Master_Transmit(&(I2C->i2c), I2C->gyro_address, Trans, 1, 10);
+			HAL_I2C_Master_Receive(&(I2C->i2c), I2C->gyro_address, Receive, 1, 10);
+			break;
+
+		default:
+			printf("Wrong TYPE");
+			break;
+	}
+
+
+	return Receive[0];
+}
+
+
+
 
 void HW579_init(HW579 *I2C)
 {
