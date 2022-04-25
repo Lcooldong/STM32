@@ -9,7 +9,9 @@
 #define INC_ITG3205_H_
 
 #include "i2c.h"
-extern I2C_HandleTypeDef hi2c1;
+#include "HW_579.h"
+#include "stdbool.h"
+
 
 #define ITG3205_ADDR_AD0_HIGH	0x69
 #define ITG3205_ADDR_AD0_LOW 	0x68
@@ -98,5 +100,14 @@ typedef struct __ITG3205{
 
 
 
+void Gyro_Writebyte(HW579 * I2C, uint8_t register_address, uint8_t data);
+void Gyro_init(HW579 *I2C);
+void Gyro_Read(HW579 *hw579);
+
+bool isRawDataReady(void);
+void readGyroRaw(uint16_t _GyroXYZ[3], HW579 *hw579);
+void setScaleFactor(float _Xcoeff, float _Ycoeff, float _Zcoeff, bool _Radians);
+void setOffsets(uint16_t _Xoffset, uint16_t _Yoffset, uint16_t _Zoffset);
+void zeroCalibrate(uint16_t totSamples, uint16_t sampleDelayMS);
 
 #endif /* INC_ITG3205_H_ */
