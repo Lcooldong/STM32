@@ -8,29 +8,30 @@
 #ifndef INC_ITG3205_H_
 #define INC_ITG3205_H_
 
+#include "i2c.h"
+extern I2C_HandleTypeDef hi2c1;
+
 #define ITG3205_ADDR_AD0_HIGH	0x69
 #define ITG3205_ADDR_AD0_LOW 	0x68
 
-#define GYROSTART_UP_DELAY		70
+#define ITG3205_MPU_ADDRESS (ITG3205_ADDR_AD0_LOW << 1)
+#define ITG3205_MPU_ADDRESS_Rd (ITG3205_ADDR_AD0_LOW << 1) | 0x01
 
 
 
-/*------------Registers------------*/
-#define WHO_AM_I				0x00
-#define	SMPLRT_DIV				0x15
-#define DLPF_FS					0x16
-#define INT_CFG					0x17
-#define	INT_STATUS				0x1A
-#define TEMP_OUT_H				0x1B
-#define TEMP_OUT_L				0x1C
-#define GYRO_XOUT_H				0x1D
-#define GYRO_XOUT_L				0x1E
-#define GYRO_YOUT_H				0x1F
-#define GYRO_YOUT_L				0x20
-#define GYRO_ZOUT_H				0x21
-#define GYRO_ZOUT_L				0x22
-#define PWR_MGM					0x3E
+#define GYROSTART_UP_DELAY  70    // 50ms from gyro startup + 20ms register r/w startup
 
+/* ---- Registers ---- */
+#define WHO_AM_I           0x00  // RW   SETUP: I2C address
+#define SMPLRT_DIV         0x15  // RW   SETUP: Sample Rate Divider
+#define DLPF_FS            0x16  // RW   SETUP: Digital Low Pass Filter/ Full Scale range
+#define INT_CFG            0x17  // RW   Interrupt: Configuration
+#define INT_STATUS         0x1A  // R	Interrupt: Status
+#define TEMP_OUT           0x1B  // R	SENSOR: Temperature 2bytes
+#define GYRO_XOUT          0x1D  // R	SENSOR: Gyro X 2bytes
+#define GYRO_YOUT          0x1F  // R	SENSOR: Gyro Y 2bytes
+#define GYRO_ZOUT          0x21  // R	SENSOR: Gyro Z 2bytes
+#define PWR_MGM            0x3E  // RW	Power Management
 
 /* ---- bit maps ---- */
 #define DLPFFS_FS_SEL             0x18  // 00011000
@@ -50,6 +51,50 @@
 #define PWRMGM_STBY_ZG            0x08  // 00001000
 #define PWRMGM_CLK_SEL            0x07  // 00000111
 
+/************************************/
+/*    REGISTERS PARAMETERS    */
+/************************************/
+// Sample Rate Divider
+#define NOSRDIVIDER         0 // default    FsampleHz=SampleRateHz/(divider+1)
+// Gyro Full Scale Range
+#define RANGE2000           3   // default
+// Digital Low Pass Filter BandWidth and SampleRate
+#define BW256_SR8           0   // default    256Khz BW and 8Khz SR
+#define BW188_SR1           1
+#define BW098_SR1           2
+#define BW042_SR1           3
+#define BW020_SR1           4
+#define BW010_SR1           5
+#define BW005_SR1           6
+// Interrupt Active logic lvl
+#define ACTIVE_ONHIGH       0 // default
+#define ACTIVE_ONLOW        1
+// Interrupt drive type
+#define PUSH_PULL           0 // default
+#define OPEN_DRAIN          1
+// Interrupt Latch mode
+#define PULSE_50US          0 // default
+#define UNTIL_INT_CLEARED   1
+// Interrupt Latch clear method
+#define READ_STATUSREG      0 // default
+#define READ_ANYREG         1
+// Power management
+#define NORMAL              0 // default
+#define STANDBY             1
+// Clock Source - user parameters
+#define INTERNALOSC         0   // default
+#define PLL_XGYRO_REF       1
+#define PLL_YGYRO_REF       2
+#define PLL_ZGYRO_REF       3
+#define PLL_EXTERNAL32      4   // 32.768 kHz
+#define PLL_EXTERNAL19      5   // 19.2 Mhz
+
+
+
+typedef struct __ITG3205{
+	I2C_HandleTypeDef i2c;
+	uint8_t gyro_address;
+}ITG3205;
 
 
 

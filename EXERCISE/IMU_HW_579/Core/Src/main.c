@@ -26,6 +26,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
 #include "stdbool.h"
+#include "ITG3205.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,7 +97,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
-
+//  Gyro_init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -104,10 +105,10 @@ int main(void)
 
   HAL_StatusTypeDef state;
   uint8_t slave_address;
-  uint8_t state_buffer[128] = {0, };
+//  uint8_t state_buffer[128] = {0, };
   uint8_t sensors[3] = {0, };
   uint8_t numSensors = 0;
-  uint8_t nDevices;
+//  uint8_t nDevices;
 
   HAL_Delay(1000);
   printf("I2C Scan Start\r\n");
@@ -135,18 +136,22 @@ int main(void)
 	  printf("result : [0x%X]\r\n", sensors[i]);
   }
 
-  uint16_t read_address = 0x00;
+
   while (1)
   {
 
+
+
+
 	  //state = HAL_I2C_Mem_Read(&hi2c1, 0xE5	, 0x32, 1, buffer, 1, HAL_MAX_DELAY);
-	  state = HAL_I2C_Mem_Read(&hi2c1, 0xD0	, read_address, 1, buffer, 8, HAL_MAX_DELAY);
-	  if(state != HAL_OK) while(HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
-	  else if(state == HAL_OK)
-	  {
-		  printf("Memory address : 0x%X\r\n", read_address);
-		  printf("Read Buffer : %x\r\n", buffer);	// get 8bits ?
-	  }
+//	  HAL_I2C_Master_Transmit(&hi2c1, 0xD0, buffer, 1, HAL_MAX_DELAY);
+//	  state = HAL_I2C_Mem_Read(&hi2c1, 0xD1	, read_address, 1, buffer, 2, HAL_MAX_DELAY);
+//	  if(state != HAL_OK) while(HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
+//	  else if(state == HAL_OK)
+//	  {
+//		  printf("Memory address : 0x%X\r\n", read_address);
+//		  printf("Read Buffer : %s\r\n", buffer);	// get 2bits ?
+//	  }
 	  HAL_Delay(100);
 
     /* USER CODE END WHILE */
