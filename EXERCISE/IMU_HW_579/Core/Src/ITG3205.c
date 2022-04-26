@@ -15,18 +15,18 @@ uint8_t gyro_buff[6];
 ITG3205 GYRO;
 extern HW579 hw579;
 
-void Gyro_Writebyte(ITG3205 * GYRO, uint8_t register_address, uint8_t data)
+void Gyro_Writebyte(uint8_t register_address, uint8_t data)
 {
 	uint8_t Trans[2] = {register_address, data};
-	HAL_I2C_Master_Transmit(&(GYRO->i2c), GYRO->gyro_address, Trans, 2, 10);
+	HAL_I2C_Master_Transmit(&(GYRO.i2c), GYRO.gyro_address, Trans, 2, 10);
 }
 
-uint8_t Gyro_Readbyte(ITG3205 * GYRO, uint8_t register_address)
+uint8_t Gyro_Readbyte(uint8_t register_address)
 {
 	uint8_t Trans[1] = {register_address};
 	uint8_t Receive[1];
-	HAL_I2C_Master_Transmit(&(GYRO->i2c), GYRO->gyro_address, Trans, 1, 10);
-	HAL_I2C_Master_Receive(&(GYRO->i2c), GYRO->gyro_address, Receive, 1, 10);
+	HAL_I2C_Master_Transmit(&(GYRO.i2c), GYRO.gyro_address, Trans, 1, 10);
+	HAL_I2C_Master_Receive(&(GYRO.i2c), GYRO.gyro_address, Receive, 1, 10);
 
 	return Receive[0];
 }
@@ -55,11 +55,11 @@ void Gyro_init(ITG3205 *GYRO)	// struct -> i2c
 	HAL_Delay(GYROSTART_UP_DELAY);
 }
 
-void Gyro_Read(ITG3205 *GYRO)
+void Gyro_Read()
 {
 	uint8_t databuf[8];
 	int16_t tempature, raw_x, raw_y, raw_z;
-	HAL_I2C_Mem_Read(&(GYRO->i2c), GYRO->gyro_address , TEMP_OUT, I2C_MEMADD_SIZE_8BIT, databuf, sizeof(databuf), 10);
+	HAL_I2C_Mem_Read(&(GYRO.i2c), GYRO.gyro_address , TEMP_OUT, I2C_MEMADD_SIZE_8BIT, databuf, sizeof(databuf), 10);
 	tempature = (databuf[0] << 8) | databuf[1];
 	raw_x = (databuf[2] << 8) | databuf[3];
 	raw_y = (databuf[4] << 8) | databuf[5];
@@ -74,10 +74,10 @@ void Gyro_Read(ITG3205 *GYRO)
 }
 
 
-void readGyroRaw(uint16_t _GyroXYZ[3], ITG3205 *GYRO)
+void readGyroRaw(uint16_t _GyroXYZ[3])
 {
 	uint8_t databuf[6];
-	HAL_I2C_Mem_Read(&(GYRO->i2c), GYRO->gyro_address , GYRO_XOUT, I2C_MEMADD_SIZE_8BIT, databuf, sizeof(databuf), 10);
+	HAL_I2C_Mem_Read(&(GYRO.i2c), GYRO.gyro_address , GYRO_XOUT, I2C_MEMADD_SIZE_8BIT, databuf, sizeof(databuf), 10);
 	_GyroXYZ[0] = databuf[0] << 8 | databuf[1];
 	_GyroXYZ[1] = databuf[2] << 8 | databuf[3];
 	_GyroXYZ[2] = databuf[4] << 8 | databuf[5];
@@ -174,7 +174,7 @@ void zeroCalibrate(uint16_t totSamples, uint16_t sampleDelayMS)
 	for(int i = 0; i < totSamples; i++)
 	{
 		HAL_Delay(sampleDelayMS);
-		readGyroRaw(xyz, &hw579);
+		readGyroRaw(xyz);
 		tmpOffsets[0] += xyz[0];
 		tmpOffsets[1] += xyz[1];
 		tmpOffsets[2] += xyz[2];

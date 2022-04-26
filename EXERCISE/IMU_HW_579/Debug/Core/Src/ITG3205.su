@@ -1,7 +1,7 @@
 ../Core/Src/ITG3205.c:18:6:Gyro_Writebyte	32	static
 ../Core/Src/ITG3205.c:24:9:Gyro_Readbyte	32	static
 ../Core/Src/ITG3205.c:35:6:Gyro_init	16	static
-../Core/Src/ITG3205.c:58:6:Gyro_Read	56	static
+../Core/Src/ITG3205.c:58:6:Gyro_Read	48	static
 ../Core/Src/ITG3205.c:77:6:readGyroRaw	40	static
 ../Core/Src/ITG3205.c:87:6:setDevAddr	16	static
 ../Core/Src/ITG3205.c:93:6:setSampleRateDiv	4	static

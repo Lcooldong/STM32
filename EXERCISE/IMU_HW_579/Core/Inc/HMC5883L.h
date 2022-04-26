@@ -8,6 +8,8 @@
 #ifndef INC_HMC5883L_H_
 #define INC_HMC5883L_H_
 
+#include "HW_579.h"
+
 #define HMC5883L_Address 0x1E
 #define ConfigurationRegisterA 0x00
 #define ConfigurationRegisterB 0x01
@@ -22,7 +24,6 @@
 #define ErrorCode_1_Num 1
 
 
-
 typedef struct __HMC5883L{
 	I2C_HandleTypeDef i2c;
 	uint8_t magneto_address;
@@ -31,9 +32,20 @@ typedef struct __HMC5883L{
 	uint16_t YAxis;
 	uint16_t ZAxis;
 
+	float scaled_XAxis;
+	float scaled_YAxis;
+	float scaled_ZAxis;
+
+	uint8_t m_Scale;
+
 
 }HMC5883L, *pHMC5883L;
 
+void ReadRawAxix(void);
+void ReadScaledAxis(void);
+uint8_t SetScale(float gauss);
+void SetMeasurementMode(uint8_t mode);
+char* GetErrorText(uint8_t errorCode);
 
 
 #endif /* INC_HMC5883L_H_ */

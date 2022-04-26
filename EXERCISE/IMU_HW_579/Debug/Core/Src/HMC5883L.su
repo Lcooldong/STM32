@@ -1,0 +1,5 @@
+../Core/Src/HMC5883L.c:13:6:ReadRawAxix	32	static
+../Core/Src/HMC5883L.c:22:6:ReadScaledAxis	4	static
+../Core/Src/HMC5883L.c:30:9:SetScale	24	static
+../Core/Src/HMC5883L.c:83:6:SetMeasurementMode	16	static
+../Core/Src/HMC5883L.c:89:7:GetErrorText	16	static

@@ -1,5 +1,5 @@
 ../Core/Src/ADXL345.c:18:6:powerOn	16	static
-../Core/Src/ADXL345.c:26:6:Accel_Read	32	static
+../Core/Src/ADXL345.c:26:6:Accel_Read	24	static
 ../Core/Src/ADXL345.c:34:6:get_Gxyz	32	static
 ../Core/Src/ADXL345.c:45:6:Accel_Writebyte	16	static
 ../Core/Src/ADXL345.c:50:9:Accel_Readbyte	4	static

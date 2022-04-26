@@ -23,9 +23,9 @@ void powerOn(ADXL345 *ACCEL)
 
 }
 
-void Accel_Read(ADXL345 * accel)
+void Accel_Read()
 {
-	HAL_I2C_Mem_Read(&(accel->i2c), accel->accel_address , ADXL345_DATAX0, I2C_MEMADD_SIZE_8BIT, accel_buf, sizeof(accel_buf), 10);
+	HAL_I2C_Mem_Read(&(ACCEL.i2c), ACCEL.accel_address , ADXL345_DATAX0, I2C_MEMADD_SIZE_8BIT, accel_buf, sizeof(accel_buf), 10);
 	ACCEL.accel_X = (((int)accel_buf[1]) << 8) | accel_buf[0];
 	ACCEL.accel_Y = (((int)accel_buf[3]) << 8) | accel_buf[2];
 	ACCEL.accel_Z = (((int)accel_buf[5]) << 8) | accel_buf[4];

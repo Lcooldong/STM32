@@ -103,12 +103,12 @@ typedef struct __ITG3205{
 
 
 
-void Gyro_Writebyte(ITG3205 * GYRO, uint8_t register_address, uint8_t data);
+void Gyro_Writebyte(uint8_t register_address, uint8_t data);
 void Gyro_init(ITG3205 *GYRO);
-void Gyro_Read(ITG3205 *GYRO);
+void Gyro_Read();
 
 bool isRawDataReady(void);
-void readGyroRaw(uint16_t _GyroXYZ[3], ITG3205 *GYRO);
+void readGyroRaw(uint16_t _GyroXYZ[3]);
 void setScaleFactor(float _Xcoeff, float _Ycoeff, float _Zcoeff, bool _Radians);
 void setOffsets(uint16_t _Xoffset, uint16_t _Yoffset, uint16_t _Zoffset);
 void zeroCalibrate(uint16_t totSamples, uint16_t sampleDelayMS);
