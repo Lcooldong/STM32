@@ -95,12 +95,13 @@
 #define ADXL345_READ_ERROR 1 // problem reading accel
 #define ADXL345_BAD_ARG    2 // bad method argument
 
-typedef struct _ADXL345
-{
-	accel_X;
-	accel_Y;
-	accel_Z;
-}ADXL345;
+typedef struct __ADXL345{
+	I2C_HandleTypeDef i2c;
+	uint8_t accel_address;
+	uint16_t accel_X;
+	uint16_t accel_Y;
+	uint16_t accel_Z;
+}ADXL345, *pADXL345;
 
 
 

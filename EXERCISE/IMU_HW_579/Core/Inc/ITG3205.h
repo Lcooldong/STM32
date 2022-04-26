@@ -96,19 +96,19 @@
 typedef struct __ITG3205{
 	I2C_HandleTypeDef i2c;
 	uint8_t gyro_address;
-	gyro_X;
-	gyro_Y;
-	gyro_Z;
-}ITG3205;
+	uint16_t gyro_X;
+	uint16_t gyro_Y;
+	uint16_t gyro_Z;
+}ITG3205, *pITG3205;
 
 
 
-void Gyro_Writebyte(HW579 * I2C, uint8_t register_address, uint8_t data);
-void Gyro_init(HW579 *I2C);
-void Gyro_Read(HW579 *hw579);
+void Gyro_Writebyte(ITG3205 * GYRO, uint8_t register_address, uint8_t data);
+void Gyro_init(ITG3205 *GYRO);
+void Gyro_Read(ITG3205 *GYRO);
 
 bool isRawDataReady(void);
-void readGyroRaw(uint16_t _GyroXYZ[3], HW579 *hw579);
+void readGyroRaw(uint16_t _GyroXYZ[3], ITG3205 *GYRO);
 void setScaleFactor(float _Xcoeff, float _Ycoeff, float _Zcoeff, bool _Radians);
 void setOffsets(uint16_t _Xoffset, uint16_t _Yoffset, uint16_t _Zoffset);
 void zeroCalibrate(uint16_t totSamples, uint16_t sampleDelayMS);
