@@ -112,9 +112,10 @@ uint8_t I2C_Readbyte(HW579 * I2C, uint8_t register_address, uint8_t TYPE)
 
 
 
-void HW579_init(HW579 *I2C)
+void HW579_init(I2C_HandleTypeDef *hi2c)
 {
-	Gyro_init(I2C);
+	hw579.i2c = *hi2c;
+	Gyro_init(&hw579);
 }
 
 void HW579_Read(void)

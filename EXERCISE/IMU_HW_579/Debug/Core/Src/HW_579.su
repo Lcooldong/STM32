@@ -2,4 +2,4 @@
 ../Core/Src/HW_579.c:55:6:I2C_Writebyte	32	static
 ../Core/Src/HW_579.c:81:9:I2C_Readbyte	32	static
 ../Core/Src/HW_579.c:115:6:HW579_init	16	static
-../Core/Src/HW_579.c:120:6:HW579_Read	8	static
+../Core/Src/HW_579.c:121:6:HW579_Read	8	static

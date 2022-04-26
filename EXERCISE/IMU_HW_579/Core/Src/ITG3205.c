@@ -12,6 +12,7 @@
 float scalefactor[3];
 uint16_t offsets[3];
 uint8_t gyro_buff[6];
+ITG3205 GYRO;
 extern HW579 hw579;
 
 void Gyro_Writebyte(HW579 * I2C, uint8_t register_address, uint8_t data)

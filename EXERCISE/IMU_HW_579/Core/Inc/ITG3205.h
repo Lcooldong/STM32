@@ -96,6 +96,9 @@
 typedef struct __ITG3205{
 	I2C_HandleTypeDef i2c;
 	uint8_t gyro_address;
+	gyro_X;
+	gyro_Y;
+	gyro_Z;
 }ITG3205;
 
 

@@ -95,6 +95,14 @@
 #define ADXL345_READ_ERROR 1 // problem reading accel
 #define ADXL345_BAD_ARG    2 // bad method argument
 
+typedef struct _ADXL345
+{
+	accel_X;
+	accel_Y;
+	accel_Z;
+}ADXL345;
+
+
 
 void Accel_Writebyte(uint8_t address, uint8_t val);
 uint8_t Accel_Readbyte();
