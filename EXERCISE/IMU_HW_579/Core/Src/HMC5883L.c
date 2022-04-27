@@ -10,6 +10,12 @@
 HMC5883L MAGNETO = {.m_Scale = 1};
 
 
+void Magneto_init()
+{
+
+}
+
+
 void ReadRawAxix(void)
 {
 	uint8_t buffer[6];

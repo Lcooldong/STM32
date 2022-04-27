@@ -98,13 +98,28 @@
 typedef struct __ADXL345{
 	I2C_HandleTypeDef i2c;
 	uint8_t accel_address;
+
+	uint16_t offset_X;
+	uint16_t offset_Y;
+	uint16_t offset_Z;
+
+	double gain_X;
+	double gain_Y;
+	double gain_Z;
+
 	uint16_t accel_X;
 	uint16_t accel_Y;
 	uint16_t accel_Z;
+
+	float scaled_accel_X;
+	float scaled_accel_Y;
+	float scaled_accel_Z;
+
 }ADXL345, *pADXL345;
 
 
-
+void Accel_init(void);
+uint16_t *Accel_read();
 void Accel_Writebyte(uint8_t address, uint8_t val);
 uint8_t Accel_Readbyte();
 

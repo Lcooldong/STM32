@@ -36,11 +36,13 @@ typedef struct __HMC5883L{
 	float scaled_YAxis;
 	float scaled_ZAxis;
 
-	uint8_t m_Scale;
+	float m_Scale;
 
 
 }HMC5883L, *pHMC5883L;
 
+
+void Magneto_init(void);
 void ReadRawAxix(void);
 void ReadScaledAxis(void);
 uint8_t SetScale(float gauss);
