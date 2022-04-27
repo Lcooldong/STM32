@@ -1,5 +1,5 @@
-../Core/Src/HW_579.c:18:10:getI2C_Address	24	static
-../Core/Src/HW_579.c:60:6:I2C_Writebyte	32	static
-../Core/Src/HW_579.c:86:9:I2C_Readbyte	32	static
-../Core/Src/HW_579.c:120:6:HW579_init	16	static
-../Core/Src/HW_579.c:129:6:HW579_Read	40	static
+../Core/Src/HW_579.c:19:10:getI2C_Address	24	static
+../Core/Src/HW_579.c:70:6:I2C_Writebyte	32	static
+../Core/Src/HW_579.c:96:9:I2C_Readbyte	32	static
+../Core/Src/HW_579.c:130:6:HW579_init	16	static
+../Core/Src/HW_579.c:142:6:HW579_Read	8	static

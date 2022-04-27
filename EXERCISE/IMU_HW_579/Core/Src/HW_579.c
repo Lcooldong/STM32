@@ -5,15 +5,16 @@
  *      Author: s_coo
  */
 
-#define DEBUG_PRINT
+//#define DEBUG_PRINT
 
 #include "HW_579.h"
-
 HW579 hw579;
+extern HMC5883L MAGNETO;
+extern ADXL345 ACCEL;
 extern ITG3205 GYRO;
 
-SENSOR_ENUM sensor_enum;
 
+SENSOR_ENUM sensor_enum;
 
 uint8_t* getI2C_Address(I2C_HandleTypeDef *hi2c)
 {
@@ -21,6 +22,11 @@ uint8_t* getI2C_Address(I2C_HandleTypeDef *hi2c)
 	uint8_t slave_address;
 	uint8_t numSensors = 0;
 	static uint8_t sensors[3] = {0, };
+
+	hw579.MAGNETO_HW579 = &MAGNETO;
+	hw579.ACCEL_HW579 = &ACCEL;
+	hw579.GYRO_HW579 = &GYRO;
+
 
 	for(slave_address = 1; slave_address < 128; slave_address++)
 	{
@@ -40,12 +46,16 @@ uint8_t* getI2C_Address(I2C_HandleTypeDef *hi2c)
 	    }
 	}
 
-//	hw579.magneto_address = sensors[0] << 1;
-//	hw579.accel_address   = sensors[1] << 1;
-//	hw579.gyro_address    = sensors[2] << 1;
-	hw579.MAGNETO_HW579->magneto_address = sensors[0] << 1;
+
+	hw579.MAGNETO_HW579->magneto_address   = sensors[0] << 1;
 	hw579.ACCEL_HW579->accel_address	   = sensors[1] << 1;
 	hw579.GYRO_HW579->gyro_address   	   = sensors[2] << 1;
+
+
+	printf("enum : %d %d %d\r\n", magneto, accel ,gyro);
+	printf("MAGNETO : 0x%X  = 0x%X\r\n", hw579.MAGNETO_HW579->magneto_address, sensors[0]<< 1);
+	printf("ACCEL   : 0x%X  = 0x%X\r\n", hw579.ACCEL_HW579->accel_address, sensors[1]<< 1);
+	printf("GYRO    : 0x%X  = 0x%X\r\n", hw579.GYRO_HW579->gyro_address, sensors[2]<< 1);
 
 
 #ifdef DEBUG_PRINT
@@ -121,14 +131,17 @@ void HW579_init(I2C_HandleTypeDef *hi2c)
 {
 	hw579.i2c = *hi2c;
 
+	getI2C_Address(hi2c);
+
 	Magneto_init();
 	Accel_init();
 	Gyro_init();
+
 }
 
 void HW579_Read(void)
 {
-	uint16_t hw579_buf[14];
+//	uint16_t hw579_buf[14];
 	Gyro_Read();
 }
 

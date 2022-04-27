@@ -113,7 +113,7 @@ int main(void)
   printf("I2C Scan Start\r\n");
   printf("==================\r\n");
 
-  getI2C_Address(&hi2c1);
+  //getI2C_Address(&hi2c1);
 
   printf("==================\r\n");
   printf("End Scanning\r\n");

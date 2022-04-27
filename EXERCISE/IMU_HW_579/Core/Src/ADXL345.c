@@ -17,7 +17,7 @@ extern HW579 hw579;
 
 void Accel_init(void)
 {
-	hw579.ACCEL_HW579 = &ACCEL;
+	//printf("0x%X\r\n", ACCEL.accel_address);
 
 	I2C_Writebyte(&ACCEL, ADXL345_POWER_CTL, 0, accel);
 	I2C_Writebyte(&ACCEL, ADXL345_POWER_CTL, 16, accel);

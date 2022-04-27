@@ -39,9 +39,6 @@ typedef enum
 
 
 
-
-//HW579 hw579 = {0, };
-
 uint8_t* getI2C_Address(I2C_HandleTypeDef *hi2c);
 void HW579_init(I2C_HandleTypeDef *hi2c);
 void HW579_Read(void);

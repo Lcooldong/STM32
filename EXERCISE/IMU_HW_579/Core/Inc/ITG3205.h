@@ -124,7 +124,7 @@ void Gyro_init(void);
 uint8_t* Gyro_Read(void);
 
 bool isRawDataReady(void);
-void readGyroRaw(uint16_t _GyroXYZ[3]);
+void readGyroRaw(void);
 void setScaleFactor(float _Xcoeff, float _Ycoeff, float _Zcoeff, bool _Radians);
 void setOffsets(uint16_t _Xoffset, uint16_t _Yoffset, uint16_t _Zoffset);
 void zeroCalibrate(uint16_t totSamples, uint16_t sampleDelayMS);
