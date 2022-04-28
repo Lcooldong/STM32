@@ -49,6 +49,7 @@
 /* USER CODE BEGIN PV */
 uint8_t buffer[128] = {0, };
 extern HW579 hw579;
+extern ITG3205 GYRO;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -129,7 +130,7 @@ int main(void)
   while (1)
   {
 	  //HW579_Read();
-	  Gyro_Read();
+	  Gyro_Read(&GYRO);
 
 	  HAL_Delay(100);
 

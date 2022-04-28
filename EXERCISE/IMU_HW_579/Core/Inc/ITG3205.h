@@ -121,8 +121,8 @@ typedef struct __ITG3205{
 
 
 void Gyro_Writebyte(uint8_t register_address, uint8_t data);
-void Gyro_init(void);
-void Gyro_Read(void);
+void Gyro_init(ITG3205* SENSOR);
+void Gyro_Read(I2C_HandleTypeDef *i2c);
 
 bool isRawDataReady(void);
 void readGyroRaw(void);

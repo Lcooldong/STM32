@@ -23,6 +23,7 @@ uint8_t* getI2C_Address(I2C_HandleTypeDef *hi2c)
 	uint8_t numSensors = 0;
 	static uint8_t sensors[3] = {0, };
 
+	//hw579.i2c = hi2c;
 	hw579.MAGNETO_HW579 = &MAGNETO;
 	hw579.ACCEL_HW579 = &ACCEL;
 	hw579.GYRO_HW579 = &GYRO;
@@ -104,8 +105,8 @@ uint8_t I2C_Readbyte(void * SENSOR, uint8_t register_address, uint8_t TYPE)
 	switch(TYPE)
 	{
 		case magneto:
-			HAL_I2C_Master_Transmit(&(((HW579 *)SENSOR)->i2c), ((HW579 *)SENSOR)->magneto_address, Trans, 1, 10);
-			HAL_I2C_Master_Receive(&(((HW579 *)SENSOR)->i2c), ((HW579 *)SENSOR)->magneto_address, Receive, 1, 10);
+			HAL_I2C_Master_Transmit(&(((HMC5883L *)SENSOR)->i2c), ((HMC5883L *)SENSOR)->magneto_address, Trans, 1, 10);
+			HAL_I2C_Master_Receive(&(((HMC5883L *)SENSOR)->i2c), ((HMC5883L *)SENSOR)->magneto_address, Receive, 1, 10);
 			break;
 
 		case accel:
@@ -132,20 +133,22 @@ uint8_t I2C_Readbyte(void * SENSOR, uint8_t register_address, uint8_t TYPE)
 
 void HW579_init(I2C_HandleTypeDef *hi2c)
 {
-	hw579.i2c = hi2c;
+	hw579.i2c = *hi2c;
 
 	getI2C_Address(hi2c);
 
 	Magneto_init();
 	Accel_init();
-	Gyro_init();
+	//printf("INIT :0x%X\r\n", hw579.GYRO_HW579->gyro_address);
+	//printf("INIT :0x%X\r\n", GYRO.gyro_address);
+	Gyro_init(hw579.GYRO_HW579);
 
 }
 
 void HW579_Read(void)
 {
 //	uint16_t hw579_buf[14];
-	Gyro_Read();
+	Gyro_Read(&hw579.i2c);
 }
 
 

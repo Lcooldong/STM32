@@ -18,16 +18,16 @@
 
 
 typedef struct __HW579{
-	I2C_HandleTypeDef *i2c;
+	I2C_HandleTypeDef i2c;
 
 	struct __HMC5883L *MAGNETO_HW579;
 	struct __ADXL345 *ACCEL_HW579;
 	struct __ITG3205 *GYRO_HW579;
 
 
-	uint8_t magneto_address;
-	uint8_t accel_address;
-	uint8_t gyro_address;
+	//uint8_t magneto_address;
+	//uint8_t accel_address;
+	//uint8_t gyro_address;
 }HW579, *pHW579;
 
 typedef enum

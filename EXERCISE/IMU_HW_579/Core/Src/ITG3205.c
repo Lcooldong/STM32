@@ -28,10 +28,11 @@ uint8_t Gyro_Readbyte(uint8_t register_address)
 }
 
 
-void Gyro_init(void)	// struct -> i2c
+void Gyro_init(ITG3205* SENSOR)	// struct -> i2c
 {
 
-	//printf("0x%X\r\n", GYRO.gyro_address);
+	printf("INIT G : 0x%X\r\n", GYRO.gyro_address);
+	GYRO.i2c = SENSOR->i2c;
 
 	I2C_Writebyte(&GYRO, PWR_MGM, 0x00, gyro);
 	HAL_Delay(100);
@@ -47,15 +48,22 @@ void Gyro_init(void)	// struct -> i2c
 	HAL_Delay(GYROSTART_UP_DELAY);
 }
 
-void Gyro_Read(void)
+void Gyro_Read(I2C_HandleTypeDef *i2c)
 {
-	readGyroRaw();
+
+
+	//GYRO.i2c = *i2c;
+	GYRO.i2c = hi2c1;
+	//printf("Gyro_Read : 0x%X\r\n", GYRO.gyro_address);
+
+	//readGyroRaw();
 	uint8_t gyro_buf[8];
-	HAL_I2C_Mem_Read(&(GYRO.i2c), GYRO.gyro_address, TEMP_OUT, I2C_MEMADD_SIZE_8BIT, (uint8_t*)gyro_buf, sizeof(gyro_buf), 10);
-	GYRO.scaled_gyro_temp = (float)((gyro_buf[0] << 8) | gyro_buf[1])/16.4;
-	GYRO.scaled_gyro_X = (float)((gyro_buf[2] << 8) | gyro_buf[3]);
-	GYRO.scaled_gyro_Y = (float)((gyro_buf[4] << 8) | gyro_buf[5]);
-	GYRO.scaled_gyro_Z = (float)((gyro_buf[6] << 8) | gyro_buf[7]);
+	HAL_I2C_Mem_Read(&(GYRO.i2c), GYRO.gyro_address, TEMP_OUT, I2C_MEMADD_SIZE_8BIT, gyro_buf, sizeof(gyro_buf), 10);
+	//HAL_I2C_Mem_Read(&(SENSOR->i2c), SENSOR->gyro_address, TEMP_OUT, I2C_MEMADD_SIZE_8BIT, gyro_buf, sizeof(gyro_buf), 10);
+	GYRO.scaled_gyro_temp = ((float)((gyro_buf[0] << 8) | gyro_buf[1]))/16.4;
+	GYRO.scaled_gyro_X = ((float)((gyro_buf[2] << 8) | gyro_buf[3]))/16.4;
+	GYRO.scaled_gyro_Y = ((float)((gyro_buf[4] << 8) | gyro_buf[5]))/16.4;
+	GYRO.scaled_gyro_Z = ((float)((gyro_buf[6] << 8) | gyro_buf[7]))/16.4;
 
 
 	printf("%8.2f %8.2f %8.2f\r\n", GYRO.scaled_gyro_X, GYRO.scaled_gyro_Y, GYRO.scaled_gyro_Z);
@@ -129,7 +137,7 @@ bool isRawDataReady(void)
 {
 	uint8_t buff[6];
 	HAL_StatusTypeDef state;
-	state = HAL_I2C_Mem_Read(&(hw579.i2c), hw579.gyro_address, INT_STATUS, 1, buff, 1, 10);
+	state = HAL_I2C_Mem_Read(&hw579.i2c, hw579.GYRO_HW579->gyro_address, INT_STATUS, 1, buff, 1, 10);
 	if(state != HAL_OK) while(HAL_I2C_GetState(&hw579.i2c) != HAL_I2C_STATE_READY);
 	return (buff[0] & INTSTATUS_RAW_DATA_RDY);
 }
