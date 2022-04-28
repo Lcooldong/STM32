@@ -132,7 +132,7 @@ uint8_t I2C_Readbyte(void * SENSOR, uint8_t register_address, uint8_t TYPE)
 
 void HW579_init(I2C_HandleTypeDef *hi2c)
 {
-	hw579.i2c = *hi2c;
+	hw579.i2c = hi2c;
 
 	getI2C_Address(hi2c);
 

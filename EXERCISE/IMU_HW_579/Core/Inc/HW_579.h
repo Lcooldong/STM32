@@ -18,7 +18,7 @@
 
 
 typedef struct __HW579{
-	I2C_HandleTypeDef i2c;
+	I2C_HandleTypeDef *i2c;
 
 	struct __HMC5883L *MAGNETO_HW579;
 	struct __ADXL345 *ACCEL_HW579;

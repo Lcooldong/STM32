@@ -48,7 +48,7 @@
 
 /* USER CODE BEGIN PV */
 uint8_t buffer[128] = {0, };
-
+extern HW579 hw579;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
