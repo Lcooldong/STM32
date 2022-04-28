@@ -75,14 +75,17 @@ void I2C_Writebyte(void * SENSOR, uint8_t register_address, uint8_t data, uint8_
 	{
 		case magneto:
 			HAL_I2C_Master_Transmit(&(((HMC5883L *)SENSOR)->i2c), ((HMC5883L *)SENSOR)->magneto_address, Trans, 2, 10);
+			printf("M : 0x%X\r\n", ((HMC5883L *)SENSOR)->magneto_address);
 			break;
 
 		case accel:
 			HAL_I2C_Master_Transmit(&(((ADXL345 *)SENSOR)->i2c), hw579.ACCEL_HW579->accel_address, Trans, 2, 10);
+			printf("A : 0x%X\r\n", hw579.ACCEL_HW579->accel_address);
 			break;
 
 		case gyro:
 			HAL_I2C_Master_Transmit(&(((ITG3205 *)SENSOR)->i2c), ((ITG3205 *)SENSOR)->gyro_address, Trans, 2, 10);
+			printf("G : 0x%X\r\n",  ((ITG3205 *)SENSOR)->gyro_address);
 			break;
 
 		default:

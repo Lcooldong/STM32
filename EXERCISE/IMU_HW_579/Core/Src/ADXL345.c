@@ -30,7 +30,6 @@ void Accel_init(void)
 uint8_t* Accel_Read()
 {
 
-
 	HAL_I2C_Mem_Read(&(ACCEL.i2c), ACCEL.accel_address , ADXL345_DATAX0, I2C_MEMADD_SIZE_8BIT, accel_buf, sizeof(accel_buf), 10);
 	ACCEL.accel_X = (((uint16_t)accel_buf[1]) << 8) | accel_buf[0];
 	ACCEL.accel_Y = (((uint16_t)accel_buf[3]) << 8) | accel_buf[2];

@@ -27,6 +27,7 @@
 typedef struct __HMC5883L{
 	I2C_HandleTypeDef i2c;
 	uint8_t magneto_address;
+	uint8_t magneto_address_read;
 
 	uint16_t XAxis;
 	uint16_t YAxis;

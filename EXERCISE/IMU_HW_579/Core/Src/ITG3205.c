@@ -8,9 +8,6 @@
 #include "ITG3205.h"
 
 
-
-float scalefactor[3];
-uint16_t offsets[3];
 ITG3205 GYRO;
 extern HW579 hw579;
 
@@ -38,34 +35,31 @@ void Gyro_init(void)	// struct -> i2c
 
 	I2C_Writebyte(&GYRO, PWR_MGM, 0x00, gyro);
 	HAL_Delay(100);
-	I2C_Writebyte(&GYRO, PWR_MGM, PLL_XGYRO_REF, gyro);
+	I2C_Writebyte(&GYRO, PWR_MGM, 0x01, gyro);
 	I2C_Writebyte(&GYRO, SMPLRT_DIV, NOSRDIVIDER, gyro);
-	I2C_Writebyte(&GYRO, DLPF_FS, RANGE2000, gyro);
-	I2C_Writebyte(&GYRO, DLPF_FS, BW256_SR8, gyro);
-	I2C_Writebyte(&GYRO, INT_CFG, INTCFG_ITG_RDY_EN, gyro);
-	I2C_Writebyte(&GYRO, INT_CFG, INTCFG_RAW_RDY_EN, gyro);
+	I2C_Writebyte(&GYRO, DLPFFS_FS_SEL, RANGE2000 << 3, gyro);
+	I2C_Writebyte(&GYRO, DLPFFS_DLPF_CFG, BW256_SR8, gyro);
+	I2C_Writebyte(&GYRO, PWRMGM_CLK_SEL, PLL_ZGYRO_REF, gyro);
+	I2C_Writebyte(&GYRO, INTCFG_ITG_RDY_EN, INTSTATUS_ITG_RDY, gyro);
+	I2C_Writebyte(&GYRO, INTCFG_RAW_RDY_EN, INTSTATUS_RAW_DATA_RDY, gyro);
+
 
 	HAL_Delay(GYROSTART_UP_DELAY);
 }
 
-uint8_t* Gyro_Read(void)
+void Gyro_Read(void)
 {
 	readGyroRaw();
 	uint8_t gyro_buf[8];
-	HAL_I2C_Mem_Read(&(GYRO.i2c), GYRO.gyro_address , TEMP_OUT, I2C_MEMADD_SIZE_8BIT, gyro_buf, sizeof(gyro_buf), 10);
-	GYRO.scaled_gyro_temp = (gyro_buf[0] << 8) | gyro_buf[1];
-	GYRO.scaled_gyro_X = (gyro_buf[2] << 8) | gyro_buf[3];
-	GYRO.scaled_gyro_Y = (gyro_buf[4] << 8) | gyro_buf[5];
-	GYRO.scaled_gyro_Z = (gyro_buf[6] << 8) | gyro_buf[7];
-
-	for(int i=0; i < 8; i++)
-	{
-		printf("%f\r\n", (float)gyro_buf[i]);
-	}
+	HAL_I2C_Mem_Read(&(GYRO.i2c), GYRO.gyro_address, TEMP_OUT, I2C_MEMADD_SIZE_8BIT, (uint8_t*)gyro_buf, sizeof(gyro_buf), 10);
+	GYRO.scaled_gyro_temp = (float)((gyro_buf[0] << 8) | gyro_buf[1])/16.4;
+	GYRO.scaled_gyro_X = (float)((gyro_buf[2] << 8) | gyro_buf[3]);
+	GYRO.scaled_gyro_Y = (float)((gyro_buf[4] << 8) | gyro_buf[5]);
+	GYRO.scaled_gyro_Z = (float)((gyro_buf[6] << 8) | gyro_buf[7]);
 
 
+	printf("%8.2f %8.2f %8.2f\r\n", GYRO.scaled_gyro_X, GYRO.scaled_gyro_Y, GYRO.scaled_gyro_Z);
 
-	return gyro_buf;
 }
 
 
@@ -77,10 +71,6 @@ void readGyroRaw(void)
 	GYRO.gyro_Y = databuf[2] << 8 | databuf[3];
 	GYRO.gyro_Z = databuf[4] << 8 | databuf[5];
 
-	for(int i=0; i< 6; i++)
-	{
-		printf("raw : %u\r\n", databuf[i]);
-	}
 }
 
 
@@ -147,37 +137,37 @@ bool isRawDataReady(void)
 
 void setScaleFactor(float _Xcoeff, float _Ycoeff, float _Zcoeff, bool _Radians)
 {
-	scalefactor[0] = 14.375 * _Xcoeff;
-	scalefactor[1] = 14.375 * _Ycoeff;
-	scalefactor[2] = 14.375 * _Zcoeff;
+	GYRO.scalefactor_X = 14.375 * _Xcoeff;
+	GYRO.scalefactor_Y = 14.375 * _Ycoeff;
+	GYRO.scalefactor_Z = 14.375 * _Zcoeff;
 
 
 	if (_Radians){
-		scalefactor[0] /= 0.0174532925;//0.0174532925 = PI/180
-		scalefactor[1] /= 0.0174532925;
-		scalefactor[2] /= 0.0174532925;
+		GYRO.scalefactor_X /= 0.0174532925;//0.0174532925 = PI/180
+		GYRO.scalefactor_Y /= 0.0174532925;
+		GYRO.scalefactor_Z /= 0.0174532925;
 	}
 }
 
 void setOffsets(uint16_t _Xoffset, uint16_t _Yoffset, uint16_t _Zoffset )
 {
-	offsets[0] = _Xoffset;
-	offsets[1] = _Yoffset;
-	offsets[2] = _Zoffset;
+	GYRO.offset_X = _Xoffset;
+	GYRO.offset_Y = _Yoffset;
+	GYRO.offset_Z = _Zoffset;
 }
 
 void zeroCalibrate(uint16_t totSamples, uint16_t sampleDelayMS)
 {
-	float tmpOffsets[] = {0,0, 0};
-	uint16_t xyz[3];
+	float tmpOffsets[] = {0, 0, 0};
+
 
 	for(int i = 0; i < totSamples; i++)
 	{
 		HAL_Delay(sampleDelayMS);
 		readGyroRaw();
-		tmpOffsets[0] += xyz[0];
-		tmpOffsets[1] += xyz[1];
-		tmpOffsets[2] += xyz[2];
+		tmpOffsets[0] += GYRO.gyro_X;
+		tmpOffsets[1] += GYRO.gyro_Y;
+		tmpOffsets[2] += GYRO.gyro_Z;
 
 	}
 	setOffsets(-tmpOffsets[0] / totSamples + 0.5, -tmpOffsets[1] / totSamples + 0.5, -tmpOffsets[2] / totSamples + 0.5);

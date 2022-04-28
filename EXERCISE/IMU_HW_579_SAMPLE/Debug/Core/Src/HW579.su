@@ -1,0 +1,4 @@
+../Core/Src/HW579.c:13:6:Gyro_Writebyte	32	static
+../Core/Src/HW579.c:18:9:Gyro_Readbyte	32	static
+../Core/Src/HW579.c:27:6:init_HW579	16	static
+../Core/Src/HW579.c:53:6:MPU_read_acc_gyro	48	static

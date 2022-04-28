@@ -123,15 +123,13 @@ int main(void)
 //	  printf("result : [0x%X]\r\n", sensors[i]);
 //  }
 
-  HW579_Read();
+
 
 
   while (1)
   {
-
-
-
-
+	  //HW579_Read();
+	  Gyro_Read();
 
 	  HAL_Delay(100);
 
