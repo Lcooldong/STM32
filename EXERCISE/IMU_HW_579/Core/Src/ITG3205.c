@@ -7,66 +7,88 @@
 
 #include "ITG3205.h"
 
-
-ITG3205 GYRO;
+extern I2C_HandleTypeDef hi2c1;
 extern HW579 hw579;
+ITG3205 GYRO = {.gyro_address = 0xD0};
 
-void Gyro_Writebyte(uint8_t register_address, uint8_t data)
+void Gyro_Writebyte(ITG3205* SENSOR, uint8_t register_address, uint8_t data)
 {
 	uint8_t Trans[2] = {register_address, data};
-	HAL_I2C_Master_Transmit(&(GYRO.i2c), GYRO.gyro_address, Trans, 2, 10);
+	HAL_I2C_Master_Transmit(&(SENSOR->i2c), SENSOR->gyro_address, Trans, 2, 10);
 }
 
-uint8_t Gyro_Readbyte(uint8_t register_address)
+uint8_t Gyro_Readbyte(ITG3205* SENSOR, uint8_t register_address)
 {
 	uint8_t Trans[1] = {register_address};
 	uint8_t Receive[1];
-	HAL_I2C_Master_Transmit(&(GYRO.i2c), GYRO.gyro_address, Trans, 1, 10);
-	HAL_I2C_Master_Receive(&(GYRO.i2c), GYRO.gyro_address, Receive, 1, 10);
+	HAL_I2C_Master_Transmit(&(SENSOR->i2c), SENSOR->gyro_address, Trans, 1, 10);
+	HAL_I2C_Master_Receive(&(SENSOR->i2c), SENSOR->gyro_address, Receive, 1, 10);
 
 	return Receive[0];
 }
 
-
-void Gyro_init(ITG3205* SENSOR)	// struct -> i2c
+void Gyro_init(ITG3205 * SENSOR)
+//void Gyro_init(ITG3205* SENSOR)	// struct -> i2c
 {
+	SENSOR = &GYRO;
+	SENSOR->i2c = hi2c1;
 
 	printf("INIT G : 0x%X\r\n", GYRO.gyro_address);
-	GYRO.i2c = SENSOR->i2c;
+	//GYRO.i2c = SENSOR->i2c;
 
-	I2C_Writebyte(&GYRO, PWR_MGM, 0x00, gyro);
-	HAL_Delay(100);
-	I2C_Writebyte(&GYRO, PWR_MGM, 0x01, gyro);
-	I2C_Writebyte(&GYRO, SMPLRT_DIV, NOSRDIVIDER, gyro);
-	I2C_Writebyte(&GYRO, DLPFFS_FS_SEL, RANGE2000 << 3, gyro);
-	I2C_Writebyte(&GYRO, DLPFFS_DLPF_CFG, BW256_SR8, gyro);
-	I2C_Writebyte(&GYRO, PWRMGM_CLK_SEL, PLL_ZGYRO_REF, gyro);
-	I2C_Writebyte(&GYRO, INTCFG_ITG_RDY_EN, INTSTATUS_ITG_RDY, gyro);
-	I2C_Writebyte(&GYRO, INTCFG_RAW_RDY_EN, INTSTATUS_RAW_DATA_RDY, gyro);
+    Gyro_Writebyte(SENSOR,PWR_MGM,0x00);
 
+    HAL_Delay(100);
+    Gyro_Writebyte(SENSOR,PWR_MGM,0x01);
+
+    Gyro_Writebyte(SENSOR,SMPLRT_DIV,0X00);
+
+    Gyro_Writebyte(SENSOR,DLPFFS_FS_SEL, 0x03 << 3);
+
+    Gyro_Writebyte(SENSOR,DLPFFS_DLPF_CFG, BW256_SR8);
+
+    Gyro_Writebyte(SENSOR,PWRMGM_CLK_SEL, PLL_ZGYRO_REF);
+
+    Gyro_Writebyte(SENSOR,INTCFG_ITG_RDY_EN, 0x01 <<2);
+
+    Gyro_Writebyte(SENSOR,INTCFG_RAW_RDY_EN, 0x01);
+
+    HAL_Delay(GYROSTART_UP_DELAY);
+
+
+//	I2C_Writebyte(&GYRO, PWR_MGM, 0x00, gyro);
+//	HAL_Delay(100);
+//	I2C_Writebyte(&GYRO, PWR_MGM, 0x01, gyro);
+//	I2C_Writebyte(&GYRO, SMPLRT_DIV, NOSRDIVIDER, gyro);
+//	I2C_Writebyte(&GYRO, DLPFFS_FS_SEL, RANGE2000 << 3, gyro);
+//	I2C_Writebyte(&GYRO, DLPFFS_DLPF_CFG, BW256_SR8, gyro);
+//	I2C_Writebyte(&GYRO, PWRMGM_CLK_SEL, PLL_ZGYRO_REF, gyro);
+//	I2C_Writebyte(&GYRO, INTCFG_ITG_RDY_EN, INTSTATUS_ITG_RDY, gyro);
+//	I2C_Writebyte(&GYRO, INTCFG_RAW_RDY_EN, INTSTATUS_RAW_DATA_RDY, gyro);
 
 	HAL_Delay(GYROSTART_UP_DELAY);
 }
 
-void Gyro_Read(I2C_HandleTypeDef *i2c)
+void Gyro_Read(ITG3205 *I2C)
 {
-
-
-	//GYRO.i2c = *i2c;
-	GYRO.i2c = hi2c1;
+	I2C = &GYRO;
+	I2C->i2c = hi2c1;
 	//printf("Gyro_Read : 0x%X\r\n", GYRO.gyro_address);
-
-	//readGyroRaw();
-	uint8_t gyro_buf[8];
-	HAL_I2C_Mem_Read(&(GYRO.i2c), GYRO.gyro_address, TEMP_OUT, I2C_MEMADD_SIZE_8BIT, gyro_buf, sizeof(gyro_buf), 10);
+	uint16_t raw_X, raw_Y, raw_Z;
+	uint8_t gyro_buf[6];
+	HAL_I2C_Mem_Read(&(GYRO.i2c), GYRO.gyro_address, GYRO_XOUT, I2C_MEMADD_SIZE_8BIT, gyro_buf, sizeof(gyro_buf), 10);
 	//HAL_I2C_Mem_Read(&(SENSOR->i2c), SENSOR->gyro_address, TEMP_OUT, I2C_MEMADD_SIZE_8BIT, gyro_buf, sizeof(gyro_buf), 10);
-	GYRO.scaled_gyro_temp = ((float)((gyro_buf[0] << 8) | gyro_buf[1]))/16.4;
-	GYRO.scaled_gyro_X = ((float)((gyro_buf[2] << 8) | gyro_buf[3]))/16.4;
-	GYRO.scaled_gyro_Y = ((float)((gyro_buf[4] << 8) | gyro_buf[5]))/16.4;
-	GYRO.scaled_gyro_Z = ((float)((gyro_buf[6] << 8) | gyro_buf[7]))/16.4;
+	//GYRO.scaled_gyro_temp = ((float)((gyro_buf[0] << 8) | gyro_buf[1]))/16.4;
+	raw_X = (gyro_buf[0] << 8) | gyro_buf[1];
+	raw_Y = (gyro_buf[2] << 8) | gyro_buf[3];
+	raw_Z = (gyro_buf[4] << 8) | gyro_buf[5];
+
+	GYRO.scaled_gyro_X = ((float)(raw_X))/16.4;
+	GYRO.scaled_gyro_Y = ((float)(raw_Y))/16.4;
+	GYRO.scaled_gyro_Z = ((float)(raw_Z))/16.4;
 
 
-	printf("%8.2f %8.2f %8.2f\r\n", GYRO.scaled_gyro_X, GYRO.scaled_gyro_Y, GYRO.scaled_gyro_Z);
+	//printf("%8.2f %8.2f %8.2f\r\n", GYRO.scaled_gyro_X, GYRO.scaled_gyro_Y, GYRO.scaled_gyro_Z);
 
 }
 

@@ -79,7 +79,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  init_HW579(&hw579);
+
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -95,7 +95,9 @@ int main(void)
   MX_USART3_UART_Init();
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
+  init_HW579(&hw579);
   printf("ADDRESS : 0x%X\r\n", hw579.gyro_address);
+  HAL_Delay(1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */

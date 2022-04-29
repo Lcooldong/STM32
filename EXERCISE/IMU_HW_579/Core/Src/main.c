@@ -27,6 +27,7 @@
 #include "stdio.h"
 #include "stdbool.h"
 #include "HW_579.h"
+#include "ITG3205.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,7 +100,9 @@ int main(void)
   MX_USART3_UART_Init();
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
-  HW579_init(&hi2c1);
+  //HW579_init(&hi2c1);
+  Gyro_init(&GYRO);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -129,9 +132,9 @@ int main(void)
 
   while (1)
   {
-	  //HW579_Read();
+	  //HW579_Read(&hw579);
 	  Gyro_Read(&GYRO);
-
+	  printf("%8.2f %8.2f %8.2f\r\n", GYRO.scaled_gyro_X,   GYRO.scaled_gyro_Y,  GYRO.scaled_gyro_Z);
 	  HAL_Delay(100);
 
     /* USER CODE END WHILE */

@@ -41,7 +41,7 @@ typedef enum
 
 uint8_t* getI2C_Address(I2C_HandleTypeDef *hi2c);
 void HW579_init(I2C_HandleTypeDef *hi2c);
-void HW579_Read(void);
+void HW579_Read(HW579 *sensor);
 void I2C_Writebyte(void * SENSOR, uint8_t register_address, uint8_t data, uint8_t TYPE);
 uint8_t I2C_Readbyte(void * SENSOR, uint8_t register_address, uint8_t TYPE);
 

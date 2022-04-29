@@ -63,7 +63,7 @@ void MPU_read_acc_gyro(HW579* I2C){
     tempmpugyz=((databuf[4]<<8)|databuf[5]);
 
 
-    I2C->gyro_X = ((float)(tempmpugyx))/16.4;
+    I2C->gyro_X = ((float)(tempmpugyx))/16.4 + 20;
     I2C->gyro_Y = ((float)(tempmpugyy))/16.4;
     I2C->gyro_Z = ((float)(tempmpugyz))/16.4;
 }

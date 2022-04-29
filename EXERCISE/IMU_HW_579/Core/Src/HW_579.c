@@ -8,12 +8,12 @@
 //#define DEBUG_PRINT
 
 #include "HW_579.h"
-HW579 hw579;
+
 extern HMC5883L MAGNETO;
 extern ADXL345 ACCEL;
 extern ITG3205 GYRO;
 
-
+HW579 hw579 = {.MAGNETO_HW579 = &MAGNETO, .ACCEL_HW579 = &ACCEL, .GYRO_HW579 = &GYRO};
 SENSOR_ENUM sensor_enum;
 
 uint8_t* getI2C_Address(I2C_HandleTypeDef *hi2c)
@@ -23,11 +23,9 @@ uint8_t* getI2C_Address(I2C_HandleTypeDef *hi2c)
 	uint8_t numSensors = 0;
 	static uint8_t sensors[3] = {0, };
 
-	//hw579.i2c = hi2c;
-	hw579.MAGNETO_HW579 = &MAGNETO;
-	hw579.ACCEL_HW579 = &ACCEL;
-	hw579.GYRO_HW579 = &GYRO;
-
+	hw579.MAGNETO_HW579->i2c = *hi2c;
+	hw579.ACCEL_HW579->i2c = *hi2c;
+	hw579.GYRO_HW579->i2c = *hi2c;
 
 	for(slave_address = 1; slave_address < 128; slave_address++)
 	{
@@ -145,10 +143,11 @@ void HW579_init(I2C_HandleTypeDef *hi2c)
 
 }
 
-void HW579_Read(void)
+void HW579_Read(HW579 *sensor)
 {
+
 //	uint16_t hw579_buf[14];
-	Gyro_Read(&hw579.i2c);
+	Gyro_Read(sensor->GYRO_HW579);
 }
 
 
