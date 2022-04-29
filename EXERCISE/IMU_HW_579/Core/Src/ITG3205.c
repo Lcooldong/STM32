@@ -8,7 +8,7 @@
 #include "ITG3205.h"
 
 extern I2C_HandleTypeDef hi2c1;
-extern HW579 hw579;
+//extern HW579 hw579;
 ITG3205 GYRO = {.gyro_address = 0xD0};
 
 void Gyro_Writebyte(ITG3205* SENSOR, uint8_t register_address, uint8_t data)
@@ -69,19 +69,22 @@ void Gyro_init(ITG3205 * SENSOR)
 	HAL_Delay(GYROSTART_UP_DELAY);
 }
 
-void Gyro_Read(ITG3205 *I2C)
+void Gyro_Read(ITG3205 *SENSOR)
 {
-	I2C = &GYRO;
-	I2C->i2c = hi2c1;
-	//printf("Gyro_Read : 0x%X\r\n", GYRO.gyro_address);
-	uint16_t raw_X, raw_Y, raw_Z;
 	uint8_t gyro_buf[6];
-	HAL_I2C_Mem_Read(&(GYRO.i2c), GYRO.gyro_address, GYRO_XOUT, I2C_MEMADD_SIZE_8BIT, gyro_buf, sizeof(gyro_buf), 10);
+	uint16_t raw_X, raw_Y, raw_Z;
+	SENSOR = &GYRO;
+	SENSOR->i2c = hi2c1;
+
+	//printf("Gyro_Read : 0x%X\r\n", GYRO.gyro_address);
+
+
+	HAL_I2C_Mem_Read(&(SENSOR->i2c), SENSOR->gyro_address, GYRO_XOUT, I2C_MEMADD_SIZE_8BIT, gyro_buf, sizeof(gyro_buf), 10);
 	//HAL_I2C_Mem_Read(&(SENSOR->i2c), SENSOR->gyro_address, TEMP_OUT, I2C_MEMADD_SIZE_8BIT, gyro_buf, sizeof(gyro_buf), 10);
 	//GYRO.scaled_gyro_temp = ((float)((gyro_buf[0] << 8) | gyro_buf[1]))/16.4;
-	raw_X = (gyro_buf[0] << 8) | gyro_buf[1];
-	raw_Y = (gyro_buf[2] << 8) | gyro_buf[3];
-	raw_Z = (gyro_buf[4] << 8) | gyro_buf[5];
+	raw_X = ((gyro_buf[0] << 8) | gyro_buf[1]);
+	raw_Y = ((gyro_buf[2] << 8) | gyro_buf[3]);
+	raw_Z = ((gyro_buf[4] << 8) | gyro_buf[5]);
 
 	GYRO.scaled_gyro_X = ((float)(raw_X))/16.4;
 	GYRO.scaled_gyro_Y = ((float)(raw_Y))/16.4;
@@ -157,11 +160,12 @@ void setRawDataReady()
 
 bool isRawDataReady(void)
 {
-	uint8_t buff[6];
-	HAL_StatusTypeDef state;
-	state = HAL_I2C_Mem_Read(&hw579.i2c, hw579.GYRO_HW579->gyro_address, INT_STATUS, 1, buff, 1, 10);
-	if(state != HAL_OK) while(HAL_I2C_GetState(&hw579.i2c) != HAL_I2C_STATE_READY);
-	return (buff[0] & INTSTATUS_RAW_DATA_RDY);
+	//uint8_t buff[6];
+	//HAL_StatusTypeDef state;
+	//state = HAL_I2C_Mem_Read(&hw579.i2c, hw579.GYRO_HW579->gyro_address, INT_STATUS, 1, buff, 1, 10);
+	//if(state != HAL_OK) while(HAL_I2C_GetState(&hw579.i2c) != HAL_I2C_STATE_READY);
+	//return (buff[0] & INTSTATUS_RAW_DATA_RDY);
+	return 0;
 }
 
 

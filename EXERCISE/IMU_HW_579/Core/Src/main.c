@@ -26,7 +26,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
 #include "stdbool.h"
-#include "HW_579.h"
+//#include "HW_579.h"
 #include "ITG3205.h"
 /* USER CODE END Includes */
 
@@ -49,7 +49,7 @@
 
 /* USER CODE BEGIN PV */
 uint8_t buffer[128] = {0, };
-extern HW579 hw579;
+//extern HW579 hw579;
 extern ITG3205 GYRO;
 /* USER CODE END PV */
 

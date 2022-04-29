@@ -9,8 +9,10 @@
 #define INC_ITG3205_H_
 
 
-#include "HW_579.h"
+//#include "HW_579.h"
 #include "i2c.h"
+#include "stdbool.h"
+#include "stdio.h"
 
 
 
@@ -97,6 +99,7 @@
 typedef struct __ITG3205{
 	I2C_HandleTypeDef i2c;
 	uint8_t gyro_address;
+
 	uint8_t gyro_address_read;
 
 	uint16_t offset_X;
@@ -117,14 +120,14 @@ typedef struct __ITG3205{
 	float scaled_gyro_X;
 	float scaled_gyro_Y;
 	float scaled_gyro_Z;
-}ITG3205, *pITG3205;
+}ITG3205;
 
 
 
 void Gyro_Writebyte(ITG3205* SENSOR, uint8_t register_address, uint8_t data);
 uint8_t Gyro_Readbyte(ITG3205* SENSOR, uint8_t register_address);
-void Gyro_init(ITG3205 *I2C);
-void Gyro_Read(ITG3205 *I2C);
+void Gyro_init(ITG3205 *SENSOR);
+void Gyro_Read(ITG3205 *SENSOR);
 
 bool isRawDataReady(void);
 void readGyroRaw(void);
