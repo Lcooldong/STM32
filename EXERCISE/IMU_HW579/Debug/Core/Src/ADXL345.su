@@ -1,0 +1,5 @@
+../Core/Src/ADXL345.c:17:6:Accel_init	4	static
+../Core/Src/ADXL345.c:29:10:Accel_Read	24	static
+../Core/Src/ADXL345.c:40:6:get_Gxyz	32	static
+../Core/Src/ADXL345.c:51:6:Accel_Writebyte	16	static
+../Core/Src/ADXL345.c:56:9:Accel_Readbyte	4	static

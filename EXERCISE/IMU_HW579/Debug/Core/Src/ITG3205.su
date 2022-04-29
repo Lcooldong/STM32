@@ -1,0 +1,4 @@
+../Core/Src/ITG3205.c:14:6:Gyro_Writebyte	32	static
+../Core/Src/ITG3205.c:19:9:Gyro_Readbyte	32	static
+../Core/Src/ITG3205.c:28:6:Gyro_Init	16	static
+../Core/Src/ITG3205.c:54:6:Read_Gyro	48	static
