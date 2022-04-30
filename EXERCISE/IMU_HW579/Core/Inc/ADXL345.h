@@ -9,6 +9,7 @@
 #define INC_ADXL345_H_
 
 #include "i2c.h"
+#include "stdbool.h"
 
 /* ------- Register names ------- */
 #define ADXL345_DEVID 0x00
@@ -107,21 +108,25 @@ typedef struct __ADXL345{
 	double gain_Y;
 	double gain_Z;
 
-	uint16_t accel_X;
-	uint16_t accel_Y;
-	uint16_t accel_Z;
+	uint16_t raw_accel_X;
+	uint16_t raw_accel_Y;
+	uint16_t raw_accel_Z;
 
 	float scaled_accel_X;
 	float scaled_accel_Y;
 	float scaled_accel_Z;
 
+	bool status;
+	uint8_t error_code;
+
 }ADXL345, *pADXL345;
 
+void Accel_Writebyte(ADXL345 * SENSOR, uint8_t register_address, uint8_t data);
+uint8_t Accel_Readbyte(ADXL345 * SENSOR,uint8_t register_address);
+void Accel_init(ADXL345* SENSOR);
+void Read_Accel(ADXL345* SENSOR);
+void Get_Accel(ADXL345* SENSOR);
 
-void Accel_init(void);
-uint16_t *Accel_read();
-void Accel_Writebyte(uint8_t address, uint8_t val);
-uint8_t Accel_Readbyte();
 
 
 

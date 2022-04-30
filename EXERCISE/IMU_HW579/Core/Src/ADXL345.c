@@ -9,52 +9,81 @@
 #include "ADXL345.h"
 
 uint8_t error_code;       // Initial state
-double gains[3] = {0.00376390, 0.00376009, 0.00349265};        // counts to Gs
-uint8_t accel_buf[6] ;
-ADXL345 ACCEL;
+ADXL345 ACCEL = {.gain_X = 0.00376390, .gain_Y = 0.00376009, .gain_Z = 0.00349265};
 
 
-void Accel_init(void)
+void Accel_Writebyte(ADXL345 * SENSOR, uint8_t register_address, uint8_t data)
 {
-	//printf("0x%X\r\n", ACCEL.accel_address);
+    uint8_t Trans[2]={register_address, data};
+    HAL_I2C_Master_Transmit(&(SENSOR->i2c), SENSOR->accel_address, Trans,2,10);
+}
 
-//	I2C_Writebyte(&ACCEL, ADXL345_POWER_CTL, 0, accel);
-//	I2C_Writebyte(&ACCEL, ADXL345_POWER_CTL, 16, accel);
-//	I2C_Writebyte(&ACCEL, ADXL345_POWER_CTL, 8, accel);
+uint8_t Accel_Readbyte(ADXL345 * SENSOR,uint8_t register_address)
+{
+	HAL_StatusTypeDef state;
+    uint8_t Trans[1]={register_address};
+    uint8_t Receive[1];
+
+    HAL_I2C_Master_Transmit(&(SENSOR->i2c), SENSOR->accel_address,Trans,1,10);
+    state = HAL_I2C_Master_Receive(&(SENSOR->i2c),SENSOR->accel_address, Receive,1,10);
+    if(state != HAL_OK)
+    {
+    	SENSOR->status = ADXL345_ERROR;
+    	SENSOR->error_code = ADXL345_READ_ERROR;
+    	while(HAL_I2C_GetState(&(SENSOR->i2c)) != HAL_I2C_STATE_READY);
+    }
+
+
+    return Receive[0];
+}
+
+
+void Accel_init(ADXL345* SENSOR)
+{
+	Accel_Writebyte(SENSOR, ADXL345_POWER_CTL, 0);
+	Accel_Writebyte(SENSOR, ADXL345_POWER_CTL, 16);
+	Accel_Writebyte(SENSOR, ADXL345_POWER_CTL, 8);
 
 }
 
 
 
-uint8_t* Accel_Read()
+void Read_Accel(ADXL345* SENSOR)
 {
+	uint8_t accel_buf[6] ;
 
 	HAL_I2C_Mem_Read(&(ACCEL.i2c), ACCEL.accel_address , ADXL345_DATAX0, I2C_MEMADD_SIZE_8BIT, accel_buf, sizeof(accel_buf), 10);
-	ACCEL.accel_X = (((uint16_t)accel_buf[1]) << 8) | accel_buf[0];
-	ACCEL.accel_Y = (((uint16_t)accel_buf[3]) << 8) | accel_buf[2];
-	ACCEL.accel_Z = (((uint16_t)accel_buf[5]) << 8) | accel_buf[4];
+	SENSOR->raw_accel_X = (((uint16_t)accel_buf[1]) << 8) | accel_buf[0];
+	SENSOR->raw_accel_Y = (((uint16_t)accel_buf[3]) << 8) | accel_buf[2];
+	SENSOR->raw_accel_Z = (((uint16_t)accel_buf[5]) << 8) | accel_buf[4];
 
-	return accel_buf;
 }
 
-void get_Gxyz(double *xyz)
+void Get_Accel(ADXL345* SENSOR)
 {
-	uint16_t i;
-	uint16_t xyz_int[3];
-	Accel_Read(&ACCEL);
-	for(i=0; i<3; i++)
-	{
-		xyz[i] = xyz_int[i] * gains[i];
-	}
-}
-
-void Accel_Writebyte(uint8_t address, uint8_t val)
-{
+	Read_Accel(SENSOR);
+	SENSOR->scaled_accel_X = SENSOR->raw_accel_X * SENSOR->gain_X;
+	SENSOR->scaled_accel_Y = SENSOR->raw_accel_Y * SENSOR->gain_Y;
+	SENSOR->scaled_accel_Z = SENSOR->raw_accel_Z * SENSOR->gain_Z;
 
 }
 
-uint8_t Accel_Readbyte()
-{
 
-	return 0;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
