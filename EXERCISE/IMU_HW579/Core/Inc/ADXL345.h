@@ -108,9 +108,9 @@ typedef struct __ADXL345{
 	double gain_Y;
 	double gain_Z;
 
-	uint16_t raw_accel_X;
-	uint16_t raw_accel_Y;
-	uint16_t raw_accel_Z;
+	int16_t raw_accel_X;
+	int16_t raw_accel_Y;
+	int16_t raw_accel_Z;
 
 	float scaled_accel_X;
 	float scaled_accel_Y;

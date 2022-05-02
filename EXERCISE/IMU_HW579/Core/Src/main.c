@@ -26,6 +26,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
 #include "ITG3205.h"
+#include "ADXL345.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,6 +47,7 @@
 
 /* USER CODE BEGIN PV */
 extern ITG3205 GYRO;
+extern ADXL345 ACCEL;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -96,6 +98,7 @@ int main(void)
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
   Gyro_Init(&GYRO);
+  Accel_init(&ACCEL);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -103,8 +106,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  Read_Gyro(&GYRO);
-	  printf("%8.2f %8.2f %8.2f\r\n", GYRO.gyro_X, GYRO.gyro_Y, GYRO.gyro_Z);
+	  //Read_Gyro(&GYRO);
+	  Read_Gyro_Temperature(&GYRO);
+	  Read_Accel(&ACCEL);
+	  printf("%8.2f  %8.2d %8.2d %8.2d\r\n", GYRO.gyro_Temp, ACCEL.raw_accel_X, ACCEL.raw_accel_Y, ACCEL.raw_accel_Z);
+
+	  //printf("%8.2f %8.2f %8.2f\r\n", GYRO.gyro_X, GYRO.gyro_Y, GYRO.gyro_Z);
 	  HAL_Delay(100);
     /* USER CODE BEGIN 3 */
   }

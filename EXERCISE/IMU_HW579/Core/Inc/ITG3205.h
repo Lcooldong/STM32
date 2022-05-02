@@ -9,6 +9,7 @@
 #define INC_ITG3205_H_
 
 #include "i2c.h"
+#include "stdbool.h"
 
 #define ITG3200_ADDR_AD0_HIGH  0x69   //AD0=1 0x69 I2C address when AD0 is connected to HIGH (VCC) - default for sparkfun breakout
 #define ITG3200_ADDR_AD0_LOW   0x68   //AD0=0 0x68 I2C address when AD0 is connected to LOW (GND)
@@ -101,6 +102,14 @@ typedef struct __ITG3205{
 	double base_gyro_Y;
 	double base_gyro_Z;
 
+	float scaleFactor_X;
+	float scaleFactor_Y;
+	float scaleFactor_Z;
+
+	uint16_t offset_X;
+	uint16_t offset_Y;
+	uint16_t offset_Z;
+
 	double scaled_gyro_X;
 	double scaled_gyro_Y;
 	double scaled_gyro_Z;
@@ -109,6 +118,7 @@ typedef struct __ITG3205{
 	double gyro_Y;
 	double gyro_Z;
 
+	float gyro_Temp;
 
 }ITG3205;
 
@@ -116,7 +126,8 @@ void Gyro_Writebyte(ITG3205 * SENSOR,uint8_t register_address,uint8_t data);
 uint8_t Gyro_Readbyte(ITG3205 * SENSOR,uint8_t register_address);
 void Gyro_Init(ITG3205* sensor);
 void Read_Gyro(ITG3205* sensor);
-void Calibrate_Gyro(ITG3205* SENSOR);
-void Get_Gyro(ITG3205* SENSOR);
+void Read_Gyro_Temperature(ITG3205* SENSOR);
+void Calibrate_Gyro(ITG3205* SENSOR, uint16_t totSamples, uint16_t sampleDelayMS);
+
 
 #endif /* INC_ITG3205_H_ */
