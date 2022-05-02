@@ -43,7 +43,7 @@ typedef struct __HMC5883L{
 }HMC5883L, *pHMC5883L;
 
 
-void Magneto_init(void);
+void Magneto_Init(HMC5883L* SENSOR);
 void ReadRawAxix(void);
 void ReadScaledAxis(void);
 uint8_t SetScale(float gauss);

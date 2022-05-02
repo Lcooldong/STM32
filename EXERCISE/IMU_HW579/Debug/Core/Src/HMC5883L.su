@@ -1,4 +1,4 @@
-../Core/Src/HMC5883L.c:14:6:Magneto_init	4	static
+../Core/Src/HMC5883L.c:14:6:Magneto_Init	16	static
 ../Core/Src/HMC5883L.c:20:6:ReadRawAxix	32	static
 ../Core/Src/HMC5883L.c:29:6:ReadScaledAxis	4	static
 ../Core/Src/HMC5883L.c:37:9:SetScale	24	static
