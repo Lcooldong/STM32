@@ -11,7 +11,7 @@
 HMC5883L MAGNETO = {.m_Scale = 1};
 
 
-void Magneto_init()
+void Magneto_Init(HMC5883L* SENSOR)
 {
 	//printf("0x%X\r\n", MAGNETO.magneto_address);
 }

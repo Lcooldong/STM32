@@ -27,6 +27,7 @@
 #include "stdio.h"
 #include "ITG3205.h"
 #include "ADXL345.h"
+#include "HMC5883L.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,6 +49,7 @@
 /* USER CODE BEGIN PV */
 extern ITG3205 GYRO;
 extern ADXL345 ACCEL;
+extern HMC5883L MAGNETO;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -98,7 +100,8 @@ int main(void)
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
   Gyro_Init(&GYRO);
-  Accel_init(&ACCEL);
+  Accel_Init(&ACCEL);
+  Magneto_Init(&MAGNETO);
   /* USER CODE END 2 */
 
   /* Infinite loop */
