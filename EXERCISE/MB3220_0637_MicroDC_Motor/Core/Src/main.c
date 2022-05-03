@@ -18,16 +18,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "i2c.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
-#include "ITG3205.h"
-#include "ADXL345.h"
-#include "HMC5883L.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,17 +44,19 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-extern ITG3205 GYRO;
-extern ADXL345 ACCEL;
-extern HMC5883L MAGNETO;
+uint8_t dir = 0;
+uint16_t interval = 50;
+int16_t temp_Interval;
+int32_t temp_CCR = 0;
+uint32_t turningPoint = 2000;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-int _write(int file, char *p, int len)
+int _write(int file, char* p, int len)
 {
-	if(HAL_UART_Transmit(&huart3, (uint8_t *)p, len, 10) == HAL_OK) return len;
+	if(HAL_UART_Transmit(&huart3, (uint8_t *)p, len, 10) == HAL_OK ) return len;
 	else return 0;
 }
 /* USER CODE END PFP */
@@ -95,28 +94,57 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_I2C1_Init();
+  MX_TIM5_Init();
   MX_USART3_UART_Init();
-  MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
-  Gyro_Init(&GYRO);
-  Accel_Init(&ACCEL);
-  Magneto_Init(&MAGNETO);
+  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+  //__HAL_TIM_SetCompare(&htim5, TIM_CHANNEL_1, 10000-1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  uint32_t freq = (HAL_RCC_GetPCLK1Freq()*2)/(htim5.Instance->PSC + 1);	// 90/90 = 1MHz
+  freq = freq / (TIM5->ARR + 1);	// 1M / 10000 = 100Hz
+
+  //temp_CCR = TIM5->CCR1 + 1;
+  printf("====Start====\r\n");
+  printf("Compare : %4d | TEMP : %5d | DIR :%d\r\n", (int)TIM5->CCR1, (int)temp_CCR ,dir);
+  HAL_Delay(2000);
+  printf("====Start====\r\n");
+
   while (1)
   {
+
+	  if(temp_CCR >= (TIM5->ARR + 1))
+	  {
+		temp_CCR = TIM5->ARR + 1;	// 10000
+		temp_Interval = -interval;
+	  }
+	  else if(temp_CCR <= turningPoint)
+	  {
+		temp_CCR = turningPoint;
+		temp_Interval = interval;
+		dir = !dir;
+		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_10, dir);
+	  }
+	  temp_CCR += temp_Interval;
+	  if(temp_CCR == 0)
+	  {
+		  TIM5->CCR1 = temp_CCR;
+	  }
+	  else
+	  {
+		  TIM5->CCR1 = temp_CCR - 1;
+	  }
+
+	  printf("Compare : %4d | TEMP : %5d | DIR :%d\r\n", (int)TIM5->CCR1, (int)temp_CCR ,dir);
+	  HAL_Delay(10);
+
+
+
     /* USER CODE END WHILE */
-	  //Read_Gyro(&GYRO);
-	  Read_Gyro_Temperature(&GYRO);
-	  Read_Accel(&ACCEL);
-	  Read_Magneto(&MAGNETO);
-	  //printf("%8.2f  %8.2d %8.2d %8.2d\r\n", GYRO.gyro_Temp, ACCEL.raw_accel_X, ACCEL.raw_accel_Y, ACCEL.raw_accel_Z);
-	  printf("%8.2f  %8.2d %8.2d %8.2d\r\n", GYRO.gyro_Temp, ACCEL.raw_accel_X, ACCEL.raw_accel_Y, ACCEL.raw_accel_Z);
-	  //printf("%8.2f %8.2f %8.2f\r\n", GYRO.gyro_X, GYRO.gyro_Y, GYRO.gyro_Z);
-	  HAL_Delay(100);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -175,6 +203,27 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+
+	static uint32_t temp;
+	if(GPIO_Pin == GPIO_PIN_15)	// PIN_15 Pressed
+	{
+		if(HAL_GetTick() - temp > 100){
+			printf("%s\r\n", "PIN_15 Pressed");
+			//buttonFlag = 1;
+			HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);		// LED3 Red
+			HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_10);		// DC Motor Direction
+		}
+		//while(HAL_GPIO_ReadPin(GPIOE, GPIO_PIN_3) == GPIO_PIN_RESET);
+		while(HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_15) == GPIO_PIN_RESET){
+			//printf("%s\r\n", "wait for reset");
+		}	// button -> 0
+		temp = HAL_GetTick();	// check last time
+	}
+
+}
+
 
 /* USER CODE END 4 */
 

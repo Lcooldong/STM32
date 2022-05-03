@@ -13,69 +13,72 @@ HMC5883L MAGNETO = {.m_Scale = 1};
 
 void Magneto_Init(HMC5883L* SENSOR)
 {
+	SENSOR->i2c = &hi2c1;
 	//printf("0x%X\r\n", MAGNETO.magneto_address);
 }
 
 
-void ReadRawAxix(void)
+void ReadRawAxis(HMC5883L* SENSOR)
 {
 	uint8_t buffer[6];
-	HAL_I2C_Mem_Read(&(MAGNETO.i2c), MAGNETO.magneto_address , DataRegisterBegin, I2C_MEMADD_SIZE_8BIT, buffer, sizeof(buffer), 10);
-	MAGNETO.XAxis = (buffer[0] << 8) | buffer[1];
-	MAGNETO.YAxis = (buffer[2] << 8) | buffer[3];
-	MAGNETO.ZAxis = (buffer[4] << 8) | buffer[5];
+
+
+	HAL_I2C_Mem_Read(&(SENSOR->i2c), SENSOR->magneto_address , DataRegisterBegin, I2C_MEMADD_SIZE_8BIT, buffer, sizeof(buffer), 10);
+	SENSOR->XAxis = (buffer[0] << 8) | buffer[1];
+	SENSOR->YAxis = (buffer[2] << 8) | buffer[3];
+	SENSOR->ZAxis = (buffer[4] << 8) | buffer[5];
 }
 
-void ReadScaledAxis(void)
+void ReadScaledAxis(HMC5883L* SENSOR)
 {
-	MAGNETO.scaled_XAxis = MAGNETO.XAxis * MAGNETO.m_Scale;
-	MAGNETO.scaled_YAxis = MAGNETO.YAxis * MAGNETO.m_Scale;
-	MAGNETO.scaled_ZAxis = MAGNETO.ZAxis * MAGNETO.m_Scale;
+	SENSOR->scaled_XAxis = SENSOR->XAxis * SENSOR->m_Scale;
+	SENSOR->scaled_YAxis = SENSOR->YAxis * SENSOR->m_Scale;
+	SENSOR->scaled_ZAxis = SENSOR->ZAxis * SENSOR->m_Scale;
 }
 
 
-uint8_t SetScale(float gauss)
+uint8_t SetScale(HMC5883L* SENSOR, float gauss)
 {
 	uint8_t regValue = 0x00;
 	if(gauss == 0.88)
 	{
 		regValue = 0x00;
-		MAGNETO.m_Scale = 0.73;
+		SENSOR->m_Scale = 0.73;
 	}
 	else if(gauss == 1.3)
 	{
 		regValue = 0x01;
-		MAGNETO.m_Scale = 0.92;
+		SENSOR->m_Scale = 0.92;
 	}
 	else if(gauss == 1.9)
 	{
 		regValue = 0x02;
-		MAGNETO.m_Scale = 1.22;
+		SENSOR->m_Scale = 1.22;
 	}
 	else if(gauss == 2.5)
 	{
 		regValue = 0x03;
-		MAGNETO.m_Scale = 1.52;
+		SENSOR->m_Scale = 1.52;
 	}
 	else if(gauss == 4.0)
 	{
 		regValue = 0x04;
-		MAGNETO.m_Scale = 2.27;
+		SENSOR->m_Scale = 2.27;
 	}
 	else if(gauss == 4.7)
 	{
 		regValue = 0x05;
-		MAGNETO.m_Scale = 2.56;
+		SENSOR->m_Scale = 2.56;
 	}
 	else if(gauss == 5.6)
 	{
 		regValue = 0x06;
-		MAGNETO.m_Scale = 3.03;
+		SENSOR->m_Scale = 3.03;
 	}
 	else if(gauss == 8.1)
 	{
 		regValue = 0x07;
-		MAGNETO.m_Scale = 4.35;
+		SENSOR->m_Scale = 4.35;
 	}
 	else
 		return ErrorCode_1_Num;
