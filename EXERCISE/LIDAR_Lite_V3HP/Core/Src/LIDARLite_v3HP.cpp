@@ -29,6 +29,7 @@
 #include "LIDARLite_v3HP.h"
 #include "i2c.h"
 
+extern I2C_HandleTypeDef hi2c2;
 /*------------------------------------------------------------------------------
   Configure
 
@@ -340,7 +341,7 @@ void LIDARLite_v3HP::write(uint8_t regAddr,  uint8_t * dataBytes,
                            uint8_t numBytes, uint8_t lidarliteAddress)
 {
 	HAL_StatusTypeDef state;
-	state = HAL_I2C_Mem_Write(&hi2c1, lidarliteAddress, regAddr, 1, dataBytes, numBytes, 10);
+	state = HAL_I2C_Mem_Write(&hi2c2, lidarliteAddress, regAddr, 1, dataBytes, numBytes, 10);
 
 
     //Wire.beginTransmission(lidarliteAddress);
@@ -425,7 +426,7 @@ void LIDARLite_v3HP::read(uint8_t regAddr,  uint8_t * dataBytes,
 
 
 
-	state = HAL_I2C_Mem_Read(&hi2c1, lidarliteAddress, regAddr, 1, dataBytes, numBytes, 10);
+	state = HAL_I2C_Mem_Read(&hi2c2, lidarliteAddress, regAddr, 1, dataBytes, numBytes, 10);
 
     //Wire.beginTransmission(lidarliteAddress);
     //Wire.write(regAddr);
@@ -452,7 +453,7 @@ void LIDARLite_v3HP::read(uint8_t regAddr,  uint8_t * dataBytes,
     // If you are here because compilation fails trying to feed five
     // parameters to "requestFrom" see function header comments above
     // **************************************************************
-    state = HAL_I2C_Mem_Read(&hi2c1, lidarliteAddress, regAddr, 1, dataBytes, numBytes, HAL_MAX_DELAY);
+    state = HAL_I2C_Mem_Read(&hi2c2, lidarliteAddress, regAddr, 1, dataBytes, numBytes, HAL_MAX_DELAY);
     if(state == HAL_OK) printf("Read ALL Data\r\n");
     else if(state != HAL_OK) while(1);
 //    Wire.requestFrom
@@ -467,8 +468,12 @@ void LIDARLite_v3HP::read(uint8_t regAddr,  uint8_t * dataBytes,
 
 
 #endif
-    state = HAL_I2C_Mem_Read(&hi2c1, lidarliteAddress, regAddr, 1, dataBytes, numBytes, HAL_MAX_DELAY);
-    while(HAL_I2C_GetState(&hi2c1) != HAL_I2C_STATE_READY);
+
+    do
+    {
+    	state = HAL_I2C_Mem_Read(&hi2c2, lidarliteAddress, regAddr, 1, dataBytes, numBytes, HAL_MAX_DELAY);
+    	if(HAL_I2C_GetState(&hi2c2)!= HAL_I2C_STATE_READY ) break;
+    }while(state != HAL_OK);
 //    uint8_t  numHere = Wire.available();
 //    uint8_t  i       = 0;
 //

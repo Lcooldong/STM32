@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
+#include "stdbool.h"
 #include "LIDARLite_v3HP.h"
 /* USER CODE END Includes */
 
@@ -46,6 +47,8 @@
 
 /* USER CODE BEGIN PV */
 LIDARLite_v3HP myLidarLite;
+int cal_cnt = 0;
+rangeType_T RANGETYPE;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -56,7 +59,7 @@ int _write(int file, char *p, int len)
 	if(HAL_UART_Transmit(&huart3, (uint8_t *)p, len, 10) == HAL_OK) return len;
 	else return 0;
 }
-
+uint8_t distanceContinuous(uint16_t * distance);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -96,13 +99,29 @@ int main(void)
   MX_USART3_UART_Init();
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
+  myLidarLite.configure(0);
   myLidarLite.DWT_Delay_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  uint16_t distance;
+  uint8_t  newDistance = 0;
+  printf("Start LIDAR\r\n");
+  //uint8_t  c;
+  //rangeType_T rangeMode = RANGE_CONTINUOUS;
   while (1)
   {
+	  newDistance = distanceContinuous(&distance);
+
+      if (newDistance)
+      {
+          printf("Distance : %5d cm\r\n", distance);
+          HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
+      }
+
+	  HAL_Delay(10);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -163,7 +182,114 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+uint8_t distanceSingle(uint16_t * distance)
+{
+    // 1. Wait for busyFlag to indicate device is idle. This must be
+    //    done before triggering a range measurement.
+    myLidarLite.waitForBusy();
 
+    // 2. Trigger range measurement.
+    myLidarLite.takeRange();
+
+    // 3. Wait for busyFlag to indicate device is idle. This should be
+    //    done before reading the distance data that was triggered above.
+    myLidarLite.waitForBusy();
+
+    // 4. Read new distance data from device registers
+    *distance = myLidarLite.readDistance();
+
+    return 1;
+}
+
+//---------------------------------------------------------------------
+// Read Continuous Distance Measurements
+//
+// The most recent distance measurement can always be read from
+// device registers. Polling for the BUSY flag in the STATUS
+// register can alert the user that the distance measurement is new
+// and that the next measurement can be initiated. If the device is
+// BUSY this function does nothing and returns 0. If the device is
+// NOT BUSY this function triggers the next measurement, reads the
+// distance data from the previous measurement, and returns 1.
+//---------------------------------------------------------------------
+uint8_t distanceContinuous(uint16_t * distance)
+{
+    uint8_t newDistance = 0;
+
+    // Check on busyFlag to indicate if device is idle
+    // (meaning = it finished the previously triggered measurement)
+    if (myLidarLite.getBusyFlag() == 0)
+    {
+        // Trigger the next range measurement
+        myLidarLite.takeRange();
+
+        // Read new distance data from device registers
+        *distance = myLidarLite.readDistance();
+
+        // Report to calling function that we have new data
+        newDistance = 1;
+    }
+
+    return newDistance;
+}
+
+//---------------------------------------------------------------------
+// Read Distance Measurement, Quickly
+//
+// Read distance. The approach is to poll the status register until the device goes
+// idle after finishing a measurement, send a new measurement command, then read the
+// previous distance data while it is performing the new command.
+//---------------------------------------------------------------------
+uint8_t distanceFast(uint16_t * distance)
+{
+    // 1. Wait for busyFlag to indicate device is idle. This must be
+    //    done before triggering a range measurement.
+    myLidarLite.waitForBusy();
+
+    // 2. Trigger range measurement.
+    myLidarLite.takeRange();
+
+    // 3. Read previous distance data from device registers.
+    //    After starting a measurement we can immediately read previous
+    //    distance measurement while the current range acquisition is
+    //    ongoing. This distance data is valid until the next
+    //    measurement finishes. The I2C transaction finishes before new
+    //    distance measurement data is acquired.
+    *distance = myLidarLite.readDistance();
+
+    return 1;
+}
+
+//---------------------------------------------------------------------
+// Print the correlation record for analysis
+//---------------------------------------------------------------------
+void dumpCorrelationRecord()
+{
+    myLidarLite.correlationRecordToSerial(256);
+}
+
+//---------------------------------------------------------------------
+// Print peaks and calculated distances from the peak stack
+//---------------------------------------------------------------------
+void peakStackExample()
+{
+    int16_t   peakArray[8];
+    int16_t   distArray[8];
+    uint8_t   i;
+
+    // - Read the Peak Stack.
+    // - Peaks and calculated distances are returned in local arrays.
+    // - See library function for details on the makeup of the stack
+    //   and how distance data is created from the stack.
+    myLidarLite.peakStackRead(peakArray, distArray);
+
+    // Print peaks and calculated distances to the serial port.
+    printf("IDX PEAK DIST\r\n");
+    for (i=0 ; i<8 ; i++)
+    {
+        printf("%d  %d  %d\r\n", i,  peakArray[i],  distArray[i]);
+    }
+}
 
 /* USER CODE END 4 */
 

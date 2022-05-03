@@ -1,6 +1,7 @@
 ../Core/Src/HMC5883L.c:14:6:Magneto_Init	16	static
-../Core/Src/HMC5883L.c:20:6:ReadRawAxix	32	static
-../Core/Src/HMC5883L.c:29:6:ReadScaledAxis	4	static
-../Core/Src/HMC5883L.c:37:9:SetScale	24	static
-../Core/Src/HMC5883L.c:90:6:SetMeasurementMode	16	static
-../Core/Src/HMC5883L.c:96:7:GetErrorText	16	static
+../Core/Src/HMC5883L.c:21:6:ReadRawAxis	40	static
+../Core/Src/HMC5883L.c:32:6:ReadScaledAxis	16	static
+../Core/Src/HMC5883L.c:39:6:Read_Magneto	16	static
+../Core/Src/HMC5883L.c:45:9:SetScale	24	static
+../Core/Src/HMC5883L.c:98:6:SetMeasurementMode	16	static
+../Core/Src/HMC5883L.c:104:7:GetErrorText	16	static

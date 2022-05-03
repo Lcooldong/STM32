@@ -53,7 +53,13 @@ class LIDARLite_v3HP
       void 		DWT_Delay_us(volatile uint32_t microseconds);
 };
 
-
+enum rangeType_T
+{
+    RANGE_NONE,
+    RANGE_SINGLE,
+    RANGE_CONTINUOUS,
+    RANGE_TIMER
+};
 
 
 #endif

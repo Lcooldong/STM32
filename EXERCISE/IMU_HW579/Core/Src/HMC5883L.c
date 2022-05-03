@@ -9,11 +9,11 @@
 #include "HMC5883L.h"
 
 HMC5883L MAGNETO = {.m_Scale = 1};
-
+//extern I2C_HandleTypeDef hi2c1;
 
 void Magneto_Init(HMC5883L* SENSOR)
 {
-	SENSOR->i2c = &hi2c1;
+	SENSOR->i2c = hi2c1;
 	//printf("0x%X\r\n", MAGNETO.magneto_address);
 }
 
@@ -34,6 +34,11 @@ void ReadScaledAxis(HMC5883L* SENSOR)
 	SENSOR->scaled_XAxis = SENSOR->XAxis * SENSOR->m_Scale;
 	SENSOR->scaled_YAxis = SENSOR->YAxis * SENSOR->m_Scale;
 	SENSOR->scaled_ZAxis = SENSOR->ZAxis * SENSOR->m_Scale;
+}
+
+void Read_Magneto(HMC5883L* SENSOR)
+{
+
 }
 
 

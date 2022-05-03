@@ -44,9 +44,10 @@ typedef struct __HMC5883L{
 
 
 void Magneto_Init(HMC5883L* SENSOR);
-void ReadRawAxis(void);
-void ReadScaledAxis(void);
-uint8_t SetScale(float gauss);
+void ReadRawAxis(HMC5883L* SENSOR);
+void ReadScaledAxis(HMC5883L* SENSOR);
+void Read_Magneto(HMC5883L* SENSOR);
+uint8_t SetScale(HMC5883L* SENSOR, float gauss);
 void SetMeasurementMode(uint8_t mode);
 char* GetErrorText(uint8_t errorCode);
 

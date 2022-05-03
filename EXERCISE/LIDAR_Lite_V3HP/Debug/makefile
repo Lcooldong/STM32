@@ -76,7 +76,7 @@ main-build: LIDAR_Lite_V3HP.elf secondary-outputs
 
 # Tool invocations
 LIDAR_Lite_V3HP.elf LIDAR_Lite_V3HP.map: $(OBJS) $(USER_OBJS) D:\Github\STM32\EXERCISE\LIDAR_Lite_V3HP\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "LIDAR_Lite_V3HP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Github\STM32\EXERCISE\LIDAR_Lite_V3HP\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LIDAR_Lite_V3HP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+	arm-none-eabi-g++ -o "LIDAR_Lite_V3HP.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Github\STM32\EXERCISE\LIDAR_Lite_V3HP\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LIDAR_Lite_V3HP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

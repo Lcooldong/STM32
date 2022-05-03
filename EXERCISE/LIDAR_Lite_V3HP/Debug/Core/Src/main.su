@@ -1,4 +1,9 @@
-../Core/Src/main.cpp:54:5:int _write(int, char*, int)	24	static
-../Core/Src/main.cpp:71:5:int main()	8	static
-../Core/Src/main.cpp:117:6:void SystemClock_Config()	88	static
-../Core/Src/main.cpp:174:6:void Error_Handler()	4	static,ignoring_inline_asm
+../Core/Src/main.cpp:57:5:int _write(int, char*, int)	24	static
+../Core/Src/main.cpp:74:5:int main()	16	static
+../Core/Src/main.cpp:136:6:void SystemClock_Config()	88	static
+../Core/Src/main.cpp:185:9:uint8_t distanceSingle(uint16_t*)	16	static
+../Core/Src/main.cpp:215:9:uint8_t distanceContinuous(uint16_t*)	24	static
+../Core/Src/main.cpp:243:9:uint8_t distanceFast(uint16_t*)	16	static
+../Core/Src/main.cpp:266:6:void dumpCorrelationRecord()	8	static
+../Core/Src/main.cpp:274:6:void peakStackExample()	48	static
+../Core/Src/main.cpp:300:6:void Error_Handler()	4	static,ignoring_inline_asm
