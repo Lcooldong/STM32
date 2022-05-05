@@ -9,6 +9,9 @@
 #define INC_HMC5883L_H_
 
 #include "i2c.h"
+#include "stdbool.h"
+#include "stdio.h"
+#include "math.h"
 
 #define HMC5883L_Address 0x1E
 #define ConfigurationRegisterA 0x00
@@ -29,9 +32,9 @@ typedef struct __HMC5883L{
 	uint8_t magneto_address;
 	uint8_t magneto_address_read;
 
-	uint16_t XAxis;
-	uint16_t YAxis;
-	uint16_t ZAxis;
+	int16_t XAxis;
+	int16_t YAxis;
+	int16_t ZAxis;
 
 	float scaled_XAxis;
 	float scaled_YAxis;
@@ -39,16 +42,23 @@ typedef struct __HMC5883L{
 
 	float m_Scale;
 
+	float heading;
+	float headingDegrees;
+
+	uint8_t status;
+	uint8_t error_code;
 
 }HMC5883L, *pHMC5883L;
 
-
-void Magneto_Init(HMC5883L* SENSOR);
+void Magneto_Writebyte(HMC5883L * SENSOR, uint8_t register_address, uint8_t data);
+uint8_t Magneto_Readbyte(HMC5883L * SENSOR, uint8_t register_address);
+void Magneto_Init(HMC5883L* SENSOR, float gauss);
 void ReadRawAxis(HMC5883L* SENSOR);
 void ReadScaledAxis(HMC5883L* SENSOR);
 void Read_Magneto(HMC5883L* SENSOR);
 uint8_t SetScale(HMC5883L* SENSOR, float gauss);
-void SetMeasurementMode(uint8_t mode);
+uint8_t SetMeasurementMode(HMC5883L* SENSOR, uint8_t mode);
 char* GetErrorText(uint8_t errorCode);
+void Get_Heading_Magneto(HMC5883L* SENSOR);
 
 #endif /* INC_HMC5883L_H_ */

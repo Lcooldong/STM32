@@ -104,6 +104,7 @@ void Read_Gyro_Temperature(ITG3205* SENSOR)
 {
 	uint8_t databuf[2];
 	uint16_t raw_Temp;
+	uint8_t temperature_offset = 31;
 
 	SENSOR = &GYRO;
 	SENSOR->i2c = hi2c1;
@@ -111,7 +112,7 @@ void Read_Gyro_Temperature(ITG3205* SENSOR)
 	HAL_I2C_Mem_Read(&(SENSOR->i2c), SENSOR->gyro_address,TEMP_OUT,I2C_MEMADD_SIZE_8BIT,databuf,sizeof(databuf),10);
 	raw_Temp = ((databuf[0]<<8)|databuf[1]);
 
-	SENSOR->gyro_Temp = ((raw_Temp -13200) / 280.0 -32 ) *5 /9 - 31;
+	SENSOR->gyro_Temp = ((raw_Temp -13200) / 280.0 -32 ) *5 /9 - temperature_offset;
 	//SENSOR->gyro_Temp = raw_Temp;
 }
 

@@ -112,7 +112,6 @@ int main(void)
   printf("Compare : %4d | TEMP : %5d | DIR :%d\r\n", (int)TIM5->CCR1, (int)temp_CCR ,dir);
   HAL_Delay(2000);
   printf("====Start====\r\n");
-
   while (1)
   {
 
@@ -140,7 +139,6 @@ int main(void)
 
 	  printf("Compare : %4d | TEMP : %5d | DIR :%d\r\n", (int)TIM5->CCR1, (int)temp_CCR ,dir);
 	  HAL_Delay(10);
-
 
 
     /* USER CODE END WHILE */
@@ -223,6 +221,20 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	}
 
 }
+
+// before Test
+void Set_dutyRatio(uint8_t _Ratio)
+{
+	if((_Ratio >= 1) && (_Ratio <= 100))
+	{
+		TIM5->CCR1 = (uint32_t)((TIM5->ARR + 1) * 0.01 * _Ratio) - 1;
+	}
+	else if(_Ratio == 0)
+	{
+		TIM5->CCR1 = 0;
+	}
+}
+
 
 
 /* USER CODE END 4 */

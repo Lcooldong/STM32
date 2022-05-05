@@ -28,6 +28,7 @@
 #include "ITG3205.h"
 #include "ADXL345.h"
 #include "HMC5883L.h"
+#include "HW_579.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,6 +51,7 @@
 extern ITG3205 GYRO;
 extern ADXL345 ACCEL;
 extern HMC5883L MAGNETO;
+extern HW579 hw579;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -101,7 +103,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
   Gyro_Init(&GYRO);
   Accel_Init(&ACCEL);
-  Magneto_Init(&MAGNETO);
+  Magneto_Init(&MAGNETO, 1.3);
+
+  getI2C_Address(&hi2c1, &hw579);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -113,8 +118,12 @@ int main(void)
 	  Read_Gyro_Temperature(&GYRO);
 	  Read_Accel(&ACCEL);
 	  Read_Magneto(&MAGNETO);
+	  Get_Heading_Magneto(&MAGNETO);
+
 	  //printf("%8.2f  %8.2d %8.2d %8.2d\r\n", GYRO.gyro_Temp, ACCEL.raw_accel_X, ACCEL.raw_accel_Y, ACCEL.raw_accel_Z);
-	  printf("%8.2f  %8.2d %8.2d %8.2d\r\n", GYRO.gyro_Temp, ACCEL.raw_accel_X, ACCEL.raw_accel_Y, ACCEL.raw_accel_Z);
+	  //printf("%8.2f  %8.2d %8.2d %8.2d\r\n", GYRO.gyro_Temp, ACCEL.raw_accel_X, ACCEL.raw_accel_Y, ACCEL.raw_accel_Z);
+	  //printf("%8.2f  %8.2d %8.2d %8.2d\r\n", GYRO.gyro_Temp, MAGNETO.XAxis, MAGNETO.YAxis, MAGNETO.ZAxis);
+	  printf("%8.2f %8.2f\r\n", MAGNETO.heading, MAGNETO.headingDegrees);
 	  //printf("%8.2f %8.2f %8.2f\r\n", GYRO.gyro_X, GYRO.gyro_Y, GYRO.gyro_Z);
 	  HAL_Delay(100);
     /* USER CODE BEGIN 3 */

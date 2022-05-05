@@ -8,13 +8,49 @@
 
 #include "HMC5883L.h"
 
-HMC5883L MAGNETO = {.m_Scale = 1};
+HMC5883L MAGNETO = {.magneto_address = 0x3C, .m_Scale = 1};
 //extern I2C_HandleTypeDef hi2c1;
 
-void Magneto_Init(HMC5883L* SENSOR)
+void Magneto_Writebyte(HMC5883L * SENSOR, uint8_t register_address, uint8_t data)
+{
+    uint8_t Trans[2]={register_address, data};
+    HAL_I2C_Master_Transmit(&(SENSOR->i2c), SENSOR->magneto_address, Trans,2,10);
+}
+
+uint8_t Magneto_Readbyte(HMC5883L * SENSOR, uint8_t register_address)
+{
+	HAL_StatusTypeDef state;
+    uint8_t Trans[1]={register_address};
+    uint8_t Receive[1];
+
+    HAL_I2C_Master_Transmit(&(SENSOR->i2c), SENSOR->magneto_address,Trans,1,10);
+    state = HAL_I2C_Master_Receive(&(SENSOR->i2c),SENSOR->magneto_address, Receive,1,10);
+    if(state != HAL_OK)
+    {
+    	SENSOR->status = 0;
+    	SENSOR->error_code = 1;
+    	while(HAL_I2C_GetState(&(SENSOR->i2c)) != HAL_I2C_STATE_READY);
+    }
+
+
+    return Receive[0];
+}
+
+
+void Magneto_Init(HMC5883L* SENSOR, float gauss)
 {
 	SENSOR->i2c = hi2c1;
-	//printf("0x%X\r\n", MAGNETO.magneto_address);
+	SENSOR->error_code = SetScale(SENSOR, gauss);
+	if(SENSOR->error_code == 1)
+	{
+		printf("Set Scale Error.\r\n");
+	}
+	SENSOR->error_code = SetMeasurementMode(SENSOR, Measurement_Continuous);
+	if(SENSOR->error_code == 1)
+	{
+		printf("Set Mode Error.\r\n");
+	}
+
 }
 
 
@@ -22,11 +58,10 @@ void ReadRawAxis(HMC5883L* SENSOR)
 {
 	uint8_t buffer[6];
 
-
 	HAL_I2C_Mem_Read(&(SENSOR->i2c), SENSOR->magneto_address , DataRegisterBegin, I2C_MEMADD_SIZE_8BIT, buffer, sizeof(buffer), 10);
-	SENSOR->XAxis = (buffer[0] << 8) | buffer[1];
-	SENSOR->YAxis = (buffer[2] << 8) | buffer[3];
-	SENSOR->ZAxis = (buffer[4] << 8) | buffer[5];
+	SENSOR->XAxis = (int16_t)(buffer[0] << 8) | buffer[1];
+	SENSOR->YAxis = (int16_t)(buffer[2] << 8) | buffer[3];
+	SENSOR->ZAxis = (int16_t)(buffer[4] << 8) | buffer[5];
 }
 
 void ReadScaledAxis(HMC5883L* SENSOR)
@@ -38,8 +73,38 @@ void ReadScaledAxis(HMC5883L* SENSOR)
 
 void Read_Magneto(HMC5883L* SENSOR)
 {
+	uint8_t buffer[6];
+
+	HAL_I2C_Mem_Read(&(SENSOR->i2c), SENSOR->magneto_address , DataRegisterBegin, I2C_MEMADD_SIZE_8BIT, buffer, sizeof(buffer), 10);
+	SENSOR->XAxis = (int16_t)(buffer[0] << 8) | buffer[1];
+	SENSOR->YAxis = (int16_t)(buffer[2] << 8) | buffer[3];
+	SENSOR->ZAxis = (int16_t)(buffer[4] << 8) | buffer[5];
+
+	SENSOR->scaled_XAxis = SENSOR->XAxis * SENSOR->m_Scale;
+	SENSOR->scaled_YAxis = SENSOR->YAxis * SENSOR->m_Scale;
+	SENSOR->scaled_ZAxis = SENSOR->ZAxis * SENSOR->m_Scale;
+
 
 }
+
+void Get_Heading_Magneto(HMC5883L* SENSOR)
+{
+	//static const double PI = 3.141592653589;
+	float heading = atan2(SENSOR->scaled_YAxis, SENSOR->scaled_XAxis);
+	//float declinationAngle = 0.0457;
+	float declinationAngle = -0.1545;
+    heading += declinationAngle;
+
+    if(heading < 0) heading += 2*M_PI;
+
+    if(heading > 2*M_PI) heading -= 2*M_PI;
+
+    float headingDegrees = heading * 180/M_PI;
+
+    SENSOR->heading = heading;
+    SENSOR->headingDegrees = headingDegrees;
+}
+
 
 
 uint8_t SetScale(HMC5883L* SENSOR, float gauss)
@@ -89,15 +154,18 @@ uint8_t SetScale(HMC5883L* SENSOR, float gauss)
 		return ErrorCode_1_Num;
 
 	regValue = regValue << 5;
-	//I2C_Writebyte(&MAGNETO, ConfigurationRegisterB, regValue, magneto);
+	Magneto_Writebyte(SENSOR, ConfigurationRegisterB, regValue);
 
 	return regValue;
 }
 
 
-void SetMeasurementMode(uint8_t mode)
+uint8_t SetMeasurementMode(HMC5883L* SENSOR , uint8_t mode)
 {
-	//I2C_Writebyte(&MAGNETO, ModeRegister, mode, magneto);
+	Magneto_Writebyte(SENSOR, ModeRegister, mode);
+	if((mode == 0x00) | (mode == 0x01) | (mode == 0x03)) return 0;
+	else return ErrorCode_1_Num;
+
 }
 
 
