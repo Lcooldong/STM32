@@ -96,13 +96,19 @@ int main(void)
   MX_USART3_UART_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-
+int _write(int file, char* p, int len)
+{
+	if(HAL_UART_Transmit(&huart3, (uint8_t)*p, len, 10) == HAL_OK) return len;
+	else return 0;
+}
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  printf("Hello World\r\n");
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
