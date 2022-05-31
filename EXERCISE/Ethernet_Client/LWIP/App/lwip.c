@@ -169,13 +169,18 @@ static void ethernet_link_status_updated(struct netif *netif)
   if (netif_is_up(netif))
   {
 /* USER CODE BEGIN 5 */
-	  netif_set_up(&gnetif);
+//	netif_set_up(netif);
+	printf("Connected\r\n");
+	GPIOB->ODR |=  (1 << 0);
+	GPIOB->ODR &= ~(1 << 14);
 /* USER CODE END 5 */
   }
   else /* netif is down */
   {
 /* USER CODE BEGIN 6 */
-
+	printf("Not Connected\r\n");
+	GPIOB->ODR &= ~(1 << 0);
+	GPIOB->ODR |=  (1 << 14);
 /* USER CODE END 6 */
   }
 }

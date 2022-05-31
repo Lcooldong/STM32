@@ -51,7 +51,6 @@ extern struct netif gnetif;
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 int _write(int file, char* p, int len);
-void ethernetif_notify_conn_changed(struct netif *netif);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -97,16 +96,19 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		if(netif_is_link_up(&gnetif))
-		{
-			GPIOB->ODR |=  (1 << 0);
-			GPIOB->ODR &= ~(1 << 14);
-		}
-		else
-		{
-			GPIOB->ODR &= ~(1 << 0);
-			GPIOB->ODR |=  (1 << 14);
-		}
+//		if(netif_is_link_up(&gnetif))
+//		{
+//			printf("Connected\r\n");
+//			GPIOB->ODR |=  (1 << 0);
+//			GPIOB->ODR &= ~(1 << 14);
+//		}
+//		else
+//		{
+//			printf("Not Connected\r\n");
+//			GPIOB->ODR &= ~(1 << 0);
+//			GPIOB->ODR |=  (1 << 14);
+//		}
+//		HAL_Delay(1000);
 //	  ethernetif_input(&gnetif);
 //	  sys_check_timeouts();
 //	  MX_LWIP_Process();
@@ -176,20 +178,7 @@ int _write(int file, char* p, int len)
 	else return 0;
 }
 
-void ethernetif_notify_conn_changed(struct netif *netif)
-{
-	if(netif_is_link_up(netif))
-	{
-		GPIOB->ODR |=  (1 << 0);
-		GPIOB->ODR &= ~(1 << 14);
-	}
-	else
-	{
-		GPIOB->ODR &= ~(1 << 0);
-		GPIOB->ODR |=  (1 << 14);
-	}
 
-}
 /* USER CODE END 4 */
 
 /**

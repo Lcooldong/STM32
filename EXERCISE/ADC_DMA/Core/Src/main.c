@@ -26,14 +26,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
-
-
 
 /* USER CODE END PTD */
 
@@ -55,7 +52,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+int _write(int file, char* p, int len);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -96,21 +93,20 @@ int main(void)
   MX_USART3_UART_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-int _write(int file, char* p, int len)
-{
-	if(HAL_UART_Transmit(&huart3, (uint8_t)*p, len, 10) == HAL_OK) return len;
-	else return 0;
-}
+  uint16_t adc_val[100];
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&adc_val[0], sizeof(adc_val));
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  printf("Hello World\r\n");
-	  HAL_Delay(1000);
     /* USER CODE END WHILE */
-
+	  for(int i=0; i< sizeof(adc_val); i++)
+	  {
+		  printf("%d\r\n", adc_val[i]);
+	  }
+	  HAL_Delay(100);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -169,7 +165,11 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+int _write(int file, char* p, int len)
+{
+	if(HAL_UART_Transmit(&huart3, (uint8_t *)p, len, 10) == HAL_OK) return len;
+	else return -1;
+}
 /* USER CODE END 4 */
 
 /**
