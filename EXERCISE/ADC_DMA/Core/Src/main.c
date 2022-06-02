@@ -27,6 +27,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
+#include "user_def.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -93,20 +94,31 @@ int main(void)
   MX_USART3_UART_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
-  uint16_t adc_val[100];
-  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)&adc_val[0], sizeof(adc_val));
+  uint16_t adc_val[200];
+  uint16_t size = sizeof(adc_val)/sizeof(uint16_t);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_val, size);
+
+  printf("sizeof array :  %d\r\n", size);
+
+  for(int i=0; i< size; i++)
+  {
+	  printf("%d\r\n", adc_val[i]);
+  }
+  DWT_Delay_us(1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+//	  for(int i=0; i< sizeof(adc_val); i++)
+//	  {
+//		  printf("%d\r\n", adc_val[i]);
+//	  }
+//	  HAL_Delay(100);
     /* USER CODE END WHILE */
-	  for(int i=0; i< sizeof(adc_val); i++)
-	  {
-		  printf("%d\r\n", adc_val[i]);
-	  }
-	  HAL_Delay(100);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
