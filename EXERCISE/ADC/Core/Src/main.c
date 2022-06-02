@@ -114,7 +114,7 @@ int main(void)
 	  {
 		  printf(" ");
 	  }
-	  printf("â– \r\n");
+	  printf("?– \r\n");
 
 //	  printf("value : %d\r\n", value);
 	  HAL_ADC_Stop(&hadc1);
@@ -149,7 +149,7 @@ void SystemClock_Config(void)
   * in the RCC_OscInitTypeDef structure.
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
-  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 4;
