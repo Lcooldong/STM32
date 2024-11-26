@@ -1,8 +1,7 @@
 ../Drivers/CMSIS/Include/core_cm4.h:2064:26:ITM_SendChar	16	static,ignoring_inline_asm
-../Core/Src/main.c:77:5:_write	32	static
-../Core/Src/main.c:87:6:HAL_UART_TxHalfCpltCallback	24	static
-../Core/Src/main.c:96:6:HAL_UART_TxCpltCallback	24	static
-../Core/Src/main.c:112:6:HAL_UART_RxCpltCallback	16	static
-../Core/Src/main.c:125:5:main	40	static
-../Core/Src/main.c:210:6:SystemClock_Config	88	static
-../Core/Src/main.c:267:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:71:5:_write	32	static
+../Core/Src/main.c:89:6:HAL_UART_RxHalfCpltCallback	16	static
+../Core/Src/main.c:93:6:HAL_UART_RxCpltCallback	16	static
+../Core/Src/main.c:105:5:main	8	static
+../Core/Src/main.c:159:6:SystemClock_Config	88	static
+../Core/Src/main.c:216:6:Error_Handler	4	static,ignoring_inline_asm

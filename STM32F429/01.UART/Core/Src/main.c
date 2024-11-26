@@ -18,13 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "stdio.h"
-#include "string.h"
+#include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -34,8 +35,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define UART_TIMEOUT 100
-#define RX_MAX_LENGTH 20
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -46,24 +46,18 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t count = 0;
-int recvCount = 0;
-int countLoop = 0;
-int countInterrupt = 0;
+int count = 0;
 
-uint8_t	data[] = "Hello World\r\n";
-uint8_t recv[64];
-uint8_t send[20];
-char buffer[32];
-int length;
+uint8_t TxData[20];
 
-uint8_t TxData[10240];
-uint8_t RxData[RX_MAX_LENGTH];
-uint8_t FinalData[RX_MAX_LENGTH];
+
+uint8_t RxData[20];
+uint8_t RxDMAData[20];
 uint8_t RxTemp[2];
 int RxIndx = 0;
-int isSent = 1;
-int indx = 49;	// '1'
+
+int counthalf_DMA = 0;
+int countfull_DMA = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -76,46 +70,32 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 int _write(int file, char *ptr, int len)
 {
-
+	HAL_UART_Transmit(&huart3, (uint8_t*)ptr, len, 10);
 	for(uint32_t i=0; i<len; i++)
 	{
 		ITM_SendChar((*ptr++));
 	}
 	return len;
 }
+//void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+//{
+//	memcpy(RxData+RxIndx, RxTemp, 1);
+//	if(++RxIndx >= 20){RxIndx = 0;}
+//	HAL_UART_Receive_IT(&huart2, RxTemp, 1);
+//
+//}
 
-void HAL_UART_TxHalfCpltCallback(UART_HandleTypeDef *huart)
+// DMA
+void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart)
 {
-	for(uint32_t i=0; i< 5120; i++)
-	{
-		TxData[i] = indx;
-	}
-	indx++;
+	counthalf_DMA++;
 }
-
-void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
-{
-
-	for(uint32_t i=5120; i<10240; i++)
-	{
-		TxData[i] = indx;
-	}
-	indx++;
-	if( indx >= 60)
-	{
-		HAL_UART_DMAStop(&huart2);
-	}
-	isSent = 1;
-	countInterrupt++;
-}
-
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	memcpy(RxData+RxIndx, RxTemp, 1);
-	if(++RxIndx >= 20){RxIndx = 0;}
-	HAL_UART_Receive_IT(&huart2, RxTemp, 1);
-
+	countfull_DMA++;
+	HAL_UART_Receive_DMA(&huart2, RxDMAData, 10);
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -147,54 +127,24 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
+  MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  uint8_t startText[] = "Start F429ZI_UART\r\n";
-//  memset(TxData, 'a', sizeof(TxData));
-  HAL_UART_Transmit(&huart2, (uint8_t*)&startText, sizeof(startText) - 1, UART_TIMEOUT);
-//  HAL_UART_Transmit_DMA(&huart2, TxData, sizeof(TxData));
-
-  HAL_UART_Receive_IT(&huart2, RxTemp, 1);
-
+  HAL_UART_Receive_DMA(&huart2, RxDMAData, 10);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-	  if (RxTemp[0] == '\n' && RxIndx > 0)
-	  {
-		  memset(FinalData, 0, sizeof(FinalData));
-		  memcpy(FinalData, RxData, RxIndx);
-
-
-
-
-
-		  length = sprintf(buffer , "[%d]=>", RxIndx);
-		  for(uint8_t i = 0; i < RxIndx; i++)
-		  {
-			  length += sprintf(buffer + length, "%c", FinalData[i]);
-		  }
-
-		  HAL_UART_Transmit_IT(&huart2, (uint8_t*)buffer, length);
-
-		  memset(RxData, 0, sizeof(RxData));
-//		  memset(buffer, 0, sizeof(buffer));
-		  RxIndx = 0;
-
-	  }
-
-
-	  HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
-	  HAL_Delay(500);
-	  countLoop++;
-
-
-
-
+	  count++;
+	  printf("[%d]\n\r", count);
+	  sprintf(TxData, "[%d]\n\r", count);
+	  HAL_UART_Transmit_IT(&huart2, TxData, sizeof(TxData));
+	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
