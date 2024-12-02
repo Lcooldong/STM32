@@ -1,0 +1,9 @@
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c:83:19:HAL_MMCEx_DMALinkedList_BuildNode	16	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c:104:19:HAL_MMCEx_DMALinkedList_InsertNode	24	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c:125:19:HAL_MMCEx_DMALinkedList_RemoveNode	16	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c:144:19:HAL_MMCEx_DMALinkedList_LockNode	16	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c:162:19:HAL_MMCEx_DMALinkedList_UnlockNode	16	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c:180:19:HAL_MMCEx_DMALinkedList_EnableCircularMode	16	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c:197:19:HAL_MMCEx_DMALinkedList_DisableCircularMode	16	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c:220:19:HAL_MMCEx_DMALinkedList_ReadBlocks	64	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_mmc_ex.c:330:19:HAL_MMCEx_DMALinkedList_WriteBlocks	64	static

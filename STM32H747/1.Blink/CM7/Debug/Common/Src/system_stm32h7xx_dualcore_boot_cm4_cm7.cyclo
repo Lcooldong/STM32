@@ -1,2 +1,2 @@
-D:/Github/STM32/STM32H747/Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.c:177:6:SystemInit	4
-D:/Github/STM32/STM32H747/Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.c:323:6:SystemCoreClockUpdate	10
+D:/Github/STM32/STM32H747/1.Blink/Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.c:177:6:SystemInit	4
+D:/Github/STM32/STM32H747/1.Blink/Common/Src/system_stm32h7xx_dualcore_boot_cm4_cm7.c:323:6:SystemCoreClockUpdate	10

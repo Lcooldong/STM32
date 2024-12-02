@@ -1,0 +1,10 @@
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_env_sensors.c:82:9:BSP_ENV_SENSOR_Init	24	static
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_env_sensors.c:124:9:BSP_ENV_SENSOR_DeInit	24	static
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_env_sensors.c:158:9:BSP_ENV_SENSOR_GetCapabilities	24	static
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_env_sensors.c:188:9:BSP_ENV_SENSOR_ReadID	24	static
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_env_sensors.c:219:9:BSP_ENV_SENSOR_Enable	24	static
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_env_sensors.c:268:9:BSP_ENV_SENSOR_Disable	24	static
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_env_sensors.c:318:9:BSP_ENV_SENSOR_GetOutputDataRate	32	static
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_env_sensors.c:368:9:BSP_ENV_SENSOR_SetOutputDataRate	32	static
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_env_sensors.c:418:9:BSP_ENV_SENSOR_GetValue	32	static
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_env_sensors.c:472:16:STTS22H_Probe	56	static

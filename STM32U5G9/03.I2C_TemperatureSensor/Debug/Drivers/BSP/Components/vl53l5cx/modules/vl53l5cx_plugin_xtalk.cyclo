@@ -1,0 +1,7 @@
+../Drivers/BSP/Components/vl53l5cx/modules/vl53l5cx_plugin_xtalk.c:20:16:_vl53l5cx_poll_for_answer	4
+../Drivers/BSP/Components/vl53l5cx/modules/vl53l5cx_plugin_xtalk.c:54:16:_vl53l5cx_program_output_config	8
+../Drivers/BSP/Components/vl53l5cx/modules/vl53l5cx_plugin_xtalk.c:146:9:vl53l5cx_calibrate_xtalk	12
+../Drivers/BSP/Components/vl53l5cx/modules/vl53l5cx_plugin_xtalk.c:287:9:vl53l5cx_get_caldata_xtalk	1
+../Drivers/BSP/Components/vl53l5cx/modules/vl53l5cx_plugin_xtalk.c:316:9:vl53l5cx_set_caldata_xtalk	1
+../Drivers/BSP/Components/vl53l5cx/modules/vl53l5cx_plugin_xtalk.c:329:9:vl53l5cx_get_xtalk_margin	1
+../Drivers/BSP/Components/vl53l5cx/modules/vl53l5cx_plugin_xtalk.c:344:9:vl53l5cx_set_xtalk_margin	2

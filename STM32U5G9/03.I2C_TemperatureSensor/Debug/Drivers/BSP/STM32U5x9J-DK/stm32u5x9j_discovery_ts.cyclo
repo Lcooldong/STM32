@@ -1,0 +1,14 @@
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:114:9:BSP_TS_Init	6
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:166:9:BSP_TS_DeInit	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:191:9:BSP_TS_EnableIT	1
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:219:9:BSP_TS_DisableIT	1
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:234:9:BSP_TS_Set_Orientation	12
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:282:9:BSP_TS_Get_Orientation	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:305:9:BSP_TS_GetState	8
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:375:9:BSP_TS_Get_MultiTouchState	2
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:400:9:BSP_TS_GestureConfig	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:423:9:BSP_TS_GetGestureId	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:446:9:BSP_TS_GetCapabilities	6
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:483:13:BSP_TS_Callback	1
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:497:6:BSP_TS_IRQHandler	1
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ts.c:516:16:SITRONIX_Probe	3

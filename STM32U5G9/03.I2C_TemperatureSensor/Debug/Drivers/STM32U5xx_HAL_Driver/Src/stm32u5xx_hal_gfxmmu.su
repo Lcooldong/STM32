@@ -1,0 +1,13 @@
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:194:19:HAL_GFXMMU_Init	24	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:300:19:HAL_GFXMMU_DeInit	24	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:341:13:HAL_GFXMMU_MspInit	16	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:356:13:HAL_GFXMMU_MspDeInit	16	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:541:19:HAL_GFXMMU_ConfigLut	48	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:596:19:HAL_GFXMMU_DisableLutLines	40	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:643:19:HAL_GFXMMU_ConfigLutLine	32	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:728:19:HAL_GFXMMU_ModifyBuffers	24	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:816:19:HAL_GFXMMU_ModifyAddressCache	24	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:849:6:HAL_GFXMMU_IRQHandler	32	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:880:13:HAL_GFXMMU_ErrorCallback	16	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:913:25:HAL_GFXMMU_GetState	16	static
+../Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_gfxmmu.c:924:10:HAL_GFXMMU_GetError	32	static,ignoring_inline_asm

@@ -48,16 +48,33 @@
 /* USER CODE BEGIN PV */
 int count = 0;
 
-uint8_t TxData[20];
+uint8_t TxData[32];
 
-
+char tempBuffer[64] ={};
 uint8_t RxData[20];
 uint8_t RxDMAData[20];
 uint8_t RxTemp[2];
 int RxIndx = 0;
 
+uint8_t RxDMALarge[4096];
+
+int isNumber = 1;
+
+
 int counthalf_DMA = 0;
 int countfull_DMA = 0;
+
+
+uint8_t RxDataFlash[256];
+uint8_t flashBuffer[4096];
+int HTC=0;
+int FTC=0;
+uint32_t flashIndx=0;
+int isSizeRxed = 0;
+uint32_t size = 0;
+
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -85,16 +102,116 @@ int _write(int file, char *ptr, int len)
 //
 //}
 
-// DMA
+// 1.DMA_Simple_Test
+//void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart)
+//{
+//	counthalf_DMA++;
+//}
+//void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+//{
+//	countfull_DMA++;
+//	HAL_UART_Receive_DMA(&huart2, RxDMAData, 10);
+//}
+
+//// 2. DMA_Large_Data_Receive
+//void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+//{
+//	if(isSizeRxed == 0)
+//	{
+//		// 4 byte data character (48 == '0') -> number
+//		for(int i=0; i<4; i++)
+//		{
+//			if(RxDMALarge[i] >= '0' && RxDMALarge[i] <= '9')
+//			{
+//				isNumber = 1;
+//			}
+//			else
+//			{
+//				isNumber = 0;
+//				break;
+//			}
+//		}
+//
+//		if(isNumber == 1)
+//		{
+//			size = ((RxDMALarge[0] - 48)*1000) + ((RxDMALarge[1] - 48)*100) + ((RxDMALarge[2] - 48)*10) + ((RxDMALarge[3] - 48));	// 4 Digit
+//			printf("Prepare : %d byte\n\r", (int)size);
+//			HAL_UART_Receive_DMA(&huart2, RxDMALarge, size);
+//			isSizeRxed = 1;
+//		}
+//		else if(isNumber == 0)
+//		{
+//			isNumber = 1;
+//			//memset(RxDMALarge, 0, 4);
+//			memset(tempBuffer, 0, strlen(tempBuffer));
+//			char txText[] = "Only write Number\n\r";
+//			char uart2Target[] = "UART2: ";
+//
+//
+//
+//			int offset = 0;
+//			int ret = snprintf(tempBuffer + offset, sizeof(tempBuffer)-offset, uart2Target);
+//			//assert(ret == strlen(uart2Target));
+//			offset += ret;
+//
+//			for(int j=0; j<strlen(txText);j++)
+//			{
+//				ret = snprintf(tempBuffer + offset, sizeof(tempBuffer)-offset, "%c", txText[j]);
+//				offset += ret;
+//			}
+//			//ret = snprintf(tempBuffer + offset, sizeof(tempBuffer)-offset, "\n\r");
+//			//assert(ret == 2);
+//			printf(txText);
+//			HAL_UART_Transmit_IT(&huart2, (uint8_t*)tempBuffer, strlen((char*)tempBuffer));
+//			//memset(tempBuffer, 0, strlen(tempBuffer));
+//			HAL_UART_Receive_DMA(&huart2, RxDMALarge, 4);
+//		}
+//
+//
+//	}
+//	else if(isSizeRxed == 1)
+//	{
+//		isSizeRxed = 0;
+//		printf("Received : %d byte\n\r", (int)size);
+//		HAL_UART_Receive_DMA(&huart2, RxDMALarge, 4);
+//	}
+//}
+
+
 void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart)
 {
-	counthalf_DMA++;
+	if(isSizeRxed == 0)
+	{
+		size = ((RxDataFlash[0] - 48)*1000) + ((RxDataFlash[1] - 48)*100) + ((RxDataFlash[2] - 48)*10) + ((RxDataFlash[3] - 48));
+		printf("Start to Send File => %d byte\r\n", (int)size);
+		flashIndx = 0;
+		memcpy(flashBuffer+flashIndx, RxDataFlash + 4, 124);	// Receive 128( 4(size) + 124(First Data)) => flash <- 124 byte
+		memset(RxDataFlash, '\0', 128);
+		flashIndx += 128;
+		isSizeRxed = 1;
+	}
+	else
+	{
+		memcpy(flashBuffer+flashIndx, RxDataFlash, 128);
+		memset(RxDataFlash, '\0', 128);
+		flashIndx +=128;
+	}
+
+	HTC=1;
+	FTC=0;
+
 }
+
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	countfull_DMA++;
-	HAL_UART_Receive_DMA(&huart2, RxDMAData, 10);
+
+	memcpy(flashBuffer+flashIndx, RxDataFlash+128, 128);
+	memset(RxDataFlash+128, '\0', 128);
+	flashIndx += 128;
+	HTC=0;
+	FTC=1;
 }
+
 
 /* USER CODE END 0 */
 
@@ -132,16 +249,57 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_UART_Receive_DMA(&huart2, RxDMAData, 10);
+//  HAL_UART_Receive_DMA(&huart2, RxDMAData, 10);
+//  HAL_UART_Receive_DMA(&huart2, RxDMALarge, 4);	// 4 byte -> length
+  HAL_UART_Receive_DMA(&huart2, RxDataFlash, 256);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  // left Data Under 128
+	  if( ((size-flashIndx)>0) && ((size-flashIndx)<128) )
+	  {
+		  if(HTC == 1)
+		  {
+			  memcpy(flashBuffer+flashIndx, RxDataFlash+128, (size-flashIndx));
+			  //strcpy((char*)flashBuffer+flashIndx, (char*)RxDataFlash+128);
+			  flashIndx = size;
+			  isSizeRxed = 0;
+			  HTC = 0;
+			  HAL_UART_DMAStop(&huart2);
+			  HAL_UART_Receive_DMA(&huart2, RxDataFlash, 256);
+
+
+		  }
+		  else if(FTC == 1)
+		  {
+			  memcpy(flashBuffer+flashIndx, RxDataFlash, (size-flashIndx));	// Existing Buffer with additional size
+			  //strcpy((char*)flashBuffer+flashIndx, (char*)RxDataFlash);
+			  flashIndx = size;
+			  isSizeRxed = 0;
+			  FTC = 0;
+			  HAL_UART_DMAStop(&huart2);
+			  HAL_UART_Receive_DMA(&huart2, RxDataFlash, 256);
+
+		  }
+		  printf("File Received in flash => %d byte\r\n", (int)flashIndx);
+	  }
+	  else if( (flashIndx == size) && ((HTC==1) || (FTC==1)) )
+	  {
+
+		  isSizeRxed = 0;
+		  FTC = 0;
+		  HTC = 0;
+		  HAL_UART_DMAStop(&huart2);
+		  HAL_UART_Receive_DMA(&huart2, RxDataFlash, 256);
+		  printf("File Received in flash => %d byte\r\n", (int)flashIndx);
+	  }
+
 	  count++;
-	  printf("[%d]\n\r", count);
-	  sprintf(TxData, "[%d]\n\r", count);
+	  printf("VCP:[%d]\n\r", count);
+	  sprintf((char*)TxData, "UART2: [%5d]\n\r", count);
 	  HAL_UART_Transmit_IT(&huart2, TxData, sizeof(TxData));
 	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_14);
 	  HAL_Delay(1000);
