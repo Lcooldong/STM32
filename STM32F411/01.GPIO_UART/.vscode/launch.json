@@ -13,14 +13,19 @@
             "runToEntryPoint": "main",
             "showDevDebugOutput": "none",
             "servertype": "stlink",
-            "windows": 
-            {
+            "windows": {
                 "serverpath": "C:/ST/STM32CubeCLT_1.17.0/STLink-gdb-server/bin/ST-LINK_gdbserver.exe",
                 "stm32cubeprogrammer": "C:/ST/STM32CubeCLT_1.17.0/STM32CubeProgrammer/bin",
                 "svdFile": "C:/ST/STM32CubeCLT_1.17.0/STMicroelectronics_CMSIS_SVD/STM32F411.svd"
-
             }
+        },
+        {
+            "type": "cmake",
+            "request": "launch",
+            "name": "Debug portfile(s)",
+            "cmakeDebugType": "external",
+            "pipeName": "\\\\.\\pipe\\vcpkg_ext_portfile_dbg",
+            "preLaunchTask": "Debug vcpkg commands"
         }
-        
     ]
 }
