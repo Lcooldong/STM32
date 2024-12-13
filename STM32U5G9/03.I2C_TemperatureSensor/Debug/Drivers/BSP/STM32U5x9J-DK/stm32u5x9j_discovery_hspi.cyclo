@@ -1,0 +1,16 @@
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:139:9:BSP_HSPI_RAM_Init	7
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:209:9:BSP_HSPI_RAM_DeInit	6
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:264:26:MX_HSPI_RAM_Init	1
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:376:9:BSP_HSPI_RAM_Read	4
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:414:9:BSP_HSPI_RAM_Read_DMA	4
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:451:9:BSP_HSPI_RAM_Write	7
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:488:9:BSP_HSPI_RAM_Write_DMA	7
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:521:9:BSP_HSPI_RAM_EnableMemoryMappedMode	8
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:557:9:BSP_HSPI_RAM_DisableMemoryMappedMode	8
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:613:9:BSP_HSPI_RAM_Config16BitsOctalRAM	30
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:782:9:BSP_HSPI_RAM_EnterDeepPowerDown	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:812:9:BSP_HSPI_RAM_LeaveDeepPowerDown	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:842:6:BSP_HSPI_RAM_DMA_IRQHandler	1
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:853:6:BSP_HSPI_RAM_IRQHandler	1
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:870:13:HSPI_RAM_MspInit	1
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_hspi.c:1095:13:HSPI_RAM_MspDeInit	1

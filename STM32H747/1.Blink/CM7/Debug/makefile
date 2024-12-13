@@ -61,8 +61,8 @@ all: main-build
 main-build: 1.Blink_CM7.elf secondary-outputs
 
 # Tool invocations
-1.Blink_CM7.elf 1.Blink_CM7.map: $(OBJS) $(USER_OBJS) D:\Github\STM32\STM32H747\CM7\STM32H747XIHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "1.Blink_CM7.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Github\STM32\STM32H747\CM7\STM32H747XIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1.Blink_CM7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+1.Blink_CM7.elf 1.Blink_CM7.map: $(OBJS) $(USER_OBJS) D:\Github\STM32\STM32H747\1.Blink\CM7\STM32H747XIHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "1.Blink_CM7.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\Github\STM32\STM32H747\1.Blink\CM7\STM32H747XIHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1.Blink_CM7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

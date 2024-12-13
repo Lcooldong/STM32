@@ -1,0 +1,17 @@
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:76:9:BSP_RANGING_SENSOR_Init	2
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:99:9:BSP_RANGING_SENSOR_DeInit	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:125:9:BSP_RANGING_SENSOR_ReadID	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:151:9:BSP_RANGING_SENSOR_GetCapabilities	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:177:9:BSP_RANGING_SENSOR_ConfigProfile	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:203:9:BSP_RANGING_SENSOR_ConfigROI	4
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:234:9:BSP_RANGING_SENSOR_ConfigIT	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:260:9:BSP_RANGING_SENSOR_GetDistance	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:286:9:BSP_RANGING_SENSOR_Start	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:311:9:BSP_RANGING_SENSOR_Stop	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:337:9:BSP_RANGING_SENSOR_SetAddress	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:363:9:BSP_RANGING_SENSOR_GetAddress	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:389:9:BSP_RANGING_SENSOR_SetPowerMode	5
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:416:9:BSP_RANGING_SENSOR_GetPowerMode	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:444:9:BSP_RANGING_SENSOR_XTalkCalibration	3
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:478:16:VL53L5CX_Probe	6
+../Drivers/BSP/STM32U5x9J-DK/stm32u5x9j_discovery_ranging_sensor.c:526:16:vl53l5cx_i2c_recover	6

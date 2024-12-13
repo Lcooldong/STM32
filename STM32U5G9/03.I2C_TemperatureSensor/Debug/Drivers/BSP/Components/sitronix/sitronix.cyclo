@@ -1,0 +1,17 @@
+../Drivers/BSP/Components/sitronix/sitronix.c:87:9:SITRONIX_RegisterBusIO	3
+../Drivers/BSP/Components/sitronix/sitronix.c:129:9:SITRONIX_GetCapabilities	1
+../Drivers/BSP/Components/sitronix/sitronix.c:150:9:SITRONIX_Init	4
+../Drivers/BSP/Components/sitronix/sitronix.c:183:9:SITRONIX_DeInit	2
+../Drivers/BSP/Components/sitronix/sitronix.c:200:9:SITRONIX_GestureConfig	1
+../Drivers/BSP/Components/sitronix/sitronix.c:212:9:SITRONIX_ReadID	4
+../Drivers/BSP/Components/sitronix/sitronix.c:242:9:SITRONIX_GetState	3
+../Drivers/BSP/Components/sitronix/sitronix.c:279:9:SITRONIX_GetMultiTouchState	2
+../Drivers/BSP/Components/sitronix/sitronix.c:304:9:SITRONIX_GetGesture	1
+../Drivers/BSP/Components/sitronix/sitronix.c:319:9:SITRONIX_EnableIT	1
+../Drivers/BSP/Components/sitronix/sitronix.c:334:9:SITRONIX_DisableIT	1
+../Drivers/BSP/Components/sitronix/sitronix.c:351:9:SITRONIX_ITStatus	1
+../Drivers/BSP/Components/sitronix/sitronix.c:367:9:SITRONIX_ClearIT	1
+../Drivers/BSP/Components/sitronix/sitronix.c:393:16:SITRONIX_DetectTouch	3
+../Drivers/BSP/Components/sitronix/sitronix.c:428:16:ReadRegWrap	1
+../Drivers/BSP/Components/sitronix/sitronix.c:443:16:WriteRegWrap	1
+../Drivers/BSP/Components/sitronix/sitronix.c:457:16:ReadDataWrap	1

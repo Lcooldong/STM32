@@ -1,0 +1,3 @@
+../Core/Src/gfxtim.c:30:6:MX_GFXTIM_Init	48	static
+../Core/Src/gfxtim.c:62:6:HAL_GFXTIM_MspInit	24	static
+../Core/Src/gfxtim.c:78:6:HAL_GFXTIM_MspDeInit	16	static
