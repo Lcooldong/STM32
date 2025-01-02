@@ -1,0 +1,5 @@
+D:/Github/STM32/Board/Weact/stm32G431CBU6/CMakeFiles/stm32G431CBU6.dir
+D:/Github/STM32/Board/Weact/stm32G431CBU6/CMakeFiles/edit_cache.dir
+D:/Github/STM32/Board/Weact/stm32G431CBU6/CMakeFiles/rebuild_cache.dir
+D:/Github/STM32/Board/Weact/stm32G431CBU6/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+D:/Github/STM32/Board/Weact/stm32G431CBU6/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
