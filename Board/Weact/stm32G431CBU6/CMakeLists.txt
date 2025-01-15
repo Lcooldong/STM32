@@ -46,7 +46,9 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 )
 
 file(GLOB SRC_FILES CONFIGURE_DEPENDS
-  App/*.c
+  ap/*.c
+  ap/*.cpp
+  bsp/*.c
 )
 
 # Add sources to executable
@@ -57,7 +59,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
-    App/Inc
+    ap/Inc
+    bsp/
+    
     # Add user defined include paths
 )
 
