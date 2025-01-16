@@ -15,14 +15,19 @@
   *
   ******************************************************************************
   */
+
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+
+
 #include "main.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+#include "test.h"
 #include "stdio.h"
 #include "string.h"
 /* USER CODE END Includes */
@@ -54,6 +59,9 @@ uint8_t FinalData[32];
 uint8_t rx;
 int RxIndx = 0;
 int length = 0;
+
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -83,7 +91,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
     // HAL_UART_Transmit(&huart4, RxTemp, 1, 10);
     
     sprintf(buffer, "Receivecd[%d] : %c\r\n", strlen(buffer), RxTemp[0]);
-    HAL_UART_Transmit(&huart4, buffer, strlen(buffer), 10);
+    HAL_UART_Transmit(&huart4, (uint8_t*)buffer, strlen(buffer), 10);
     memset(RxTemp, 0, sizeof(RxTemp));
   }
   //memcpy(RxData + RxIndx, RxTemp,1);
@@ -120,7 +128,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -134,6 +142,8 @@ int main(void)
   MX_GPIO_Init();
   MX_UART4_Init();
   /* USER CODE BEGIN 2 */
+
+  
   // HAL_UART_Receive_IT(&huart4, RxData, 1);
   HAL_UART_Receive_IT(&huart4, RxTemp, 1);
   // HAL_UART_Receive_IT(&huart4, &rx, 1);
@@ -148,7 +158,7 @@ int main(void)
     
     count++;
     sprintf(countBuffer, "[%d]\r\n", count);
-    HAL_UART_Transmit(&huart4, (unsigned char*)countBuffer, sizeof(countBuffer) -1, 10);
+    HAL_UART_Transmit(&huart4, (uint8_t*)countBuffer, sizeof(countBuffer) -1, 10);
     HAL_Delay(500);
 
     // if (RxTemp[0] == '\n' && RxIndx > 0)
