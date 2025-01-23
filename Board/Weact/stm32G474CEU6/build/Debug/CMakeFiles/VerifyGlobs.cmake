@@ -14,7 +14,6 @@ endif()
 # SRC_FILES at CMakeLists.txt:49 (file)
 file(GLOB NEW_GLOB LIST_DIRECTORIES true "D:/Github/STM32/Board/Weact/stm32G474CEU6/App/*.cpp")
 set(OLD_GLOB
-  "D:/Github/STM32/Board/Weact/stm32G474CEU6/App/test.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
