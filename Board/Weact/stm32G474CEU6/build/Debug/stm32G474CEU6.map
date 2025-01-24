@@ -4510,7 +4510,7 @@ LOAD C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x08000000                g_pfnVectors
                 0x080001d8                        . = ALIGN (0x4)
 
-.text           0x080001e0     0xb804
+.text           0x080001e0     0xb81c
                 0x080001e0                        . = ALIGN (0x4)
  *(.text)
  .text          0x080001e0       0x40 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -4556,844 +4556,844 @@ LOAD C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x0800082c       0x74 CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
                 0x0800082c                HAL_UART_RxCpltCallback
  .text.HAL_FDCAN_RxFifo0Callback
-                0x080008a0       0xac CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
+                0x080008a0       0xc4 CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
                 0x080008a0                HAL_FDCAN_RxFifo0Callback
- .text.main     0x0800094c      0x1a4 CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
-                0x0800094c                main
+ .text.main     0x08000964      0x1a4 CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
+                0x08000964                main
  .text.SystemClock_Config
-                0x08000af0       0x96 CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
-                0x08000af0                SystemClock_Config
+                0x08000b08       0x96 CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
+                0x08000b08                SystemClock_Config
  .text.Error_Handler
-                0x08000b86        0xc CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
-                0x08000b86                Error_Handler
- *fill*         0x08000b92        0x2 
+                0x08000b9e        0xc CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
+                0x08000b9e                Error_Handler
+ *fill*         0x08000baa        0x2 
  .text.MX_GPIO_Init
-                0x08000b94       0xc8 CMakeFiles/stm32G474CEU6.dir/Core/Src/gpio.c.obj
-                0x08000b94                MX_GPIO_Init
+                0x08000bac       0xc8 CMakeFiles/stm32G474CEU6.dir/Core/Src/gpio.c.obj
+                0x08000bac                MX_GPIO_Init
  .text.MX_FDCAN2_Init
-                0x08000c5c       0x90 CMakeFiles/stm32G474CEU6.dir/Core/Src/fdcan.c.obj
-                0x08000c5c                MX_FDCAN2_Init
+                0x08000c74       0x90 CMakeFiles/stm32G474CEU6.dir/Core/Src/fdcan.c.obj
+                0x08000c74                MX_FDCAN2_Init
  .text.HAL_FDCAN_MspInit
-                0x08000cec       0xc8 CMakeFiles/stm32G474CEU6.dir/Core/Src/fdcan.c.obj
-                0x08000cec                HAL_FDCAN_MspInit
+                0x08000d04       0xc8 CMakeFiles/stm32G474CEU6.dir/Core/Src/fdcan.c.obj
+                0x08000d04                HAL_FDCAN_MspInit
  .text.MX_UART4_Init
-                0x08000db4       0xa0 CMakeFiles/stm32G474CEU6.dir/Core/Src/usart.c.obj
-                0x08000db4                MX_UART4_Init
+                0x08000dcc       0xa0 CMakeFiles/stm32G474CEU6.dir/Core/Src/usart.c.obj
+                0x08000dcc                MX_UART4_Init
  .text.HAL_UART_MspInit
-                0x08000e54      0x100 CMakeFiles/stm32G474CEU6.dir/Core/Src/usart.c.obj
-                0x08000e54                HAL_UART_MspInit
+                0x08000e6c      0x100 CMakeFiles/stm32G474CEU6.dir/Core/Src/usart.c.obj
+                0x08000e6c                HAL_UART_MspInit
  .text.NMI_Handler
-                0x08000f54        0x8 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000f54                NMI_Handler
- .text.HardFault_Handler
-                0x08000f5c        0x8 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000f5c                HardFault_Handler
- .text.MemManage_Handler
-                0x08000f64        0x8 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000f64                MemManage_Handler
- .text.BusFault_Handler
                 0x08000f6c        0x8 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000f6c                BusFault_Handler
- .text.UsageFault_Handler
+                0x08000f6c                NMI_Handler
+ .text.HardFault_Handler
                 0x08000f74        0x8 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000f74                UsageFault_Handler
+                0x08000f74                HardFault_Handler
+ .text.MemManage_Handler
+                0x08000f7c        0x8 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08000f7c                MemManage_Handler
+ .text.BusFault_Handler
+                0x08000f84        0x8 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08000f84                BusFault_Handler
+ .text.UsageFault_Handler
+                0x08000f8c        0x8 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08000f8c                UsageFault_Handler
  .text.SVC_Handler
-                0x08000f7c        0xe CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000f7c                SVC_Handler
+                0x08000f94        0xe CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08000f94                SVC_Handler
  .text.DebugMon_Handler
-                0x08000f8a        0xe CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000f8a                DebugMon_Handler
+                0x08000fa2        0xe CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08000fa2                DebugMon_Handler
  .text.PendSV_Handler
-                0x08000f98        0xe CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000f98                PendSV_Handler
+                0x08000fb0        0xe CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08000fb0                PendSV_Handler
  .text.SysTick_Handler
-                0x08000fa6        0xc CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000fa6                SysTick_Handler
- *fill*         0x08000fb2        0x2 
+                0x08000fbe        0xc CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08000fbe                SysTick_Handler
+ *fill*         0x08000fca        0x2 
  .text.USB_LP_IRQHandler
-                0x08000fb4       0x14 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000fb4                USB_LP_IRQHandler
+                0x08000fcc       0x14 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08000fcc                USB_LP_IRQHandler
  .text.UART4_IRQHandler
-                0x08000fc8       0x14 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000fc8                UART4_IRQHandler
+                0x08000fe0       0x14 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08000fe0                UART4_IRQHandler
  .text.FDCAN2_IT0_IRQHandler
-                0x08000fdc       0x14 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
-                0x08000fdc                FDCAN2_IT0_IRQHandler
+                0x08000ff4       0x14 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+                0x08000ff4                FDCAN2_IT0_IRQHandler
  .text.HAL_MspInit
-                0x08000ff0       0x48 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_hal_msp.c.obj
-                0x08000ff0                HAL_MspInit
+                0x08001008       0x48 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_hal_msp.c.obj
+                0x08001008                HAL_MspInit
  .text.HAL_PCD_MspInit
-                0x08001038       0x78 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x08001038                HAL_PCD_MspInit
+                0x08001050       0x78 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x08001050                HAL_PCD_MspInit
  .text.HAL_PCD_SetupStageCallback
-                0x080010b0       0x24 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x080010b0                HAL_PCD_SetupStageCallback
+                0x080010c8       0x24 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080010c8                HAL_PCD_SetupStageCallback
  .text.HAL_PCD_DataOutStageCallback
-                0x080010d4       0x36 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x080010d4                HAL_PCD_DataOutStageCallback
+                0x080010ec       0x36 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080010ec                HAL_PCD_DataOutStageCallback
  .text.HAL_PCD_DataInStageCallback
-                0x0800110a       0x34 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x0800110a                HAL_PCD_DataInStageCallback
+                0x08001122       0x34 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x08001122                HAL_PCD_DataInStageCallback
  .text.HAL_PCD_SOFCallback
-                0x0800113e       0x1c CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x0800113e                HAL_PCD_SOFCallback
+                0x08001156       0x1c CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x08001156                HAL_PCD_SOFCallback
  .text.HAL_PCD_ResetCallback
-                0x0800115a       0x3c CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x0800115a                HAL_PCD_ResetCallback
- *fill*         0x08001196        0x2 
+                0x08001172       0x3c CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x08001172                HAL_PCD_ResetCallback
+ *fill*         0x080011ae        0x2 
  .text.HAL_PCD_SuspendCallback
-                0x08001198       0x34 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x08001198                HAL_PCD_SuspendCallback
+                0x080011b0       0x34 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080011b0                HAL_PCD_SuspendCallback
  .text.HAL_PCD_ResumeCallback
-                0x080011cc       0x38 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x080011cc                HAL_PCD_ResumeCallback
+                0x080011e4       0x38 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080011e4                HAL_PCD_ResumeCallback
  .text.USBD_LL_Init
-                0x08001204       0xc0 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x08001204                USBD_LL_Init
+                0x0800121c       0xc0 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x0800121c                USBD_LL_Init
  .text.USBD_LL_Start
-                0x080012c4       0x36 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x080012c4                USBD_LL_Start
+                0x080012dc       0x36 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080012dc                USBD_LL_Start
  .text.USBD_LL_OpenEP
-                0x080012fa       0x4c CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x080012fa                USBD_LL_OpenEP
+                0x08001312       0x4c CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x08001312                USBD_LL_OpenEP
  .text.USBD_LL_CloseEP
-                0x08001346       0x3e CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x08001346                USBD_LL_CloseEP
+                0x0800135e       0x3e CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x0800135e                USBD_LL_CloseEP
  .text.USBD_LL_StallEP
-                0x08001384       0x3e CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x08001384                USBD_LL_StallEP
+                0x0800139c       0x3e CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x0800139c                USBD_LL_StallEP
  .text.USBD_LL_ClearStallEP
-                0x080013c2       0x3e CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x080013c2                USBD_LL_ClearStallEP
+                0x080013da       0x3e CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080013da                USBD_LL_ClearStallEP
  .text.USBD_LL_IsStallEP
-                0x08001400       0x58 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x08001400                USBD_LL_IsStallEP
+                0x08001418       0x58 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x08001418                USBD_LL_IsStallEP
  .text.USBD_LL_SetUSBAddress
-                0x08001458       0x3e CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x08001458                USBD_LL_SetUSBAddress
+                0x08001470       0x3e CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x08001470                USBD_LL_SetUSBAddress
  .text.USBD_LL_Transmit
-                0x08001496       0x42 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x08001496                USBD_LL_Transmit
+                0x080014ae       0x42 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080014ae                USBD_LL_Transmit
  .text.USBD_LL_PrepareReceive
-                0x080014d8       0x42 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x080014d8                USBD_LL_PrepareReceive
+                0x080014f0       0x42 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080014f0                USBD_LL_PrepareReceive
  .text.USBD_LL_GetRxDataSize
-                0x0800151a       0x26 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x0800151a                USBD_LL_GetRxDataSize
+                0x08001532       0x26 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x08001532                USBD_LL_GetRxDataSize
  .text.HAL_PCDEx_LPM_Callback
-                0x08001540       0x6c CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x08001540                HAL_PCDEx_LPM_Callback
+                0x08001558       0x6c CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x08001558                HAL_PCDEx_LPM_Callback
  .text.USBD_static_malloc
-                0x080015ac       0x1c CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x080015ac                USBD_static_malloc
+                0x080015c4       0x1c CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080015c4                USBD_static_malloc
  .text.USBD_static_free
-                0x080015c8       0x14 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
-                0x080015c8                USBD_static_free
+                0x080015e0       0x14 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080015e0                USBD_static_free
  .text.SystemClockConfig_Resume
-                0x080015dc        0xc CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x080015f4        0xc CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
  .text.USBD_Get_USB_Status
-                0x080015e8       0x58 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+                0x08001600       0x58 CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
  .text.MX_USB_Device_Init
-                0x08001640       0x60 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usb_device.c.obj
-                0x08001640                MX_USB_Device_Init
+                0x08001658       0x60 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usb_device.c.obj
+                0x08001658                MX_USB_Device_Init
  .text.USBD_CDC_DeviceDescriptor
-                0x080016a0       0x24 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
-                0x080016a0                USBD_CDC_DeviceDescriptor
+                0x080016b8       0x24 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+                0x080016b8                USBD_CDC_DeviceDescriptor
  .text.USBD_CDC_LangIDStrDescriptor
-                0x080016c4       0x24 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
-                0x080016c4                USBD_CDC_LangIDStrDescriptor
+                0x080016dc       0x24 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+                0x080016dc                USBD_CDC_LangIDStrDescriptor
  .text.USBD_CDC_ProductStrDescriptor
-                0x080016e8       0x3c CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
-                0x080016e8                USBD_CDC_ProductStrDescriptor
+                0x08001700       0x3c CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+                0x08001700                USBD_CDC_ProductStrDescriptor
  .text.USBD_CDC_ManufacturerStrDescriptor
-                0x08001724       0x28 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
-                0x08001724                USBD_CDC_ManufacturerStrDescriptor
+                0x0800173c       0x28 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+                0x0800173c                USBD_CDC_ManufacturerStrDescriptor
  .text.USBD_CDC_SerialStrDescriptor
-                0x0800174c       0x24 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
-                0x0800174c                USBD_CDC_SerialStrDescriptor
+                0x08001764       0x24 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+                0x08001764                USBD_CDC_SerialStrDescriptor
  .text.USBD_CDC_ConfigStrDescriptor
-                0x08001770       0x3c CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
-                0x08001770                USBD_CDC_ConfigStrDescriptor
+                0x08001788       0x3c CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+                0x08001788                USBD_CDC_ConfigStrDescriptor
  .text.USBD_CDC_InterfaceStrDescriptor
-                0x080017ac       0x3c CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
-                0x080017ac                USBD_CDC_InterfaceStrDescriptor
+                0x080017c4       0x3c CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+                0x080017c4                USBD_CDC_InterfaceStrDescriptor
  .text.Get_SerialNum
-                0x080017e8       0x58 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+                0x08001800       0x58 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
  .text.IntToUnicode
-                0x08001840       0x7e CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
- *fill*         0x080018be        0x2 
+                0x08001858       0x7e CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+ *fill*         0x080018d6        0x2 
  .text.CDC_Init_FS
-                0x080018c0       0x28 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
+                0x080018d8       0x28 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
  .text.CDC_DeInit_FS
-                0x080018e8       0x10 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
+                0x08001900       0x10 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
  .text.CDC_Control_FS
-                0x080018f8       0xbc CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
+                0x08001910       0xbc CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
  .text.CDC_Receive_FS
-                0x080019b4       0x28 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
+                0x080019cc       0x28 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
  .text.CDC_Transmit_FS
-                0x080019dc       0x4c CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
-                0x080019dc                CDC_Transmit_FS
+                0x080019f4       0x4c CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
+                0x080019f4                CDC_Transmit_FS
  .text.CDC_TransmitCplt_FS
-                0x08001a28       0x22 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
+                0x08001a40       0x22 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
  .text.HAL_PCD_Init
-                0x08001a4a      0x19c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x08001a4a                HAL_PCD_Init
+                0x08001a62      0x19c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08001a62                HAL_PCD_Init
  .text.HAL_PCD_Start
-                0x08001be6       0x44 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x08001be6                HAL_PCD_Start
+                0x08001bfe       0x44 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08001bfe                HAL_PCD_Start
  .text.HAL_PCD_IRQHandler
-                0x08001c2a      0x24e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x08001c2a                HAL_PCD_IRQHandler
+                0x08001c42      0x24e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08001c42                HAL_PCD_IRQHandler
  .text.HAL_PCD_SetAddress
-                0x08001e78       0x48 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x08001e78                HAL_PCD_SetAddress
+                0x08001e90       0x48 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08001e90                HAL_PCD_SetAddress
  .text.HAL_PCD_EP_Open
-                0x08001ec0       0xbe CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x08001ec0                HAL_PCD_EP_Open
+                0x08001ed8       0xbe CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08001ed8                HAL_PCD_EP_Open
  .text.HAL_PCD_EP_Close
-                0x08001f7e       0x90 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x08001f7e                HAL_PCD_EP_Close
+                0x08001f96       0x90 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08001f96                HAL_PCD_EP_Close
  .text.HAL_PCD_EP_Receive
-                0x0800200e       0x62 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x0800200e                HAL_PCD_EP_Receive
+                0x08002026       0x62 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08002026                HAL_PCD_EP_Receive
  .text.HAL_PCD_EP_GetRxCount
-                0x08002070       0x30 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x08002070                HAL_PCD_EP_GetRxCount
+                0x08002088       0x30 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08002088                HAL_PCD_EP_GetRxCount
  .text.HAL_PCD_EP_Transmit
-                0x080020a0       0x6e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x080020a0                HAL_PCD_EP_Transmit
+                0x080020b8       0x6e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x080020b8                HAL_PCD_EP_Transmit
  .text.HAL_PCD_EP_SetStall
-                0x0800210e       0xa4 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x0800210e                HAL_PCD_EP_SetStall
+                0x08002126       0xa4 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08002126                HAL_PCD_EP_SetStall
  .text.HAL_PCD_EP_ClrStall
-                0x080021b2       0xa8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
-                0x080021b2                HAL_PCD_EP_ClrStall
+                0x080021ca       0xa8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x080021ca                HAL_PCD_EP_ClrStall
  .text.PCD_EP_ISR_Handler
-                0x0800225a      0x68e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08002272      0x68e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
  .text.HAL_PCD_EP_DB_Receive
-                0x080028e8      0x212 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08002900      0x212 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
  .text.HAL_PCD_EP_DB_Transmit
-                0x08002afa      0x878 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+                0x08002b12      0x878 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
  .text.HAL_PCDEx_PMAConfig
-                0x08003372       0x86 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd_ex.c.obj
-                0x08003372                HAL_PCDEx_PMAConfig
+                0x0800338a       0x86 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd_ex.c.obj
+                0x0800338a                HAL_PCDEx_PMAConfig
  .text.HAL_PCDEx_ActivateLPM
-                0x080033f8       0x54 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd_ex.c.obj
-                0x080033f8                HAL_PCDEx_ActivateLPM
+                0x08003410       0x54 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd_ex.c.obj
+                0x08003410                HAL_PCDEx_ActivateLPM
  .text.USB_EnableGlobalInt
-                0x0800344c       0x2e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x0800344c                USB_EnableGlobalInt
+                0x08003464       0x2e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x08003464                USB_EnableGlobalInt
  .text.USB_DisableGlobalInt
-                0x0800347a       0x36 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x0800347a                USB_DisableGlobalInt
+                0x08003492       0x36 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x08003492                USB_DisableGlobalInt
  .text.USB_DevInit
-                0x080034b0       0x3c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x080034b0                USB_DevInit
+                0x080034c8       0x3c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x080034c8                USB_DevInit
  .text.USB_ActivateEndpoint
-                0x080034ec      0x9d0 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x080034ec                USB_ActivateEndpoint
+                0x08003504      0x9d0 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x08003504                USB_ActivateEndpoint
  .text.USB_DeactivateEndpoint
-                0x08003ebc      0x3da CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x08003ebc                USB_DeactivateEndpoint
+                0x08003ed4      0x3da CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x08003ed4                USB_DeactivateEndpoint
  .text.USB_EPStartXfer
-                0x08004296      0xb5e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x08004296                USB_EPStartXfer
+                0x080042ae      0xb5e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x080042ae                USB_EPStartXfer
  .text.USB_EPSetStall
-                0x08004df4       0xa2 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x08004df4                USB_EPSetStall
+                0x08004e0c       0xa2 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x08004e0c                USB_EPSetStall
  .text.USB_EPClearStall
-                0x08004e96      0x152 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x08004e96                USB_EPClearStall
+                0x08004eae      0x152 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x08004eae                USB_EPClearStall
  .text.USB_SetDevAddress
-                0x08004fe8       0x28 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x08004fe8                USB_SetDevAddress
+                0x08005000       0x28 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x08005000                USB_SetDevAddress
  .text.USB_DevConnect
-                0x08005010       0x2e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x08005010                USB_DevConnect
+                0x08005028       0x2e CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x08005028                USB_DevConnect
  .text.USB_ReadInterrupts
-                0x0800503e       0x20 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x0800503e                USB_ReadInterrupts
+                0x08005056       0x20 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x08005056                USB_ReadInterrupts
  .text.USB_WritePMA
-                0x0800505e       0x84 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x0800505e                USB_WritePMA
+                0x08005076       0x84 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x08005076                USB_WritePMA
  .text.USB_ReadPMA
-                0x080050e2       0x98 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
-                0x080050e2                USB_ReadPMA
+                0x080050fa       0x98 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+                0x080050fa                USB_ReadPMA
  .text.HAL_Init
-                0x0800517a       0x30 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
-                0x0800517a                HAL_Init
- *fill*         0x080051aa        0x2 
+                0x08005192       0x30 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
+                0x08005192                HAL_Init
+ *fill*         0x080051c2        0x2 
  .text.HAL_InitTick
-                0x080051ac       0x74 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
-                0x080051ac                HAL_InitTick
+                0x080051c4       0x74 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
+                0x080051c4                HAL_InitTick
  .text.HAL_IncTick
-                0x08005220       0x24 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
-                0x08005220                HAL_IncTick
+                0x08005238       0x24 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
+                0x08005238                HAL_IncTick
  .text.HAL_GetTick
-                0x08005244       0x18 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
-                0x08005244                HAL_GetTick
+                0x0800525c       0x18 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
+                0x0800525c                HAL_GetTick
  .text.HAL_RCC_OscConfig
-                0x0800525c      0x624 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
-                0x0800525c                HAL_RCC_OscConfig
+                0x08005274      0x624 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
+                0x08005274                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x08005880      0x278 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
-                0x08005880                HAL_RCC_ClockConfig
+                0x08005898      0x278 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
+                0x08005898                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x08005af8       0xc4 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
-                0x08005af8                HAL_RCC_GetSysClockFreq
+                0x08005b10       0xc4 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
+                0x08005b10                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_GetHCLKFreq
-                0x08005bbc       0x18 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
-                0x08005bbc                HAL_RCC_GetHCLKFreq
+                0x08005bd4       0x18 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
+                0x08005bd4                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK1Freq
-                0x08005bd4       0x2c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
-                0x08005bd4                HAL_RCC_GetPCLK1Freq
+                0x08005bec       0x2c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
+                0x08005bec                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x08005c00       0x2c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
-                0x08005c00                HAL_RCC_GetPCLK2Freq
+                0x08005c18       0x2c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
+                0x08005c18                HAL_RCC_GetPCLK2Freq
  .text.RCC_GetSysClockFreqFromPLLSource
-                0x08005c2c       0x8c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
+                0x08005c44       0x8c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
  .text.HAL_RCCEx_PeriphCLKConfig
-                0x08005cb8      0x49c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c.obj
-                0x08005cb8                HAL_RCCEx_PeriphCLKConfig
+                0x08005cd0      0x49c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c.obj
+                0x08005cd0                HAL_RCCEx_PeriphCLKConfig
  .text.HAL_GPIO_Init
-                0x08006154      0x304 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj
-                0x08006154                HAL_GPIO_Init
+                0x0800616c      0x304 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj
+                0x0800616c                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x08006458       0x30 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj
-                0x08006458                HAL_GPIO_WritePin
+                0x08006470       0x30 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj
+                0x08006470                HAL_GPIO_WritePin
  .text.HAL_GPIO_TogglePin
-                0x08006488       0x34 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj
-                0x08006488                HAL_GPIO_TogglePin
+                0x080064a0       0x34 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj
+                0x080064a0                HAL_GPIO_TogglePin
  .text.HAL_DMA_Abort
-                0x080064bc       0xb2 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c.obj
-                0x080064bc                HAL_DMA_Abort
+                0x080064d4       0xb2 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c.obj
+                0x080064d4                HAL_DMA_Abort
  .text.HAL_DMA_Abort_IT
-                0x0800656e       0xce CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c.obj
-                0x0800656e                HAL_DMA_Abort_IT
+                0x08006586       0xce CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c.obj
+                0x08006586                HAL_DMA_Abort_IT
  .text.HAL_PWREx_ControlVoltageScaling
-                0x0800663c      0x148 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.obj
-                0x0800663c                HAL_PWREx_ControlVoltageScaling
+                0x08006654      0x148 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.obj
+                0x08006654                HAL_PWREx_ControlVoltageScaling
  .text.HAL_PWREx_DisableUCPDDeadBattery
-                0x08006784       0x20 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.obj
-                0x08006784                HAL_PWREx_DisableUCPDDeadBattery
+                0x0800679c       0x20 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.obj
+                0x0800679c                HAL_PWREx_DisableUCPDDeadBattery
  .text.__NVIC_SetPriorityGrouping
-                0x080067a4       0x48 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+                0x080067bc       0x48 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
  .text.__NVIC_GetPriorityGrouping
-                0x080067ec       0x1c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+                0x08006804       0x1c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
  .text.__NVIC_EnableIRQ
-                0x08006808       0x3c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+                0x08006820       0x3c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
  .text.__NVIC_SetPriority
-                0x08006844       0x54 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+                0x0800685c       0x54 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
  .text.NVIC_EncodePriority
-                0x08006898       0x66 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
- *fill*         0x080068fe        0x2 
+                0x080068b0       0x66 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+ *fill*         0x08006916        0x2 
  .text.SysTick_Config
-                0x08006900       0x44 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+                0x08006918       0x44 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08006944       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
-                0x08006944                HAL_NVIC_SetPriorityGrouping
+                0x0800695c       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+                0x0800695c                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x0800695a       0x34 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
-                0x0800695a                HAL_NVIC_SetPriority
+                0x08006972       0x34 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+                0x08006972                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x0800698e       0x1c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
-                0x0800698e                HAL_NVIC_EnableIRQ
+                0x080069a6       0x1c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+                0x080069a6                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x080069aa       0x18 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
-                0x080069aa                HAL_SYSTICK_Config
- *fill*         0x080069c2        0x2 
+                0x080069c2       0x18 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+                0x080069c2                HAL_SYSTICK_Config
+ *fill*         0x080069da        0x2 
  .text.HAL_FDCAN_Init
-                0x080069c4      0x2b4 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x080069c4                HAL_FDCAN_Init
+                0x080069dc      0x2b4 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x080069dc                HAL_FDCAN_Init
  .text.HAL_FDCAN_ConfigFilter
-                0x08006c78       0xb4 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x08006c78                HAL_FDCAN_ConfigFilter
+                0x08006c90       0xb4 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x08006c90                HAL_FDCAN_ConfigFilter
  .text.HAL_FDCAN_Start
-                0x08006d2c       0x50 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x08006d2c                HAL_FDCAN_Start
+                0x08006d44       0x50 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x08006d44                HAL_FDCAN_Start
  .text.HAL_FDCAN_AddMessageToTxFifoQ
-                0x08006d7c       0x88 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x08006d7c                HAL_FDCAN_AddMessageToTxFifoQ
+                0x08006d94       0x88 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x08006d94                HAL_FDCAN_AddMessageToTxFifoQ
  .text.HAL_FDCAN_GetRxMessage
-                0x08006e04      0x210 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x08006e04                HAL_FDCAN_GetRxMessage
+                0x08006e1c      0x210 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x08006e1c                HAL_FDCAN_GetRxMessage
  .text.HAL_FDCAN_ActivateNotification
-                0x08007014      0x1cc CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x08007014                HAL_FDCAN_ActivateNotification
+                0x0800702c      0x1cc CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x0800702c                HAL_FDCAN_ActivateNotification
  .text.HAL_FDCAN_IRQHandler
-                0x080071e0      0x24a CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x080071e0                HAL_FDCAN_IRQHandler
+                0x080071f8      0x24a CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x080071f8                HAL_FDCAN_IRQHandler
  .text.HAL_FDCAN_TxEventFifoCallback
-                0x0800742a       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x0800742a                HAL_FDCAN_TxEventFifoCallback
+                0x08007442       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x08007442                HAL_FDCAN_TxEventFifoCallback
  .text.HAL_FDCAN_RxFifo1Callback
-                0x08007440       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x08007440                HAL_FDCAN_RxFifo1Callback
+                0x08007458       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x08007458                HAL_FDCAN_RxFifo1Callback
  .text.HAL_FDCAN_TxFifoEmptyCallback
-                0x08007456       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x08007456                HAL_FDCAN_TxFifoEmptyCallback
+                0x0800746e       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x0800746e                HAL_FDCAN_TxFifoEmptyCallback
  .text.HAL_FDCAN_TxBufferCompleteCallback
-                0x0800746a       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x0800746a                HAL_FDCAN_TxBufferCompleteCallback
+                0x08007482       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x08007482                HAL_FDCAN_TxBufferCompleteCallback
  .text.HAL_FDCAN_TxBufferAbortCallback
-                0x08007480       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x08007480                HAL_FDCAN_TxBufferAbortCallback
+                0x08007498       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x08007498                HAL_FDCAN_TxBufferAbortCallback
  .text.HAL_FDCAN_TimestampWraparoundCallback
-                0x08007496       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x08007496                HAL_FDCAN_TimestampWraparoundCallback
+                0x080074ae       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x080074ae                HAL_FDCAN_TimestampWraparoundCallback
  .text.HAL_FDCAN_TimeoutOccurredCallback
-                0x080074aa       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x080074aa                HAL_FDCAN_TimeoutOccurredCallback
+                0x080074c2       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x080074c2                HAL_FDCAN_TimeoutOccurredCallback
  .text.HAL_FDCAN_HighPriorityMessageCallback
-                0x080074be       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x080074be                HAL_FDCAN_HighPriorityMessageCallback
+                0x080074d6       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x080074d6                HAL_FDCAN_HighPriorityMessageCallback
  .text.HAL_FDCAN_ErrorCallback
-                0x080074d2       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x080074d2                HAL_FDCAN_ErrorCallback
+                0x080074ea       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x080074ea                HAL_FDCAN_ErrorCallback
  .text.HAL_FDCAN_ErrorStatusCallback
-                0x080074e6       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
-                0x080074e6                HAL_FDCAN_ErrorStatusCallback
+                0x080074fe       0x16 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x080074fe                HAL_FDCAN_ErrorStatusCallback
  .text.FDCAN_CalcultateRamBlockAddresses
-                0x080074fc       0xd8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x08007514       0xd8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
  .text.FDCAN_CopyMessageToRAM
-                0x080075d4       0xf8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x080075ec       0xf8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
  .text.HAL_UART_Transmit
-                0x080076cc      0x11c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x080076cc                HAL_UART_Transmit
+                0x080076e4      0x11c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x080076e4                HAL_UART_Transmit
  .text.HAL_UART_Receive_IT
-                0x080077e8       0x98 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x080077e8                HAL_UART_Receive_IT
+                0x08007800       0x98 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08007800                HAL_UART_Receive_IT
  .text.HAL_UART_IRQHandler
-                0x08007880      0x684 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x08007880                HAL_UART_IRQHandler
+                0x08007898      0x684 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08007898                HAL_UART_IRQHandler
  .text.HAL_UART_TxCpltCallback
-                0x08007f04       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x08007f04                HAL_UART_TxCpltCallback
+                0x08007f1c       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08007f1c                HAL_UART_TxCpltCallback
  .text.HAL_UART_ErrorCallback
-                0x08007f18       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x08007f18                HAL_UART_ErrorCallback
+                0x08007f30       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08007f30                HAL_UART_ErrorCallback
  .text.HAL_UARTEx_RxEventCallback
-                0x08007f2c       0x18 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x08007f2c                HAL_UARTEx_RxEventCallback
+                0x08007f44       0x18 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08007f44                HAL_UARTEx_RxEventCallback
  .text.UART_SetConfig
-                0x08007f44      0x5f8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x08007f44                UART_SetConfig
+                0x08007f5c      0x5f8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08007f5c                UART_SetConfig
  .text.UART_AdvFeatureConfig
-                0x0800853c      0x144 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x0800853c                UART_AdvFeatureConfig
+                0x08008554      0x144 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08008554                UART_AdvFeatureConfig
  .text.UART_CheckIdleState
-                0x08008680      0x154 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x08008680                UART_CheckIdleState
+                0x08008698      0x154 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08008698                UART_CheckIdleState
  .text.UART_WaitOnFlagUntilTimeout
-                0x080087d4       0xda CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x080087d4                UART_WaitOnFlagUntilTimeout
- *fill*         0x080088ae        0x2 
+                0x080087ec       0xda CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x080087ec                UART_WaitOnFlagUntilTimeout
+ *fill*         0x080088c6        0x2 
  .text.UART_Start_Receive_IT
-                0x080088b0      0x244 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x080088b0                UART_Start_Receive_IT
+                0x080088c8      0x244 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x080088c8                UART_Start_Receive_IT
  .text.UART_EndRxTransfer
-                0x08008af4       0xcc CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08008b0c       0xcc CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
  .text.UART_DMAAbortOnError
-                0x08008bc0       0x24 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08008bd8       0x24 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
  .text.UART_EndTransmit_IT
-                0x08008be4       0x56 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
- *fill*         0x08008c3a        0x2 
+                0x08008bfc       0x56 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+ *fill*         0x08008c52        0x2 
  .text.UART_RxISR_8BIT
-                0x08008c3c      0x1b8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08008c54      0x1b8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
  .text.UART_RxISR_16BIT
-                0x08008df4      0x1b8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08008e0c      0x1b8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
  .text.UART_RxISR_8BIT_FIFOEN
-                0x08008fac      0x364 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08008fc4      0x364 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
  .text.UART_RxISR_16BIT_FIFOEN
-                0x08009310      0x36c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x08009328      0x36c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
  .text.HAL_RS485Ex_Init
-                0x0800967c       0xd2 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
-                0x0800967c                HAL_RS485Ex_Init
+                0x08009694       0xd2 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+                0x08009694                HAL_RS485Ex_Init
  .text.HAL_UARTEx_WakeupCallback
-                0x0800974e       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
-                0x0800974e                HAL_UARTEx_WakeupCallback
+                0x08009766       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+                0x08009766                HAL_UARTEx_WakeupCallback
  .text.HAL_UARTEx_RxFifoFullCallback
-                0x08009762       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
-                0x08009762                HAL_UARTEx_RxFifoFullCallback
+                0x0800977a       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+                0x0800977a                HAL_UARTEx_RxFifoFullCallback
  .text.HAL_UARTEx_TxFifoEmptyCallback
-                0x08009776       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
-                0x08009776                HAL_UARTEx_TxFifoEmptyCallback
+                0x0800978e       0x14 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+                0x0800978e                HAL_UARTEx_TxFifoEmptyCallback
  .text.HAL_UARTEx_DisableFifoMode
-                0x0800978a       0x72 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
-                0x0800978a                HAL_UARTEx_DisableFifoMode
+                0x080097a2       0x72 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+                0x080097a2                HAL_UARTEx_DisableFifoMode
  .text.HAL_UARTEx_SetTxFifoThreshold
-                0x080097fc       0x7c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
-                0x080097fc                HAL_UARTEx_SetTxFifoThreshold
+                0x08009814       0x7c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+                0x08009814                HAL_UARTEx_SetTxFifoThreshold
  .text.HAL_UARTEx_SetRxFifoThreshold
-                0x08009878       0x7c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
-                0x08009878                HAL_UARTEx_SetRxFifoThreshold
+                0x08009890       0x7c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+                0x08009890                HAL_UARTEx_SetRxFifoThreshold
  .text.UARTEx_SetNbDataToProcess
-                0x080098f4       0x9c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+                0x0800990c       0x9c CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
  .text.SystemInit
-                0x08009990       0x24 CMakeFiles/stm32G474CEU6.dir/Core/Src/system_stm32g4xx.c.obj
-                0x08009990                SystemInit
+                0x080099a8       0x24 CMakeFiles/stm32G474CEU6.dir/Core/Src/system_stm32g4xx.c.obj
+                0x080099a8                SystemInit
  .text.USBD_Init
-                0x080099b4       0x60 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x080099b4                USBD_Init
+                0x080099cc       0x60 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x080099cc                USBD_Init
  .text.USBD_RegisterClass
-                0x08009a14       0x4e CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009a14                USBD_RegisterClass
+                0x08009a2c       0x4e CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009a2c                USBD_RegisterClass
  .text.USBD_Start
-                0x08009a62       0x18 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009a62                USBD_Start
+                0x08009a7a       0x18 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009a7a                USBD_Start
  .text.USBD_RunTestMode
-                0x08009a7a       0x16 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009a7a                USBD_RunTestMode
+                0x08009a92       0x16 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009a92                USBD_RunTestMode
  .text.USBD_SetClassConfig
-                0x08009a90       0x38 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009a90                USBD_SetClassConfig
+                0x08009aa8       0x38 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009aa8                USBD_SetClassConfig
  .text.USBD_ClrClassConfig
-                0x08009ac8       0x30 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009ac8                USBD_ClrClassConfig
+                0x08009ae0       0x30 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009ae0                USBD_ClrClassConfig
  .text.USBD_LL_SetupStage
-                0x08009af8       0xaa CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009af8                USBD_LL_SetupStage
+                0x08009b10       0xaa CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009b10                USBD_LL_SetupStage
  .text.USBD_LL_DataOutStage
-                0x08009ba2       0xc6 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009ba2                USBD_LL_DataOutStage
+                0x08009bba       0xc6 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009bba                USBD_LL_DataOutStage
  .text.USBD_LL_DataInStage
-                0x08009c68      0x12c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009c68                USBD_LL_DataInStage
+                0x08009c80      0x12c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009c80                USBD_LL_DataInStage
  .text.USBD_LL_Reset
-                0x08009d94       0x9c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009d94                USBD_LL_Reset
+                0x08009dac       0x9c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009dac                USBD_LL_Reset
  .text.USBD_LL_SetSpeed
-                0x08009e30       0x20 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009e30                USBD_LL_SetSpeed
+                0x08009e48       0x20 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009e48                USBD_LL_SetSpeed
  .text.USBD_LL_Suspend
-                0x08009e50       0x2c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009e50                USBD_LL_Suspend
+                0x08009e68       0x2c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009e68                USBD_LL_Suspend
  .text.USBD_LL_Resume
-                0x08009e7c       0x30 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009e7c                USBD_LL_Resume
+                0x08009e94       0x30 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009e94                USBD_LL_Resume
  .text.USBD_LL_SOF
-                0x08009eac       0x44 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
-                0x08009eac                USBD_LL_SOF
+                0x08009ec4       0x44 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+                0x08009ec4                USBD_LL_SOF
  .text.SWAPBYTE
-                0x08009ef0       0x3c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x08009f08       0x3c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_StdDevReq
-                0x08009f2c       0xdc CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x08009f2c                USBD_StdDevReq
+                0x08009f44       0xdc CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x08009f44                USBD_StdDevReq
  .text.USBD_StdItfReq
-                0x0800a008       0x92 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x0800a008                USBD_StdItfReq
+                0x0800a020       0x92 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800a020                USBD_StdItfReq
  .text.USBD_StdEPReq
-                0x0800a09a      0x2c4 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x0800a09a                USBD_StdEPReq
- *fill*         0x0800a35e        0x2 
+                0x0800a0b2      0x2c4 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800a0b2                USBD_StdEPReq
+ *fill*         0x0800a376        0x2 
  .text.USBD_GetDescriptor
-                0x0800a360      0x328 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800a378      0x328 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_SetAddress
-                0x0800a688       0x88 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800a6a0       0x88 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_SetConfig
-                0x0800a710      0x14c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800a728      0x14c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_GetConfig
-                0x0800a85c       0x6c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800a874       0x6c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_GetStatus
-                0x0800a8c8       0x68 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800a8e0       0x68 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_SetFeature
-                0x0800a930       0x28 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800a948       0x28 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_ClrFeature
-                0x0800a958       0x44 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800a970       0x44 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_ParseSetupRequest
-                0x0800a99c       0x74 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x0800a99c                USBD_ParseSetupRequest
+                0x0800a9b4       0x74 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800a9b4                USBD_ParseSetupRequest
  .text.USBD_CtlError
-                0x0800aa10       0x22 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x0800aa10                USBD_CtlError
+                0x0800aa28       0x22 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800aa28                USBD_CtlError
  .text.USBD_GetString
-                0x0800aa32       0x8c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
-                0x0800aa32                USBD_GetString
+                0x0800aa4a       0x8c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800aa4a                USBD_GetString
  .text.USBD_GetLen
-                0x0800aabe       0x34 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+                0x0800aad6       0x34 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
  .text.USBD_CtlSendData
-                0x0800aaf2       0x36 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x0800aaf2                USBD_CtlSendData
+                0x0800ab0a       0x36 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x0800ab0a                USBD_CtlSendData
  .text.USBD_CtlContinueSendData
-                0x0800ab28       0x22 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x0800ab28                USBD_CtlContinueSendData
+                0x0800ab40       0x22 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x0800ab40                USBD_CtlContinueSendData
  .text.USBD_CtlPrepareRx
-                0x0800ab4a       0x3a CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x0800ab4a                USBD_CtlPrepareRx
+                0x0800ab62       0x3a CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x0800ab62                USBD_CtlPrepareRx
  .text.USBD_CtlContinueRx
-                0x0800ab84       0x22 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x0800ab84                USBD_CtlContinueRx
+                0x0800ab9c       0x22 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x0800ab9c                USBD_CtlContinueRx
  .text.USBD_CtlSendStatus
-                0x0800aba6       0x26 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x0800aba6                USBD_CtlSendStatus
+                0x0800abbe       0x26 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x0800abbe                USBD_CtlSendStatus
  .text.USBD_CtlReceiveStatus
-                0x0800abcc       0x26 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
-                0x0800abcc                USBD_CtlReceiveStatus
+                0x0800abe4       0x26 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+                0x0800abe4                USBD_CtlReceiveStatus
  .text.USBD_CDC_Init
-                0x0800abf2       0xfe CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800ac0a       0xfe CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
  .text.USBD_CDC_DeInit
-                0x0800acf0       0x74 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800ad08       0x74 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
  .text.USBD_CDC_Setup
-                0x0800ad64      0x190 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800ad7c      0x190 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
  .text.USBD_CDC_DataIn
-                0x0800aef4       0xca CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800af0c       0xca CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
  .text.USBD_CDC_DataOut
-                0x0800afbe       0x56 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800afd6       0x56 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
  .text.USBD_CDC_EP0_RxReady
-                0x0800b014       0x58 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800b02c       0x58 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
  .text.USBD_CDC_GetFSCfgDesc
-                0x0800b06c       0x20 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800b084       0x20 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
  .text.USBD_CDC_GetHSCfgDesc
-                0x0800b08c       0x20 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800b0a4       0x20 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
  .text.USBD_CDC_GetOtherSpeedCfgDesc
-                0x0800b0ac       0x20 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800b0c4       0x20 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
  .text.USBD_CDC_GetDeviceQualifierDescriptor
-                0x0800b0cc       0x20 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
-                0x0800b0cc                USBD_CDC_GetDeviceQualifierDescriptor
+                0x0800b0e4       0x20 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800b0e4                USBD_CDC_GetDeviceQualifierDescriptor
  .text.USBD_CDC_RegisterInterface
-                0x0800b0ec       0x2a CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
-                0x0800b0ec                USBD_CDC_RegisterInterface
+                0x0800b104       0x2a CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800b104                USBD_CDC_RegisterInterface
  .text.USBD_CDC_SetTxBuffer
-                0x0800b116       0x3c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
-                0x0800b116                USBD_CDC_SetTxBuffer
+                0x0800b12e       0x3c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800b12e                USBD_CDC_SetTxBuffer
  .text.USBD_CDC_SetRxBuffer
-                0x0800b152       0x32 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
-                0x0800b152                USBD_CDC_SetRxBuffer
+                0x0800b16a       0x32 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800b16a                USBD_CDC_SetRxBuffer
  .text.USBD_CDC_TransmitPacket
-                0x0800b184       0x60 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
-                0x0800b184                USBD_CDC_TransmitPacket
+                0x0800b19c       0x60 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800b19c                USBD_CDC_TransmitPacket
  .text.USBD_CDC_ReceivePacket
-                0x0800b1e4       0x54 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
-                0x0800b1e4                USBD_CDC_ReceivePacket
- .text._sbrk    0x0800b238       0x6c CMakeFiles/stm32G474CEU6.dir/Core/Src/sysmem.c.obj
-                0x0800b238                _sbrk
+                0x0800b1fc       0x54 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+                0x0800b1fc                USBD_CDC_ReceivePacket
+ .text._sbrk    0x0800b250       0x6c CMakeFiles/stm32G474CEU6.dir/Core/Src/sysmem.c.obj
+                0x0800b250                _sbrk
  .text.Reset_Handler
-                0x0800b2a4       0x50 CMakeFiles/stm32G474CEU6.dir/startup_stm32g474xx.s.obj
-                0x0800b2a4                Reset_Handler
+                0x0800b2bc       0x50 CMakeFiles/stm32G474CEU6.dir/startup_stm32g474xx.s.obj
+                0x0800b2bc                Reset_Handler
  .text.Default_Handler
-                0x0800b2f4        0x2 CMakeFiles/stm32G474CEU6.dir/startup_stm32g474xx.s.obj
-                0x0800b2f4                RTC_Alarm_IRQHandler
-                0x0800b2f4                EXTI2_IRQHandler
-                0x0800b2f4                TIM8_TRG_COM_IRQHandler
-                0x0800b2f4                TIM8_CC_IRQHandler
-                0x0800b2f4                HRTIM1_Master_IRQHandler
-                0x0800b2f4                SPI4_IRQHandler
-                0x0800b2f4                FDCAN3_IT0_IRQHandler
-                0x0800b2f4                TIM1_CC_IRQHandler
-                0x0800b2f4                HRTIM1_FLT_IRQHandler
-                0x0800b2f4                HRTIM1_TIMF_IRQHandler
-                0x0800b2f4                USB_HP_IRQHandler
-                0x0800b2f4                CORDIC_IRQHandler
-                0x0800b2f4                HRTIM1_TIMD_IRQHandler
-                0x0800b2f4                DMA2_Channel8_IRQHandler
-                0x0800b2f4                EXTI3_IRQHandler
-                0x0800b2f4                I2C3_ER_IRQHandler
-                0x0800b2f4                EXTI0_IRQHandler
-                0x0800b2f4                I2C2_EV_IRQHandler
-                0x0800b2f4                FPU_IRQHandler
-                0x0800b2f4                FDCAN1_IT1_IRQHandler
-                0x0800b2f4                TIM1_UP_TIM16_IRQHandler
-                0x0800b2f4                ADC1_2_IRQHandler
-                0x0800b2f4                HRTIM1_TIME_IRQHandler
-                0x0800b2f4                SPI1_IRQHandler
-                0x0800b2f4                TIM6_DAC_IRQHandler
-                0x0800b2f4                HRTIM1_TIMC_IRQHandler
-                0x0800b2f4                TIM8_UP_IRQHandler
-                0x0800b2f4                DMA2_Channel2_IRQHandler
-                0x0800b2f4                DMA1_Channel4_IRQHandler
-                0x0800b2f4                TIM20_TRG_COM_IRQHandler
-                0x0800b2f4                USART3_IRQHandler
-                0x0800b2f4                DMA1_Channel7_IRQHandler
-                0x0800b2f4                UART5_IRQHandler
-                0x0800b2f4                ADC3_IRQHandler
-                0x0800b2f4                TIM4_IRQHandler
-                0x0800b2f4                DMA2_Channel1_IRQHandler
-                0x0800b2f4                QUADSPI_IRQHandler
-                0x0800b2f4                I2C1_EV_IRQHandler
-                0x0800b2f4                DMA1_Channel6_IRQHandler
-                0x0800b2f4                DMA2_Channel4_IRQHandler
-                0x0800b2f4                TIM3_IRQHandler
-                0x0800b2f4                RCC_IRQHandler
-                0x0800b2f4                TIM20_UP_IRQHandler
-                0x0800b2f4                DMA1_Channel1_IRQHandler
-                0x0800b2f4                Default_Handler
-                0x0800b2f4                DMA2_Channel7_IRQHandler
-                0x0800b2f4                RTC_TAMP_LSECSS_IRQHandler
-                0x0800b2f4                FMAC_IRQHandler
-                0x0800b2f4                EXTI15_10_IRQHandler
-                0x0800b2f4                DMA1_Channel8_IRQHandler
-                0x0800b2f4                HRTIM1_TIMA_IRQHandler
-                0x0800b2f4                TIM7_DAC_IRQHandler
-                0x0800b2f4                FDCAN3_IT1_IRQHandler
-                0x0800b2f4                TIM5_IRQHandler
-                0x0800b2f4                UCPD1_IRQHandler
-                0x0800b2f4                I2C3_EV_IRQHandler
-                0x0800b2f4                EXTI9_5_IRQHandler
-                0x0800b2f4                RTC_WKUP_IRQHandler
-                0x0800b2f4                PVD_PVM_IRQHandler
-                0x0800b2f4                SPI2_IRQHandler
-                0x0800b2f4                ADC5_IRQHandler
-                0x0800b2f4                DMA2_Channel5_IRQHandler
-                0x0800b2f4                CRS_IRQHandler
-                0x0800b2f4                DMA1_Channel5_IRQHandler
-                0x0800b2f4                EXTI4_IRQHandler
-                0x0800b2f4                RNG_IRQHandler
-                0x0800b2f4                HRTIM1_TIMB_IRQHandler
-                0x0800b2f4                TIM1_TRG_COM_TIM17_IRQHandler
-                0x0800b2f4                FDCAN2_IT1_IRQHandler
-                0x0800b2f4                DMA1_Channel3_IRQHandler
-                0x0800b2f4                ADC4_IRQHandler
-                0x0800b2f4                WWDG_IRQHandler
-                0x0800b2f4                I2C4_EV_IRQHandler
-                0x0800b2f4                LPUART1_IRQHandler
-                0x0800b2f4                DMA2_Channel6_IRQHandler
-                0x0800b2f4                FDCAN1_IT0_IRQHandler
-                0x0800b2f4                TIM2_IRQHandler
-                0x0800b2f4                COMP7_IRQHandler
-                0x0800b2f4                COMP1_2_3_IRQHandler
-                0x0800b2f4                EXTI1_IRQHandler
-                0x0800b2f4                USART2_IRQHandler
-                0x0800b2f4                COMP4_5_6_IRQHandler
-                0x0800b2f4                TIM20_BRK_IRQHandler
-                0x0800b2f4                I2C2_ER_IRQHandler
-                0x0800b2f4                DMA1_Channel2_IRQHandler
-                0x0800b2f4                TIM8_BRK_IRQHandler
-                0x0800b2f4                FLASH_IRQHandler
-                0x0800b2f4                TIM20_CC_IRQHandler
-                0x0800b2f4                USART1_IRQHandler
-                0x0800b2f4                SPI3_IRQHandler
-                0x0800b2f4                I2C1_ER_IRQHandler
-                0x0800b2f4                FMC_IRQHandler
-                0x0800b2f4                LPTIM1_IRQHandler
-                0x0800b2f4                DMAMUX_OVR_IRQHandler
-                0x0800b2f4                I2C4_ER_IRQHandler
-                0x0800b2f4                USBWakeUp_IRQHandler
-                0x0800b2f4                SAI1_IRQHandler
-                0x0800b2f4                DMA2_Channel3_IRQHandler
-                0x0800b2f4                TIM1_BRK_TIM15_IRQHandler
- *fill*         0x0800b2f6        0x2 
- .text.sprintf  0x0800b2f8       0x40 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-sprintf.o)
-                0x0800b2f8                siprintf
-                0x0800b2f8                sprintf
- .text.__errno  0x0800b338        0xc C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
-                0x0800b338                __errno
+                0x0800b30c        0x2 CMakeFiles/stm32G474CEU6.dir/startup_stm32g474xx.s.obj
+                0x0800b30c                RTC_Alarm_IRQHandler
+                0x0800b30c                EXTI2_IRQHandler
+                0x0800b30c                TIM8_TRG_COM_IRQHandler
+                0x0800b30c                TIM8_CC_IRQHandler
+                0x0800b30c                HRTIM1_Master_IRQHandler
+                0x0800b30c                SPI4_IRQHandler
+                0x0800b30c                FDCAN3_IT0_IRQHandler
+                0x0800b30c                TIM1_CC_IRQHandler
+                0x0800b30c                HRTIM1_FLT_IRQHandler
+                0x0800b30c                HRTIM1_TIMF_IRQHandler
+                0x0800b30c                USB_HP_IRQHandler
+                0x0800b30c                CORDIC_IRQHandler
+                0x0800b30c                HRTIM1_TIMD_IRQHandler
+                0x0800b30c                DMA2_Channel8_IRQHandler
+                0x0800b30c                EXTI3_IRQHandler
+                0x0800b30c                I2C3_ER_IRQHandler
+                0x0800b30c                EXTI0_IRQHandler
+                0x0800b30c                I2C2_EV_IRQHandler
+                0x0800b30c                FPU_IRQHandler
+                0x0800b30c                FDCAN1_IT1_IRQHandler
+                0x0800b30c                TIM1_UP_TIM16_IRQHandler
+                0x0800b30c                ADC1_2_IRQHandler
+                0x0800b30c                HRTIM1_TIME_IRQHandler
+                0x0800b30c                SPI1_IRQHandler
+                0x0800b30c                TIM6_DAC_IRQHandler
+                0x0800b30c                HRTIM1_TIMC_IRQHandler
+                0x0800b30c                TIM8_UP_IRQHandler
+                0x0800b30c                DMA2_Channel2_IRQHandler
+                0x0800b30c                DMA1_Channel4_IRQHandler
+                0x0800b30c                TIM20_TRG_COM_IRQHandler
+                0x0800b30c                USART3_IRQHandler
+                0x0800b30c                DMA1_Channel7_IRQHandler
+                0x0800b30c                UART5_IRQHandler
+                0x0800b30c                ADC3_IRQHandler
+                0x0800b30c                TIM4_IRQHandler
+                0x0800b30c                DMA2_Channel1_IRQHandler
+                0x0800b30c                QUADSPI_IRQHandler
+                0x0800b30c                I2C1_EV_IRQHandler
+                0x0800b30c                DMA1_Channel6_IRQHandler
+                0x0800b30c                DMA2_Channel4_IRQHandler
+                0x0800b30c                TIM3_IRQHandler
+                0x0800b30c                RCC_IRQHandler
+                0x0800b30c                TIM20_UP_IRQHandler
+                0x0800b30c                DMA1_Channel1_IRQHandler
+                0x0800b30c                Default_Handler
+                0x0800b30c                DMA2_Channel7_IRQHandler
+                0x0800b30c                RTC_TAMP_LSECSS_IRQHandler
+                0x0800b30c                FMAC_IRQHandler
+                0x0800b30c                EXTI15_10_IRQHandler
+                0x0800b30c                DMA1_Channel8_IRQHandler
+                0x0800b30c                HRTIM1_TIMA_IRQHandler
+                0x0800b30c                TIM7_DAC_IRQHandler
+                0x0800b30c                FDCAN3_IT1_IRQHandler
+                0x0800b30c                TIM5_IRQHandler
+                0x0800b30c                UCPD1_IRQHandler
+                0x0800b30c                I2C3_EV_IRQHandler
+                0x0800b30c                EXTI9_5_IRQHandler
+                0x0800b30c                RTC_WKUP_IRQHandler
+                0x0800b30c                PVD_PVM_IRQHandler
+                0x0800b30c                SPI2_IRQHandler
+                0x0800b30c                ADC5_IRQHandler
+                0x0800b30c                DMA2_Channel5_IRQHandler
+                0x0800b30c                CRS_IRQHandler
+                0x0800b30c                DMA1_Channel5_IRQHandler
+                0x0800b30c                EXTI4_IRQHandler
+                0x0800b30c                RNG_IRQHandler
+                0x0800b30c                HRTIM1_TIMB_IRQHandler
+                0x0800b30c                TIM1_TRG_COM_TIM17_IRQHandler
+                0x0800b30c                FDCAN2_IT1_IRQHandler
+                0x0800b30c                DMA1_Channel3_IRQHandler
+                0x0800b30c                ADC4_IRQHandler
+                0x0800b30c                WWDG_IRQHandler
+                0x0800b30c                I2C4_EV_IRQHandler
+                0x0800b30c                LPUART1_IRQHandler
+                0x0800b30c                DMA2_Channel6_IRQHandler
+                0x0800b30c                FDCAN1_IT0_IRQHandler
+                0x0800b30c                TIM2_IRQHandler
+                0x0800b30c                COMP7_IRQHandler
+                0x0800b30c                COMP1_2_3_IRQHandler
+                0x0800b30c                EXTI1_IRQHandler
+                0x0800b30c                USART2_IRQHandler
+                0x0800b30c                COMP4_5_6_IRQHandler
+                0x0800b30c                TIM20_BRK_IRQHandler
+                0x0800b30c                I2C2_ER_IRQHandler
+                0x0800b30c                DMA1_Channel2_IRQHandler
+                0x0800b30c                TIM8_BRK_IRQHandler
+                0x0800b30c                FLASH_IRQHandler
+                0x0800b30c                TIM20_CC_IRQHandler
+                0x0800b30c                USART1_IRQHandler
+                0x0800b30c                SPI3_IRQHandler
+                0x0800b30c                I2C1_ER_IRQHandler
+                0x0800b30c                FMC_IRQHandler
+                0x0800b30c                LPTIM1_IRQHandler
+                0x0800b30c                DMAMUX_OVR_IRQHandler
+                0x0800b30c                I2C4_ER_IRQHandler
+                0x0800b30c                USBWakeUp_IRQHandler
+                0x0800b30c                SAI1_IRQHandler
+                0x0800b30c                DMA2_Channel3_IRQHandler
+                0x0800b30c                TIM1_BRK_TIM15_IRQHandler
+ *fill*         0x0800b30e        0x2 
+ .text.sprintf  0x0800b310       0x40 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-sprintf.o)
+                0x0800b310                siprintf
+                0x0800b310                sprintf
+ .text.__errno  0x0800b350        0xc C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
+                0x0800b350                __errno
  .text.__ssputs_r
-                0x0800b344       0xb6 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
-                0x0800b344                __ssputs_r
- *fill*         0x0800b3fa        0x2 
+                0x0800b35c       0xb6 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
+                0x0800b35c                __ssputs_r
+ *fill*         0x0800b412        0x2 
  .text._svfprintf_r
-                0x0800b3fc      0x1f8 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
-                0x0800b3fc                _svfiprintf_r
-                0x0800b3fc                _svfprintf_r
+                0x0800b414      0x1f8 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
+                0x0800b414                _svfiprintf_r
+                0x0800b414                _svfprintf_r
  .text._printf_common
-                0x0800b5f4       0xda C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-vfprintf_i.o)
-                0x0800b5f4                _printf_common
- *fill*         0x0800b6ce        0x2 
+                0x0800b60c       0xda C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-vfprintf_i.o)
+                0x0800b60c                _printf_common
+ *fill*         0x0800b6e6        0x2 
  .text._printf_i
-                0x0800b6d0      0x240 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-vfprintf_i.o)
-                0x0800b6d0                _printf_i
- .text.memmove  0x0800b910       0x34 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memmove.o)
-                0x0800b910                memmove
- .text.memcpy   0x0800b944       0x1c C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
-                0x0800b944                memcpy
+                0x0800b6e8      0x240 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-vfprintf_i.o)
+                0x0800b6e8                _printf_i
+ .text.memmove  0x0800b928       0x34 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memmove.o)
+                0x0800b928                memmove
+ .text.memcpy   0x0800b95c       0x1c C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+                0x0800b95c                memcpy
  .text._realloc_r
-                0x0800b960       0x5c C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-reallocr.o)
-                0x0800b960                _realloc_r
+                0x0800b978       0x5c C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-reallocr.o)
+                0x0800b978                _realloc_r
  .text._malloc_usable_size_r
-                0x0800b9bc       0x10 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-msizer.o)
-                0x0800b9bc                _malloc_usable_size_r
+                0x0800b9d4       0x10 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-msizer.o)
+                0x0800b9d4                _malloc_usable_size_r
  *(.glue_7)
- .glue_7        0x0800b9cc        0x0 linker stubs
+ .glue_7        0x0800b9e4        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800b9cc        0x0 linker stubs
+ .glue_7t       0x0800b9e4        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800b9cc        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x0800b9e4        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x0800b9cc        0x4 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0800b9cc                _init
- .init          0x0800b9d0        0x8 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x0800b9e4        0x4 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0800b9e4                _init
+ .init          0x0800b9e8        0x8 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x0800b9d8        0x4 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0800b9d8                _fini
- .fini          0x0800b9dc        0x8 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x0800b9e4                        . = ALIGN (0x4)
-                0x0800b9e4                        _etext = .
+ .fini          0x0800b9f0        0x4 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0800b9f0                _fini
+ .fini          0x0800b9f4        0x8 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x0800b9fc                        . = ALIGN (0x4)
+                0x0800b9fc                        _etext = .
 
-.vfp11_veneer   0x0800b9e4        0x0
- .vfp11_veneer  0x0800b9e4        0x0 linker stubs
+.vfp11_veneer   0x0800b9fc        0x0
+ .vfp11_veneer  0x0800b9fc        0x0 linker stubs
 
-.v4_bx          0x0800b9e4        0x0
- .v4_bx         0x0800b9e4        0x0 linker stubs
+.v4_bx          0x0800b9fc        0x0
+ .v4_bx         0x0800b9fc        0x0 linker stubs
 
-.iplt           0x0800b9e4        0x0
- .iplt          0x0800b9e4        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x0800b9fc        0x0
+ .iplt          0x0800b9fc        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x0800b9e4      0x100
-                0x0800b9e4                        . = ALIGN (0x4)
+.rodata         0x0800b9fc      0x100
+                0x0800b9fc                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0800b9e4       0x34 CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
- .rodata        0x0800ba18       0x46 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+ .rodata        0x0800b9fc       0x34 CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
+ .rodata        0x0800ba30       0x46 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
  *(.rodata*)
- *fill*         0x0800ba5e        0x2 
+ *fill*         0x0800ba76        0x2 
  .rodata.DLCtoBytes
-                0x0800ba60       0x10 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+                0x0800ba78       0x10 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
  .rodata.UARTPrescTable
-                0x0800ba70       0x18 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
-                0x0800ba70                UARTPrescTable
+                0x0800ba88       0x18 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+                0x0800ba88                UARTPrescTable
  .rodata.numerator.1
-                0x0800ba88        0x8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+                0x0800baa0        0x8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
  .rodata.denominator.0
-                0x0800ba90        0x8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+                0x0800baa8        0x8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
  .rodata.AHBPrescTable
-                0x0800ba98       0x10 CMakeFiles/stm32G474CEU6.dir/Core/Src/system_stm32g4xx.c.obj
-                0x0800ba98                AHBPrescTable
+                0x0800bab0       0x10 CMakeFiles/stm32G474CEU6.dir/Core/Src/system_stm32g4xx.c.obj
+                0x0800bab0                AHBPrescTable
  .rodata.APBPrescTable
-                0x0800baa8        0x8 CMakeFiles/stm32G474CEU6.dir/Core/Src/system_stm32g4xx.c.obj
-                0x0800baa8                APBPrescTable
+                0x0800bac0        0x8 CMakeFiles/stm32G474CEU6.dir/Core/Src/system_stm32g4xx.c.obj
+                0x0800bac0                APBPrescTable
  .rodata._svfprintf_r.str1.1
-                0x0800bab0       0x11 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
+                0x0800bac8       0x11 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x0800bac1       0x22 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-vfprintf_i.o)
-                0x0800bae4                        . = ALIGN (0x4)
- *fill*         0x0800bae3        0x1 
+                0x0800bad9       0x22 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-vfprintf_i.o)
+                0x0800bafc                        . = ALIGN (0x4)
+ *fill*         0x0800bafb        0x1 
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0800bae4        0x8
-                0x0800bae4                        __exidx_start = .
+.ARM            0x0800bafc        0x8
+                0x0800bafc                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0800bae4        0x8 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
- .ARM.exidx     0x0800baec        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-strlen.o)
+ .ARM.exidx     0x0800bafc        0x8 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x0800bb04        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-strlen.o)
                                   0x8 (size before relaxing)
- .ARM.exidx     0x0800baec        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memchr.o)
+ .ARM.exidx     0x0800bb04        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memchr.o)
                                   0x8 (size before relaxing)
-                0x0800baec                        __exidx_end = .
+                0x0800bb04                        __exidx_end = .
 
-.rel.dyn        0x0800baec        0x0
- .rel.iplt      0x0800baec        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0800bb04        0x0
+ .rel.iplt      0x0800bb04        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.preinit_array  0x0800baec        0x0
-                0x0800baec                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0800bb04        0x0
+                0x0800bb04                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0800baec                        PROVIDE (__preinit_array_end = .)
+                0x0800bb04                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x0800baec        0x4
-                0x0800baec                        PROVIDE (__init_array_start = .)
+.init_array     0x0800bb04        0x4
+                0x0800bb04                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0800baec        0x4 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0800baf0                        PROVIDE (__init_array_end = .)
+ .init_array    0x0800bb04        0x4 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0800bb08                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x0800baf0        0x4
+.fini_array     0x0800bb08        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0800baf0        0x4 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x0800bb08        0x4 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0800baf4                        _sidata = LOADADDR (.data)
+                0x0800bb0c                        _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x1d4 load address 0x0800baf4
+.data           0x20000000      0x1d4 load address 0x0800bb0c
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -5448,11 +5448,11 @@ LOAD C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  *fill*         0x200001d3        0x1 
                 0x200001d4                        _edata = .
 
-.igot.plt       0x200001d4        0x0 load address 0x0800bcc8
+.igot.plt       0x200001d4        0x0 load address 0x0800bce0
  .igot.plt      0x200001d4        0x0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x200001d4                        . = ALIGN (0x4)
 
-.bss            0x200001d4     0x1cf4 load address 0x0800bcc8
+.bss            0x200001d4     0x1cf4 load address 0x0800bce0
                 0x200001d4                        _sbss = .
                 0x200001d4                        __bss_start__ = _sbss
  *(.bss)
@@ -5530,7 +5530,7 @@ LOAD C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x20001ec8                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20001ec8      0x600 load address 0x0800bcc8
+                0x20001ec8      0x600 load address 0x0800bce0
                 0x20001ec8                        . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 0x20001ec8                        PROVIDE (_end = .)
@@ -6109,47 +6109,47 @@ LOAD C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_macro   0x00028ba0       0x10 CMakeFiles/stm32G474CEU6.dir/Core/Src/sysmem.c.obj
  .debug_macro   0x00028bb0      0x23c CMakeFiles/stm32G474CEU6.dir/Core/Src/sysmem.c.obj
 
-.debug_line     0x00000000    0x1b0da
- .debug_line    0x00000000      0xc3b CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
- .debug_line    0x00000c3b      0x778 CMakeFiles/stm32G474CEU6.dir/Core/Src/gpio.c.obj
- .debug_line    0x000013b3      0x7f8 CMakeFiles/stm32G474CEU6.dir/Core/Src/fdcan.c.obj
- .debug_line    0x00001bab      0x814 CMakeFiles/stm32G474CEU6.dir/Core/Src/usart.c.obj
- .debug_line    0x000023bf      0x869 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
- .debug_line    0x00002c28      0x75f CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_hal_msp.c.obj
- .debug_line    0x00003387      0xe8e CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
- .debug_line    0x00004215      0xa1d CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usb_device.c.obj
- .debug_line    0x00004c32      0xaa7 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
- .debug_line    0x000056d9      0xa80 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
- .debug_line    0x00006159     0x13b3 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
- .debug_line    0x0000750c      0x8f8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd_ex.c.obj
- .debug_line    0x00007e04      0xf73 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
- .debug_line    0x00008d77      0xb87 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
- .debug_line    0x000098fe      0xf52 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
- .debug_line    0x0000a850     0x1263 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c.obj
- .debug_line    0x0000bab3      0xba0 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj
- .debug_line    0x0000c653      0xeb1 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c.obj
- .debug_line    0x0000d504      0xcf6 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.obj
- .debug_line    0x0000e1fa      0xd1a CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
- .debug_line    0x0000ef14     0x197a CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
- .debug_line    0x0001088e     0x3c24 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
- .debug_line    0x000144b2      0xdad CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
- .debug_line    0x0001525f      0x7cb CMakeFiles/stm32G474CEU6.dir/Core/Src/system_stm32g4xx.c.obj
- .debug_line    0x00015a2a      0xdcb CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
- .debug_line    0x000167f5     0x106c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
- .debug_line    0x00017861      0xa22 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
- .debug_line    0x00018283      0xd8b CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
- .debug_line    0x0001900e      0x344 CMakeFiles/stm32G474CEU6.dir/Core/Src/sysmem.c.obj
- .debug_line    0x00019352       0x7b CMakeFiles/stm32G474CEU6.dir/startup_stm32g474xx.s.obj
- .debug_line    0x000193cd      0x2b0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-sprintf.o)
- .debug_line    0x0001967d      0x185 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
- .debug_line    0x00019802       0x4f C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-strlen.o)
- .debug_line    0x00019851      0x882 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
- .debug_line    0x0001a0d3      0x74c C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-vfprintf_i.o)
- .debug_line    0x0001a81f      0x1bc C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memmove.o)
- .debug_line    0x0001a9db       0x84 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memchr.o)
- .debug_line    0x0001aa5f      0x202 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
- .debug_line    0x0001ac61      0x274 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-reallocr.o)
- .debug_line    0x0001aed5      0x205 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-msizer.o)
+.debug_line     0x00000000    0x1b0e3
+ .debug_line    0x00000000      0xc44 CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
+ .debug_line    0x00000c44      0x778 CMakeFiles/stm32G474CEU6.dir/Core/Src/gpio.c.obj
+ .debug_line    0x000013bc      0x7f8 CMakeFiles/stm32G474CEU6.dir/Core/Src/fdcan.c.obj
+ .debug_line    0x00001bb4      0x814 CMakeFiles/stm32G474CEU6.dir/Core/Src/usart.c.obj
+ .debug_line    0x000023c8      0x869 CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_it.c.obj
+ .debug_line    0x00002c31      0x75f CMakeFiles/stm32G474CEU6.dir/Core/Src/stm32g4xx_hal_msp.c.obj
+ .debug_line    0x00003390      0xe8e CMakeFiles/stm32G474CEU6.dir/USB_Device/Target/usbd_conf.c.obj
+ .debug_line    0x0000421e      0xa1d CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usb_device.c.obj
+ .debug_line    0x00004c3b      0xaa7 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_desc.c.obj
+ .debug_line    0x000056e2      0xa80 CMakeFiles/stm32G474CEU6.dir/USB_Device/App/usbd_cdc_if.c.obj
+ .debug_line    0x00006162     0x13b3 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj
+ .debug_line    0x00007515      0x8f8 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd_ex.c.obj
+ .debug_line    0x00007e0d      0xf73 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_ll_usb.c.obj
+ .debug_line    0x00008d80      0xb87 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c.obj
+ .debug_line    0x00009907      0xf52 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c.obj
+ .debug_line    0x0000a859     0x1263 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c.obj
+ .debug_line    0x0000babc      0xba0 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c.obj
+ .debug_line    0x0000c65c      0xeb1 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c.obj
+ .debug_line    0x0000d50d      0xcf6 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.obj
+ .debug_line    0x0000e203      0xd1a CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c.obj
+ .debug_line    0x0000ef1d     0x197a CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_fdcan.c.obj
+ .debug_line    0x00010897     0x3c24 CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c.obj
+ .debug_line    0x000144bb      0xdad CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart_ex.c.obj
+ .debug_line    0x00015268      0x7cb CMakeFiles/stm32G474CEU6.dir/Core/Src/system_stm32g4xx.c.obj
+ .debug_line    0x00015a33      0xdcb CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+ .debug_line    0x000167fe     0x106c CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+ .debug_line    0x0001786a      0xa22 CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
+ .debug_line    0x0001828c      0xd8b CMakeFiles/stm32G474CEU6.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+ .debug_line    0x00019017      0x344 CMakeFiles/stm32G474CEU6.dir/Core/Src/sysmem.c.obj
+ .debug_line    0x0001935b       0x7b CMakeFiles/stm32G474CEU6.dir/startup_stm32g474xx.s.obj
+ .debug_line    0x000193d6      0x2b0 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-sprintf.o)
+ .debug_line    0x00019686      0x185 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-errno.o)
+ .debug_line    0x0001980b       0x4f C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-strlen.o)
+ .debug_line    0x0001985a      0x882 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-svfprintf.o)
+ .debug_line    0x0001a0dc      0x74c C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-nano-vfprintf_i.o)
+ .debug_line    0x0001a828      0x1bc C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memmove.o)
+ .debug_line    0x0001a9e4       0x84 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memchr.o)
+ .debug_line    0x0001aa68      0x202 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_line    0x0001ac6a      0x274 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-reallocr.o)
+ .debug_line    0x0001aede      0x205 C:/ST/STM32CubeCLT_1.17.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-msizer.o)
 
 .debug_str      0x00000000    0xf466f
  .debug_str     0x00000000    0xed37f CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj
