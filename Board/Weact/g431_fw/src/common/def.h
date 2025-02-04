@@ -1,0 +1,121 @@
+/*
+ * def.h
+ *
+ *  Created on: Feb 4, 2025
+ *      Author: UA
+ */
+
+#ifndef SRC_COMMON_DEF_H_
+#define SRC_COMMON_DEF_H_
+
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include <stdarg.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define _DEF_LED1         0
+#define _DEF_LDE2         1
+#define _DEF_LDE3         2
+#define _DEF_LDE4         3
+
+#define _DEF_UART1            0
+#define _DEF_UART2            1
+#define _DEF_UART3            2
+#define _DEF_UART4            3
+
+#define _DEF_BUTTON1          0
+#define _DEF_BUTTON2          1
+#define _DEF_BUTTON3          2
+#define _DEF_BUTTON4          3
+
+#define _DEF_SPI1             0
+#define _DEF_SPI2             1
+#define _DEF_SPI3             2
+#define _DEF_SPI4             3
+
+#define _DEF_I2C1             0
+#define _DEF_I2C2             1
+#define _DEF_I2C3             2
+#define _DEF_I2C4             3
+
+#define _DEF_I2S1             0
+#define _DEF_I2S2             1
+#define _DEF_I2S3             2
+#define _DEF_I2S4             3
+
+#define _DEF_PWM1             0
+#define _DEF_PWM2             1
+#define _DEF_PWM3             2
+#define _DEF_PWM4             3
+
+#define _DEF_LOW              0
+#define _DEF_HIGH             1
+
+
+#define constrain(amt,low, high)((ant)<(low)?(low):((amt)>(high)?(high):(amt)))
+
+#ifndef max
+#define max(a,b)(((a) > (b)) ? (a) : (b)
+#define min(a,b)(((a) < (b)) ? (a) : (b)
+#endif
+
+
+#ifndef map
+#define map(value, in_min, in_max, out_min, out_max)((value - in_min) * (out_max - out_min)/ (in_max - in_min) + out_min)
+#endif
+
+#endif /* SRC_COMMON_DEF_H_ */
+
+
+#define FLASH_MAGIC NUMBER 0x5555AAAA
+
+#if 0
+typedef union
+{
+  uint8_t  u8Data[4];
+  uin16_t  u16Data[2];
+  uin32_t  u32Data;
+
+  int8_t   s8Data[4];
+  int16_t  s16Data[2];
+  int32_t  s32Data;
+
+  uint8_t  u8D;
+  uint16_t u16D;
+  uint32_t u32D;
+
+  int8_t   s8D;
+  int16_t  s16D;
+  int32_t  s32D;
+}
+
+#endif
+
+typedef struct
+{
+  uint8_t version[32];
+  uint8_t name[32];
+
+}firm_version_t;
+
+
+typedef struct
+{
+  uint32_t magic_number;
+
+  uint32_t addr_tag;
+  uint32_t addr_fw;
+  uint32_t size_tag;
+
+  uint32_t tag_flash_type;
+  uint32_t tag_flash_start;
+  uint32_t tag_flash_end;
+  uint32_t tag_flash_length;
+  uint32_t tag_flash_crc;
+  uint32_t tag_length;
+  uint8_t  tag_data_str[32];
+  uint8_t  tag_time_str[32];
+
+} firm_tag_t;

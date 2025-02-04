@@ -1,6 +1,6 @@
 # ninja log v5
 101	1454	7593965690432275	CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pcd.c.obj	5755772744596742
-89	1209	7593976666268877	build.ninja	4ece162fe1d5e44d
+89	1209	7603579086315352	build.ninja	4ece162fe1d5e44d
 37	1575	7593965692752792	CMakeFiles/stm32G474CEU6.dir/Core/Src/main.c.obj	f1aca55840bf8ff3
 43	1491	7593965690232263	CMakeFiles/stm32G474CEU6.dir/Core/Src/gpio.c.obj	2861ba56570817f4
 290	1388	7593965689717079	CMakeFiles/stm32G474CEU6.dir/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c.obj	38168145f78d19db

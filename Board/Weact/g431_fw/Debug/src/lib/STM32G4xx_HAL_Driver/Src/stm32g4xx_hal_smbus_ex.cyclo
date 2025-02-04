@@ -1,0 +1,4 @@
+../src/lib/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_smbus_ex.c:90:19:HAL_SMBUSEx_EnableWakeUp	3
+../src/lib/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_smbus_ex.c:129:19:HAL_SMBUSEx_DisableWakeUp	3
+../src/lib/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_smbus_ex.c:196:6:HAL_SMBUSEx_EnableFastModePlus	1
+../src/lib/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_smbus_ex.c:225:6:HAL_SMBUSEx_DisableFastModePlus	1
