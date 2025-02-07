@@ -10,6 +10,7 @@ C_SRCS :=
 S_UPPER_SRCS := 
 O_SRCS := 
 CYCLO_FILES := 
+OBJCOPY_HEX := 
 SIZE_OUTPUT := 
 OBJDUMP_LIST := 
 SU_FILES := 
@@ -19,12 +20,18 @@ MAP_FILES :=
 S_DEPS := 
 S_UPPER_DEPS := 
 C_DEPS := 
+OBJCOPY_BIN := 
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src/ap \
 src/bsp \
 src/bsp/startup \
+src/common/core \
+src/hw/driver \
+src/hw/driver/usb/core \
+src/hw/driver/usb/usb_cdc \
+src/hw/driver/usb \
 src/hw \
 src/lib/STM32G4xx_HAL_Driver/Src \
 src \

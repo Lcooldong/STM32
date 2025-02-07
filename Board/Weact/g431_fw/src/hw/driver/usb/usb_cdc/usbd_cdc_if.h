@@ -1,9 +1,9 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file    usb.h
-  * @brief   This file contains all the function prototypes for
-  *          the usb.c file
+  * @file           : usbd_cdc_if.h
+  * @version        : v3.0_Cube
+  * @brief          : Header for usbd_cdc_if.c file.
   ******************************************************************************
   * @attention
   *
@@ -17,36 +17,38 @@
   ******************************************************************************
   */
 /* USER CODE END Header */
+
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __USB_H__
-#define __USB_H__
+#ifndef __USBD_CDC_IF_H__
+#define __USBD_CDC_IF_H__
 
 #ifdef __cplusplus
-extern "C" {
+ extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
+#include "usbd_cdc.h"
 
-/* USER CODE BEGIN Includes */
 
-/* USER CODE END Includes */
+#define APP_RX_DATA_SIZE  1000
+#define APP_TX_DATA_SIZE  1000
 
-extern PCD_HandleTypeDef hpcd_USB_FS;
+extern USBD_CDC_ItfTypeDef USBD_Interface_fops_FS;
 
-/* USER CODE BEGIN Private defines */
+uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len);
 
-/* USER CODE END Private defines */
 
-void MX_USB_PCD_Init(void);
+bool     cdcIfInit(void);
+uint32_t cdcIfAvailable(void);
+uint8_t  cdcIfRead(void);
+uint32_t cdcIfGetBaud(void);
+uint32_t cdcIfWrite(uint8_t *p_data, uint32_t length);
+bool     cdcIfIsConnected(void);
 
-/* USER CODE BEGIN Prototypes */
-
-/* USER CODE END Prototypes */
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __USB_H__ */
+#endif /* __USBD_CDC_IF_H__ */
 

@@ -10,7 +10,12 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include src/lib/STM32G4xx_HAL_Driver/Src/subdir.mk
+-include src/hw/driver/usb/usb_cdc/subdir.mk
+-include src/hw/driver/usb/core/subdir.mk
+-include src/hw/driver/usb/subdir.mk
+-include src/hw/driver/subdir.mk
 -include src/hw/subdir.mk
+-include src/common/core/subdir.mk
 -include src/bsp/startup/subdir.mk
 -include src/bsp/subdir.mk
 -include src/ap/subdir.mk
@@ -55,6 +60,12 @@ default.size.stdout \
 OBJDUMP_LIST += \
 g431_fw.list \
 
+OBJCOPY_HEX += \
+g431_fw.hex \
+
+OBJCOPY_BIN += \
+g431_fw.bin \
+
 
 # All Target
 all: main-build
@@ -78,12 +89,22 @@ g431_fw.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+g431_fw.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "g431_fw.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+g431_fw.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "g431_fw.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) default.size.stdout g431_fw.elf g431_fw.list g431_fw.map
+	-$(RM) default.size.stdout g431_fw.bin g431_fw.elf g431_fw.hex g431_fw.list g431_fw.map
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

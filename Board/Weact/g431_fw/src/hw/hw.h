@@ -10,6 +10,12 @@
 
 #include "hw_def.h"
 
+#include "cdc.h"
+#include "led.h"
+#include "rtc.h"
+#include "reset.h"
+#include "usb.h"
+
 bool hwInit(void);
 
 #endif /* SRC_HW_HW_H_ */

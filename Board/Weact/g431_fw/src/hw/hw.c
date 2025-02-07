@@ -14,6 +14,16 @@ bool hwInit(void)
 
   ret &= bspInit();
 
+//  ret &= rtcInit();
+//  ret &= resetInit();
+  ret &= ledInit();
+//  ret &= usbInit();
+//  ret &= usbBegin(USB_CDC_MODE);
+//
+//  if(resetGetCount() == 2)
+//  {
+//    resetToSysBoot();
+//  }
 
   return ret;
 }

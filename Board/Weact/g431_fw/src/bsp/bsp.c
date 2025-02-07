@@ -5,15 +5,19 @@
  *      Author: UA
  */
 
+#include "hw_def.h"
 #include "bsp.h"
+
 
 
 void SystemClock_Config(void);
 
 
+
 bool bspInit(void)
 {
   HAL_Init();
+
 
   SystemClock_Config();
 
@@ -22,14 +26,26 @@ bool bspInit(void)
 
 void delay(uint32_t time_ms)
 {
+#ifdef _USE_HW_RTOS
+  if (xTaskGetSchedulerState() != taskSCHEDULER_NOT_STARTED)
+  {
+    osDelay(time_ms);
+  }
+  else
+  {
+    HAL_Delay(time_ms);
+  }
+#else
   HAL_Delay(time_ms);
+#endif
 }
 
-uint32_t miilis(void)
+uint32_t millis(void)
 {
-  HAL_GetTick();
-  return 0;
+  return HAL_GetTick();
 }
+
+
 
 
 
@@ -42,12 +58,20 @@ void SystemClock_Config(void)
   */
   HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1_BOOST);
 
+  /** Configure LSE Drive Capability
+  */
+//  HAL_PWR_EnableBkUpAccess();
+//  __HAL_RCC_LSEDRIVE_CONFIG(RCC_LSEDRIVE_LOW);
+
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
+//  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48|RCC_OSCILLATORTYPE_HSE
+//                              |RCC_OSCILLATORTYPE_LSE;
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI48|RCC_OSCILLATORTYPE_LSI
                               |RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+//  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
@@ -79,9 +103,4 @@ void SystemClock_Config(void)
 
 void Error_Handler(void)
 {
-
-  __disable_irq();
-  while (1)
-  {
-  }
 }

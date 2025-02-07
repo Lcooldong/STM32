@@ -15,10 +15,17 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include "err_code.h"
+
+#define _DEF_CH1              0
+#define _DEF_CH2              1
+#define _DEF_CH3              2
+#define _DEF_CH4              3
+
 #define _DEF_LED1         0
-#define _DEF_LDE2         1
-#define _DEF_LDE3         2
-#define _DEF_LDE4         3
+#define _DEF_LED2         1
+#define _DEF_LED3         2
+#define _DEF_LED4         3
 
 #define _DEF_UART1            0
 #define _DEF_UART2            1
@@ -53,23 +60,53 @@
 #define _DEF_LOW              0
 #define _DEF_HIGH             1
 
+#define _DEF_INPUT            (1<<0)
+#define _DEF_OUTPUT           (1<<1)
+#define _DEF_PULLUP           (1<<2)
+#define _DEF_PULLDOWN         (1<<3)
+#define _DEF_INPUT_PULLUP     (_DEF_INPUT  | _DEF_PULLUP)
+#define _DEF_INPUT_PULLDOWN   (_DEF_INPUT  | _DEF_PULLDOWN)
+#define _DEF_OUTPUT_PULLUP    (_DEF_OUTPUT | _DEF_PULLUP)
+#define _DEF_OUTPUT_PULLDOWN  (_DEF_OUTPUT | _DEF_PULLDOWN)
 
-#define constrain(amt,low, high)((ant)<(low)?(low):((amt)>(high)?(high):(amt)))
+#define _DEF_CAN1             0
+#define _DEF_CAN2             1
+#define _DEF_CAN3             2
+#define _DEF_CAN4             3
 
-#ifndef max
-#define max(a,b)(((a) > (b)) ? (a) : (b)
-#define min(a,b)(((a) < (b)) ? (a) : (b)
+#define _DEF_CAN_100K         0
+#define _DEF_CAN_125K         1
+#define _DEF_CAN_250K         2
+#define _DEF_CAN_500K         3
+#define _DEF_CAN_1000K        4
+
+#define _DEF_CAN_STD          0
+#define _DEF_CAN_EXT          1
+
+#define _DEF_DXL1             0
+#define _DEF_DXL2             1
+#define _DEF_DXL3             2
+#define _DEF_DXL4             3
+
+
+#define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
+
+#ifndef cmax
+#define cmax(a,b) (((a) > (b)) ? (a) : (b))
+#define cmin(a,b) (((a) < (b)) ? (a) : (b))
 #endif
 
 
-#ifndef map
-#define map(value, in_min, in_max, out_min, out_max)((value - in_min) * (out_max - out_min)/ (in_max - in_min) + out_min)
+#ifndef cmap
+#define cmap(value, in_min, in_max, out_min, out_max) ((value - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 #endif
 
-#endif /* SRC_COMMON_DEF_H_ */
 
 
-#define FLASH_MAGIC NUMBER 0x5555AAAA
+#define MAGIC_NUMBER              0x5555AAAA
+#define FLASH_MAGIC NUMBER        0x5555AAAA
+#define VERSION_MAGIC_NUMBER      0x56455220    // "VER "
+#define TAG_MAGIC_NUMBER          0x54414720    // "TAG "
 
 #if 0
 typedef union
@@ -89,17 +126,26 @@ typedef union
   int8_t   s8D;
   int16_t  s16D;
   int32_t  s32D;
-}
+}data_t
 
 #endif
 
+//typedef struct
+//{
+//  uint8_t version[32];
+//  uint8_t name[32];
+//} firm_version_t;
+//
+//
+
+
 typedef struct
 {
-  uint8_t version[32];
-  uint8_t name[32];
-
-}firm_version_t;
-
+  uint32_t magic_number;
+  char     version_str[32];
+  char     name_str[32];
+  uint32_t firm_addr;
+} firm_ver_t;
 
 typedef struct
 {
@@ -119,3 +165,5 @@ typedef struct
   uint8_t  tag_time_str[32];
 
 } firm_tag_t;
+
+#endif /* SRC_COMMON_DEF_H_ */
