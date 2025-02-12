@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\src\bsp\bsp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\src\bsp\device\stm32g4xx_it.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\src\bsp\device\syscalls.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\src\bsp\device\sysmem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\src\bsp\device\system_stm32g4xx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\src\ap\app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\src\hw\hw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\src\bsp\startup\startup_stm32g431cbux.s" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{285FF9F1-2968-3AA9-B4D5-AC3628D5FCAC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

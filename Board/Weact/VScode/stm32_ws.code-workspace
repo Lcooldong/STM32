@@ -1,0 +1,11 @@
+
+{
+	"folders": [
+		{
+			"path": "stm32g431_fw"
+		}
+	],
+	"settings": {
+		// "cortex-debug.armToolchainPath": "D:/Stm32/tools/build_tools/arm-gnu-toolchain-14.2.rel1-mingw-w64-x86_64-arm-none-eabi/bin"
+	}
+}

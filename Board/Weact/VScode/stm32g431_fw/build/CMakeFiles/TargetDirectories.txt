@@ -1,0 +1,3 @@
+D:/Github/STM32/Board/Weact/VScode/stm32g431_fw/build/CMakeFiles/stm32g431_fw.elf.dir
+D:/Github/STM32/Board/Weact/VScode/stm32g431_fw/build/CMakeFiles/ALL_BUILD.dir
+D:/Github/STM32/Board/Weact/VScode/stm32g431_fw/build/CMakeFiles/ZERO_CHECK.dir

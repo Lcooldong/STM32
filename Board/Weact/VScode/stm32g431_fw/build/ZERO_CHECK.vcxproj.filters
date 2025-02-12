@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Github\STM32\Board\Weact\VScode\stm32g431_fw\build\CMakeFiles\9895aab2224103409baf03568521b5a3\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{28D83D39-C998-32C0-A3F0-DE44C8D6AE0E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
