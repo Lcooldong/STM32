@@ -77,7 +77,17 @@ src/hw/driver/usb.o: ../src/hw/driver/usb.c \
  D:/Github/STM32/Board/Weact/g431_fw/src/lib/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_usart.h \
  D:/Github/STM32/Board/Weact/g431_fw/src/lib/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_usart_ex.h \
  D:/Github/STM32/Board/Weact/g431_fw/src/lib/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_wwdg.h \
- D:/Github/STM32/Board/Weact/g431_fw/src/common/hw/include/cdc.h
+ D:/Github/STM32/Board/Weact/g431_fw/src/common/hw/include/cdc.h \
+ D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_core.h \
+ D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/usbd_conf.h \
+ D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_def.h \
+ D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_ioreq.h \
+ D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_core.h \
+ D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_ctlreq.h \
+ D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/usb_cdc/usbd_cdc.h \
+ D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_ioreq.h \
+ D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/usb_cdc/usbd_cdc_if.h \
+ D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/usb_cdc/usbd_cdc.h
 D:/Github/STM32/Board/Weact/g431_fw/src/common/hw/include/usb.h:
 D:/Github/STM32/Board/Weact/g431_fw/src/hw/hw_def.h:
 D:/Github/STM32/Board/Weact/g431_fw/src/bsp/bsp.h:
@@ -157,3 +167,13 @@ D:/Github/STM32/Board/Weact/g431_fw/src/lib/STM32G4xx_HAL_Driver/Inc/stm32g4xx_h
 D:/Github/STM32/Board/Weact/g431_fw/src/lib/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_usart_ex.h:
 D:/Github/STM32/Board/Weact/g431_fw/src/lib/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_wwdg.h:
 D:/Github/STM32/Board/Weact/g431_fw/src/common/hw/include/cdc.h:
+D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_core.h:
+D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/usbd_conf.h:
+D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_def.h:
+D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_ioreq.h:
+D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_core.h:
+D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_ctlreq.h:
+D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/usb_cdc/usbd_cdc.h:
+D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/core/usbd_ioreq.h:
+D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/usb_cdc/usbd_cdc_if.h:
+D:/Github/STM32/Board/Weact/g431_fw/src/hw/driver/usb/usb_cdc/usbd_cdc.h:

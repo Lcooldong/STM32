@@ -13,12 +13,12 @@ bool hwInit(void)
   bool ret = true;
 
   ret &= bspInit();
-
+//
 //  ret &= rtcInit();
 //  ret &= resetInit();
   ret &= ledInit();
-//  ret &= usbInit();
-//  ret &= usbBegin(USB_CDC_MODE);
+  ret &= usbInit();
+  ret &= usbBegin(USB_CDC_MODE);
 //
 //  if(resetGetCount() == 2)
 //  {

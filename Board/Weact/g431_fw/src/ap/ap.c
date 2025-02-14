@@ -32,32 +32,32 @@ void apMain(void)
     }
 
 
-//    if(cdcIsConnect() == true)
-//    {
-//      if(cur_time - pre_time[1] >= 500)
-//      {
-//        pre_time[1] = cur_time;
-//        ledToggle(_DEF_LED2);
-//      }
-//    }
-//    else
-//    {
-//      ledOff(_DEF_LED2);
-//    }
-//
-//    if(cdcAvailable() > 0)
-//    {
-//      uint8_t rx_data;
-//      char *startText = "RX : ";
-//      char *endText = "\r\n";
-//
-//      rx_data = cdcRead();
-//
-//      cdcWrite((uint8_t*)startText, sizeof(startText));
-//      cdcWrite(&rx_data, 1);
-//      cdcWrite((uint8_t*)endText, sizeof(endText));
-//
-//    }
+    if(cdcIsConnect() == true)
+    {
+      if(cur_time - pre_time[1] >= 500)
+      {
+        pre_time[1] = cur_time;
+        ledToggle(_DEF_LED2);
+      }
+    }
+    else
+    {
+      ledOff(_DEF_LED2);
+    }
+
+    if(cdcAvailable() > 0)
+    {
+      uint8_t rx_data;
+      char *startText = "RX : ";
+      char *endText = "\r\n";
+
+      rx_data = cdcRead();
+
+      cdcWrite((uint8_t*)startText, sizeof(startText));
+      cdcWrite(&rx_data, 1);
+      cdcWrite((uint8_t*)endText, sizeof(endText));
+
+    }
 
   }
 }

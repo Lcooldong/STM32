@@ -1,0 +1,7 @@
+../src/hw/driver/usb.c:45:6:usbInit	1
+../src/hw/driver/usb.c:56:6:usbDeInit	2
+../src/hw/driver/usb.c:64:6:usbIsOpen	1
+../src/hw/driver/usb.c:69:6:usbIsConnect	4
+../src/hw/driver/usb.c:88:9:usbGetMode	1
+../src/hw/driver/usb.c:93:6:usbBegin	6
+../src/hw/driver/usb.c:165:6:USB_LP_IRQHandler	1
